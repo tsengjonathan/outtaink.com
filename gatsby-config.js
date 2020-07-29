@@ -11,6 +11,7 @@ module.exports = {
       twitter: `kylemathews`,
     },
   },
+  pathPrefix: "/outtaink.com",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
