@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const BlogIndex = ({ data, location }) => {
+const ArticleIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
@@ -44,7 +44,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default ArticleIndex
 
 export const pageQuery = graphql`
   query {
