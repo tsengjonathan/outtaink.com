@@ -11,7 +11,7 @@ module.exports = {
       twitter: `kylemathews`,
     },
   },
-  pathPrefix: "/outtaink.com",
+  pathPrefix: '/outtaink.com',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -81,4 +81,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
