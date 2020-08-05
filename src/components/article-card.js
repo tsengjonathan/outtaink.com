@@ -7,25 +7,24 @@ function ArticleCard({ node }) {
   const title = node.frontmatter.title || node.fields.slug;
   return (
     <article key={node.fields.slug}>
-      <header>
-        <h3
-          style={{
-            marginBottom: rhythm(1 / 4),
-          }}
-        >
-          <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+      <Link
+        className="text-current hover:text-gray-700 transition duration-300 ease-in-out"
+        to={node.fields.slug}
+      >
+        <header>
+          <h3 className="mb-2">
             {title}
-          </Link>
-        </h3>
-        <small>{node.frontmatter.date}</small>
-      </header>
-      <section>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: node.excerpt,
-          }}
-        />
-      </section>
+          </h3>
+          <small>{node.frontmatter.date}</small>
+        </header>
+        <section>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: node.excerpt,
+            }}
+          />
+        </section>
+      </Link>
     </article>
   );
 }
