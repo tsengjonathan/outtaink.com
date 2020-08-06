@@ -15,34 +15,36 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
-        <header>
-          <h1 className="mt-6 mb-0">{post.frontmatter.title}</h1>
-          <p className="text-sm block mb-6">{post.frontmatter.date}</p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr className="mb-6" />
-        <footer />
-      </article>
+      <div className="mx-auto my-8 max-w-2xl">
+        <article>
+          <header>
+            <h1 className="mt-6 mb-0">{post.frontmatter.title}</h1>
+            <p className="text-sm block mb-6">{post.frontmatter.date}</p>
+          </header>
+          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr className="mb-6" />
+          <footer />
+        </article>
 
-      <nav>
-        <ul className="flex flex-wrap justify-between list-none p-0 m-0">
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+        <nav>
+          <ul className="flex flex-wrap justify-between list-none p-0 m-0">
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </nav>
+      </div>
     </Layout>
   );
 };

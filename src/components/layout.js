@@ -5,7 +5,7 @@ const Layout = ({ location, title, children }) => {
   return (
     <div className="px-8 py-4 flex flex-col min-h-screen">
       <Header title={title} />
-      <main className="mx-auto my-8 grid flex-1 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">{children}</main>
+      <main>{children}</main>
       <footer>
         <p>
           © {new Date().getFullYear()}, Built with

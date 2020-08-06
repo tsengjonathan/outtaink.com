@@ -11,10 +11,12 @@ const ArticleIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      {posts.map(({ node }) => (
-        <ArticleCard node={node} />
-      ))}
+      <div className="mx-auto my-8 grid flex-1 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+        <SEO title="All posts" />
+        {posts.map(({ node }) => (
+          <ArticleCard node={node} />
+        ))}
+      </div>
     </Layout>
   );
 };
