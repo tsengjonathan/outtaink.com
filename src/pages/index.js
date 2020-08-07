@@ -11,7 +11,7 @@ const ArticleIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="mx-auto my-8 grid flex-1 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="mx-auto my-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         <SEO title="All posts" />
         {posts.map(({ node }) => (
           <ArticleCard node={node} />
