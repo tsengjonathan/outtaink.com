@@ -14,7 +14,7 @@ const ArticleIndex = ({ data, location }) => {
       <div className="mx-auto my-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         <SEO title="All posts" />
         {posts.map(({ node }) => (
-          <ArticleCard node={node} />
+          <ArticleCard key={node.fields.slug} node={node} />
         ))}
       </div>
     </Layout>
@@ -40,6 +40,13 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
