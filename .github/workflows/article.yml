@@ -52,13 +52,3 @@ jobs:
             })
 
             console.log("Blob", blob)
-
-            const { data: tree } = await github.git.createTree({
-              owner: context.actor,
-              repo: context.repo.repo,
-              tree: [{
-                path: "content/articles/${{ github.event.inputs.endpoint }}",
-                mode: "100644",
-                type: "blob",                
-              }]
-            })
