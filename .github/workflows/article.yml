@@ -29,3 +29,16 @@ jobs:
               ref: "refs/heads/${{ github.event.inputs.endpoint }}",
               sha: context.sha
             })
+  directory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const result = await github.git.createBlob({
+              owner: context.actor,
+              repo: context.repo.repo,
+              content: ""
+            })
+            console.log(result)
