@@ -62,7 +62,7 @@ jobs:
                 path: "content/articles/${{ github.event.inputs.endpoint }}",
                 mode: "100644",
                 type: "blob",   
-                sha: branch.commit.commit.tree.sha             
+                sha: blob.sha             
               }]
             })
 
