@@ -45,6 +45,8 @@ jobs:
 
             console.log("Branch", branch)
 
+            console.log("Branch Tree", branch.commit.commit.tree)
+
             const { data: blob } = await github.git.createBlob({
               owner: context.actor,
               repo: context.repo.repo,
