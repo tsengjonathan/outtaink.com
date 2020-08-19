@@ -50,3 +50,11 @@ jobs:
               repo: context.repo.repo,
               content: ""
             })
+
+            await github.git.createCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              message: "Initialize file",
+              tree: data.sha,
+              parents: branch.commit.sha
+            })
