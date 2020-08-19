@@ -26,5 +26,6 @@ jobs:
             github.git.createRef({
               owner: context.actor,
               repo: context.repo.repo,
-              ref: "refs/heads/${{ github.event.inputs.endpoint }}"
+              ref: "refs/heads/${{ github.event.inputs.endpoint }}",
+              sha: context.sha
             })
