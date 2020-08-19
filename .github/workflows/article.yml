@@ -30,6 +30,7 @@ jobs:
               sha: context.sha
             })
   directory:
+    needs: branch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v2
@@ -39,7 +40,7 @@ jobs:
             const { data: branch } = await github.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: ${{ github.event.inputs.endpoint }}
+              branch: "${{ github.event.inputs.endpoint }}""
             })
 
             console.log("Branch", branch)
