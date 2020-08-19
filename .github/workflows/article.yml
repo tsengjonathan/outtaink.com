@@ -39,7 +39,7 @@ jobs:
             const { data: branch } = await github.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: ${{ github.events.inputs.endpoint }}
+              branch: "${{ github.events.inputs.endpoint }}""
             })
 
             console.log("Branch", branch)
