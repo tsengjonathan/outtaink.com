@@ -1,12 +1,12 @@
 const currentDate = new Date();
 
-const articleContent = ```
+const articleContent = `
 ---
 title: 
 date: ${currentDate.toISOString()}
 cover: 
 ---
-```
+`
 
 module.exports = async (github, context) => {
   const defaultArgs = {
