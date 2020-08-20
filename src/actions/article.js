@@ -1,7 +1,9 @@
+const currentDate = new Date();
+
 const articleContent = ```
 ---
 title: 
-date: ${Date.now().toISOString()}
+date: ${currentDate.toISOString()}
 cover: 
 ---
 ```
