@@ -67,3 +67,13 @@ jobs:
             })
 
             console.log("Tree", tree)
+
+            const { data: commit } = await github.git.createCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              message: "Initialize file",
+              tree: tree.sha,
+              parents: [branch.commit.sha]
+            })
+
+            console.log("Commit", commit)
