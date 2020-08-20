@@ -8,13 +8,13 @@ cover:
 ---
 `
 
-module.exports = async ({ github, context }) => {
+module.exports = async ({ github, context, test }) => {
   const defaultArgs = {
     owner: context.repo.owner,
     repo: context.repo.repo
   }
 
-  console.log("GitHub", github)
+  console.log("Test", test)
 
   // eslint-disable-next-line no-template-curly-in-string
   const endpoint = github.events.input.endpoint
