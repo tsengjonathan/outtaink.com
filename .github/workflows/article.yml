@@ -81,7 +81,7 @@ jobs:
 
             const { data: ref } = await github.git.getRef({
               owner: context.repo.owner,
-              repo: context.repo, repo,
+              repo: context.repo.repo,
               ref: "heads/{{ github.event.inputs.endpoint }}"
             })
 
