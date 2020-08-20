@@ -43,7 +43,8 @@ module.exports = async ({ github, context, endpoint }) => {
     tree: tree.sha,
     parents: [branch.sha],
     author: {
-      name: context.actor
+      name: context.actor,
+      email: null
     }
   })
 
