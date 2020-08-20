@@ -39,7 +39,7 @@ module.exports = async ({ github, context, endpoint }) => {
 
   const { data: commit } = await github.git.createCommit({
     ...defaultArgs,
-    message: "Initialize file",
+    message: `Initialize /${endpoint} article`,
     tree: tree.sha,
     parents: [branch.sha]
   })
