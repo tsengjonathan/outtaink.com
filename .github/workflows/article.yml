@@ -61,9 +61,10 @@ jobs:
               tree: [{
                 path: "content/articles/${{ github.event.inputs.endpoint }}",
                 mode: "100644",
-                type: "blob",   
+                type: "blob", 
                 sha: blob.sha             
-              }]
+              }],
+              base_tree: branch.commit.commit.tree.sha
             })
 
             console.log("Tree", tree)
