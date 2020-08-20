@@ -9,15 +9,13 @@ cover:
 `
 
 module.exports = async ({ github, context }) => {
-  console.log("Context", context)
-
   const defaultArgs = {
     owner: context.repo.owner,
     repo: context.repo.repo
   }
 
   // eslint-disable-next-line no-template-curly-in-string
-  const endpoint = "${{ github.event.inputs.endpoint }}"
+  const endpoint = github.events.input.endpoint
 
   const { data: { commit: branch } } = await github.repos.getBranch({
     ...defaultArgs,
