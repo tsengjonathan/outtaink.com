@@ -1,9 +1,9 @@
 const currentDate = new Date();
 
-const articleContent = `
----
+const articleContent = 
+`---
 title: 
-date: ${currentDate.toISOString()}
+date: '${currentDate.toISOString()}'
 cover: 
 ---
 `
@@ -41,7 +41,10 @@ module.exports = async ({ github, context, endpoint }) => {
     ...defaultArgs,
     message: "Initialize file",
     tree: tree.sha,
-    parents: [branch.sha]
+    parents: [branch.sha],
+    author: {
+      name: context.actor
+    }
   })
 
   await github.git.updateRef({
