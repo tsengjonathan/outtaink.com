@@ -8,7 +8,7 @@ cover:
 ---
 `
 
-module.exports = async (github, context) => {
+module.exports = async ({ github, context }) => {
   console.log("Context", context)
 
   const defaultArgs = {
