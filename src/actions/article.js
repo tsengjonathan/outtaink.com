@@ -9,6 +9,8 @@ cover:
 `
 
 module.exports = async (github, context) => {
+  console.log("Context", context)
+
   const defaultArgs = {
     owner: context.repo.owner,
     repo: context.repo.repo
