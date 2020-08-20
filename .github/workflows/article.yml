@@ -26,5 +26,18 @@ jobs:
             github.git.createRef({
               owner: context.actor,
               repo: context.repo.repo,
-              ref: refs/heads/${{ github.event.inputs.endpoint }}
+              ref: "refs/heads/${{ github.event.inputs.endpoint }}",
+              sha: context.sha
             })
+  directory:
+    needs: branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/github-script@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const script = require(`${process.env.GITHUB_WORKSPACE}/src/actions/article.js`)
+            const endpoint = "${{ github.event.inputs.endpoint }}"
+            console.log(await script({ github, context, endpoint }))
