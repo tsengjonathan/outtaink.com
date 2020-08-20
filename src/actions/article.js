@@ -17,7 +17,9 @@ module.exports = async ({ github, context, test }) => {
   console.log("Test", test)
 
   // eslint-disable-next-line no-template-curly-in-string
-  const endpoint = github.events.input.endpoint
+  const endpoint = github.event.inputs.endpoint
+
+  console.log("Endpoint", endpoint)
 
   const { data: { commit: branch } } = await github.repos.getBranch({
     ...defaultArgs,
