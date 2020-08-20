@@ -82,6 +82,6 @@ jobs:
             await github.git.updateRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: "{{ github.event.inputs.endpoint }}/HEAD",
+              ref: "heads/{{ github.event.inputs.endpoint }}",
               sha: commit.sha,
             })
