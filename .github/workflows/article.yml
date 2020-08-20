@@ -39,4 +39,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const script = require(`${process.env.GITHUB_WORKSPACE}/src/actions/article.js`)
-            console.log(script({github, context}))
+            console.log(await script({github, context}))
