@@ -41,11 +41,7 @@ module.exports = async ({ github, context, endpoint }) => {
     ...defaultArgs,
     message: "Initialize file",
     tree: tree.sha,
-    parents: [branch.sha],
-    author: {
-      name: context.actor,
-      email: null
-    }
+    parents: [branch.sha]
   })
 
   await github.git.updateRef({
