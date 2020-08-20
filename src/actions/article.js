@@ -14,6 +14,8 @@ module.exports = async ({ github, context }) => {
     repo: context.repo.repo
   }
 
+  console.log("GitHub", github)
+
   // eslint-disable-next-line no-template-curly-in-string
   const endpoint = github.events.input.endpoint
 
