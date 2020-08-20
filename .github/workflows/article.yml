@@ -79,9 +79,10 @@ jobs:
 
             console.log("Commit", commit)
 
-            await github.git.updateRef({
+            const { data: ref } = await github.git.getRef({
               owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: "heads/{{ github.event.inputs.endpoint }}",
-              sha: commit.sha,
+              repo: context.repo, repo,
+              ref: "heads/{{ github.event.inputs.endpoint }}"
             })
+
+            console.log("Ref", ref)
