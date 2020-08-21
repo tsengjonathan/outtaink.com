@@ -47,6 +47,15 @@ export const pageQuery = graphql`
                 }
               }
             }
+            author {
+              img {
+                childImageSharp {
+                  fluid(maxWidth: 300) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
           }
         }
       }
