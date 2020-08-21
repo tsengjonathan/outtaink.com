@@ -28,6 +28,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/authors`,
+        name: `authors`,
+      },
+    },
+    `gatsby-transformer-yaml`,
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -82,4 +90,7 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  mapping: {
+    "MarkdownRemark.frontmatter.author": `AuthorYaml`
+  }
 };
