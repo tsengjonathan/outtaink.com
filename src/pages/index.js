@@ -48,10 +48,11 @@ export const pageQuery = graphql`
               }
             }
             author {
+              name
               img {
                 childImageSharp {
-                  fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid
+                  fixed(width: 24) {
+                    ...GatsbyImageSharpFixed
                   }
                 }
               }
