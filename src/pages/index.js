@@ -47,6 +47,16 @@ export const pageQuery = graphql`
                 }
               }
             }
+            author {
+              name
+              img {
+                childImageSharp {
+                  fixed(width: 24) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
           }
         }
       }

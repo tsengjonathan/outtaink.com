@@ -30,10 +30,15 @@ function ArticleCard({ node }) {
         </header>
         <section>
           <p
+            className="mb-2"
             dangerouslySetInnerHTML={{
               __html: node.excerpt,
             }}
           />
+          <div className="flex items-center">
+            <Img className="h-4 rounded-full mr-2" fixed={node.frontmatter.author.img.childImageSharp.fixed} />
+            <small className="py-2">{node.frontmatter.author.name}</small>
+          </div>
         </section>
       </Link>
     </article>
