@@ -5,14 +5,16 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ArticleCard from '../components/article-card';
 
+import '../styles/index.css';
+
 const ArticleIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="mx-auto my-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-        <SEO title="All posts" />
+      <SEO title="All posts" />
+      <div className="mx-auto my-8 masonry">
         {posts.map(({ node }) => (
           <ArticleCard key={node.fields.slug} node={node} />
         ))}
