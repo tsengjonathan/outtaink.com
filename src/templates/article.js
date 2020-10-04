@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -15,6 +16,9 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
         title={post.title}
         description={post.description || post.excerpt}
       />
+      <Helmet>
+          <style type="text/css">{`${post.codeinjection_styles}`}</style>
+      </Helmet>
       <div className="mx-auto my-8 max-w-2xl">
         <article>
           <header>
@@ -63,6 +67,7 @@ export const pageQuery = graphql`
       published_at(formatString: "MMMM DD, YYYY")
       excerpt
       html
+      codeinjection_styles
     }
   }
 `;
