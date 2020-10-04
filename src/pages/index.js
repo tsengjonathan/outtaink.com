@@ -37,12 +37,24 @@ export const pageQuery = graphql`
         node {
           excerpt
           slug
-          published_at
+          published_at(formatString: "MMMM DD, YYYY")
           title
-          feature_image
+          cover_image {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           authors {
             name
-            profile_image
+            image {
+              childImageSharp {		
+                fixed(width: 24) {		
+                  ...GatsbyImageSharpFixed		
+                }		
+              }
+            }
           }
         }
       }

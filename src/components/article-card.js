@@ -1,18 +1,17 @@
 import React from 'react';
 
 import { Link } from 'gatsby';
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 
 function ArticleCard({ node }) {
   const title = node.title || node.slug;
-  const cover = node.feature_image;
+  const cover = node.cover_image;
 
   const hoverEffect = "transition duration-300 ease-in-out no-underline";
 
   const image = (
     <div className="bg-white">
-      {/* <Img className={`mb-4 hover:opacity-75 ${hoverEffect}`} fluid={cover.childImageSharp.fluid} /> */}
-      <img src={node.feature_image} alt={node.title} />
+      <Img className={`mb-4 hover:opacity-75 ${hoverEffect}`} fluid={cover.childImageSharp.fluid} />
     </div>
   );
 
@@ -39,8 +38,7 @@ function ArticleCard({ node }) {
             }}
           />
           <div className="flex items-center">
-            {/* <Img className="h-4 rounded-full mr-2" fixed={node.frontmatter.author.img.childImageSharp.fixed} /> */}
-            <img src={author.profile_image} alt={author.name} />
+            <Img className="h-4 rounded-full mr-2" fixed={author.image.childImageSharp.fixed} />
             <small className="py-2">{author.name}</small>
           </div>
         </section>
