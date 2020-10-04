@@ -1,64 +1,42 @@
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require(`path`)
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const postTemplate = path.resolve(`./src/templates/article.js`)
 
-  const article = path.resolve(`./src/templates/article.js`);
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
+  // Query Ghost data
+  const result = await graphql(`
+    {
+      allGhostPost(sort: { order: ASC, fields: published_at }) {
+        edges {
+          node {
+            slug
           }
         }
       }
-    `
-  );
+    }
+  `)
 
+  // Handle errors
   if (result.errors) {
-    throw result.errors;
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
   }
 
-  // Create article pages.
-  const posts = result.data.allMarkdownRemark.edges;
+  if (!result.data.allGhostPost) {
+    return
+  }
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+  // Create pages for each Ghost post
+  const items = result.data.allGhostPost.edges
+  items.forEach(({ node }) => {
+    node.url = `${node.slug}`
 
-    createPage({
-      path: post.node.fields.slug,
-      component: article,
+    actions.createPage({
+      path: node.url,
+      component: postTemplate,
       context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
+        slug: node.slug,
       },
-    });
-  });
-};
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
-  }
-};
+    })
+  })
+}
