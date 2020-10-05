@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 function ArticleCard({ node }) {
   const title = node.title || node.slug;
   const cover = node.cover_image;
+  const author = node.primary_author
 
   const hoverEffect = "transition duration-300 ease-in-out no-underline";
 
@@ -13,9 +14,7 @@ function ArticleCard({ node }) {
     <div className="bg-white">
       <Img className={`mb-4 hover:opacity-75 ${hoverEffect}`} fluid={cover.childImageSharp.fluid} />
     </div>
-  );
-
-  const author = node.authors[0]
+  );  
 
   return (
     <article className="inline-block mb-4" key={node.slug}>

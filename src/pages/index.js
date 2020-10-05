@@ -46,7 +46,7 @@ export const pageQuery = graphql`
               }
             }
           }
-          authors {
+          primary_author {
             name
             image {
               childImageSharp {		
