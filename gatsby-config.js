@@ -85,10 +85,17 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-postcss`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `https://cms.outtaink.com`,
+        contentApiKey: `13318b8ef106fc7806c8345400`,
+      },
+    }
   ],
   mapping: {
     "MarkdownRemark.frontmatter.author": `AuthorYaml`
