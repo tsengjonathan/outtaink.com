@@ -10,11 +10,15 @@ function ArticleCard({ node }) {
 
   const hoverEffect = "transition duration-300 ease-in-out no-underline";
 
-  const image = (
+  const coverImage = cover ? (
     <div className="bg-white">
       <Img className={`mb-4 hover:opacity-75 ${hoverEffect}`} fluid={cover.childImageSharp.fluid} />
     </div>
-  );  
+  ) : null  
+
+  const authorImage = author.image ? (
+    <Img className="h-4 rounded-full mr-2" fixed={author.image.childImageSharp.fixed} />
+  ) : null
 
   return (
     <article className="inline-block mb-4" key={node.slug}>
@@ -22,7 +26,7 @@ function ArticleCard({ node }) {
         className={`text-current hover:text-gray-700 ${hoverEffect}`}
         to={node.slug}
       >
-        { cover ? image : null }
+        { coverImage }
         <header>
           <h3 className="mb-2">
             {title}
@@ -37,7 +41,7 @@ function ArticleCard({ node }) {
             }}
           />
           <div className="flex items-center">
-            <Img className="h-4 rounded-full mr-2" fixed={author.image.childImageSharp.fixed} />
+            { authorImage }
             <small className="py-2">{author.name}</small>
           </div>
         </section>

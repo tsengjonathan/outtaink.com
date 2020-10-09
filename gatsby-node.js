@@ -81,3 +81,21 @@ exports.onCreateNode = async ({
     }
   }
 }
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type GhostPost implements Node {
+      cover_image: ParentImageSharp
+    }
+
+    type GhostAuthor implements Node {
+      image: ParentImageSharp
+    }
+
+    type ParentImageSharp {
+      childImageSharp: ImageSharp!
+    }
+  `
+  createTypes(typeDefs)
+}
