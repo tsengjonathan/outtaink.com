@@ -1,64 +1,101 @@
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require(`path`)
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+const { createRemoteFileNode } = require("gatsby-source-filesystem")
 
-  const article = path.resolve(`./src/templates/article.js`);
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const postTemplate = path.resolve(`./src/templates/article.js`)
+
+  // Query Ghost data
+  const result = await graphql(`
+    {
+      allGhostPost(sort: { order: ASC, fields: published_at }) {
+        edges {
+          node {
+            slug
           }
         }
       }
-    `
-  );
+    }
+  `)
 
+  // Handle errors
   if (result.errors) {
-    throw result.errors;
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
   }
 
-  // Create article pages.
-  const posts = result.data.allMarkdownRemark.edges;
+  if (!result.data.allGhostPost) {
+    return
+  }
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+  // Create pages for each Ghost post
+  const items = result.data.allGhostPost.edges
+  items.forEach(({ node }) => {
+    node.url = `${node.slug}`
 
-    createPage({
-      path: post.node.fields.slug,
-      component: article,
+    actions.createPage({
+      path: node.url,
+      component: postTemplate,
       context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
+        slug: node.slug,
       },
-    });
-  });
-};
+    })
+  })
+}
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
+exports.onCreateNode = async ({
+  node,
+  actions: { createNode },
+  store,
+  cache,
+  createNodeId,
+}) => {
+  if (
+    node.internal.type === "GhostPost" &&
+    node.feature_image !== null
+  ) {
+    let fileNode = await createRemoteFileNode({
+      url: node.feature_image, // string that points to the URL of the image
+      parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
+      createNode, // helper function in gatsby-node to generate the node
+      createNodeId, // helper function in gatsby-node to generate the node id
+      cache, // Gatsby's cache
+      store, // Gatsby's redux store
+    })
+    // if the file was created, attach the new node to the parent node
+    if (fileNode) {
+      node.cover_image___NODE = fileNode.id
+    }
+  } else if (node.internal.type === "GhostAuthor" && node.profile_image !== null) {
+    let fileNode = await createRemoteFileNode({
+      url: node.profile_image, // string that points to the URL of the image
+      parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
+      createNode, // helper function in gatsby-node to generate the node
+      createNodeId, // helper function in gatsby-node to generate the node id
+      cache, // Gatsby's cache
+      store, // Gatsby's redux store
+    })
+    // if the file was created, attach the new node to the parent node
+    if (fileNode) {
+      node.image___NODE = fileNode.id
+    }
   }
-};
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type GhostPost implements Node {
+      cover_image: ParentImageSharp
+    }
+
+    type GhostAuthor implements Node {
+      image: ParentImageSharp
+    }
+
+    type ParentImageSharp {
+      childImageSharp: ImageSharp!
+    }
+  `
+  createTypes(typeDefs)
+}

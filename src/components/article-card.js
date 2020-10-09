@@ -4,29 +4,34 @@ import { Link } from 'gatsby';
 import Img from "gatsby-image"
 
 function ArticleCard({ node }) {
-  const title = node.frontmatter.title || node.fields.slug;
-  const cover = node.frontmatter.cover;
+  const title = node.title || node.slug;
+  const cover = node.cover_image;
+  const author = node.primary_author
 
   const hoverEffect = "transition duration-300 ease-in-out no-underline";
 
-  const image = (
+  const coverImage = cover ? (
     <div className="bg-white">
       <Img className={`mb-4 hover:opacity-75 ${hoverEffect}`} fluid={cover.childImageSharp.fluid} />
     </div>
-  );
+  ) : null  
+
+  const authorImage = author.image ? (
+    <Img className="h-4 rounded-full mr-2" fixed={author.image.childImageSharp.fixed} />
+  ) : null
 
   return (
-    <article key={node.fields.slug}>
+    <article className="inline-block mb-4" key={node.slug}>
       <Link
         className={`text-current hover:text-gray-700 ${hoverEffect}`}
-        to={node.fields.slug}
+        to={node.slug}
       >
-        { cover ? image : null }
+        { coverImage }
         <header>
           <h3 className="mb-2">
             {title}
           </h3>
-          <small>{node.frontmatter.date}</small>
+          <small>{node.published_at}</small>
         </header>
         <section>
           <p
@@ -36,8 +41,8 @@ function ArticleCard({ node }) {
             }}
           />
           <div className="flex items-center">
-            <Img className="h-4 rounded-full mr-2" fixed={node.frontmatter.author.img.childImageSharp.fixed} />
-            <small className="py-2">{node.frontmatter.author.name}</small>
+            { authorImage }
+            <small className="py-2">{author.name}</small>
           </div>
         </section>
       </Link>

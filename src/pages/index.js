@@ -5,16 +5,18 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ArticleCard from '../components/article-card';
 
+import '../styles/index.css';
+
 const ArticleIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMarkdownRemark.edges;
+  const posts = data.allGhostPost.edges;
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="mx-auto my-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-        <SEO title="All posts" />
+      <SEO title="All posts" />
+      <div className="mx-auto my-8 masonry">
         {posts.map(({ node }) => (
-          <ArticleCard key={node.fields.slug} node={node} />
+          <ArticleCard key={node.slug} node={node} />
         ))}
       </div>
     </Layout>
@@ -30,31 +32,27 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allGhostPost(sort: {fields: published_at, order: DESC}) {
       edges {
         node {
-          excerpt(truncate: true, pruneLength: 80)
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
+          excerpt
+          slug
+          published_at(formatString: "MMMM DD, YYYY")
+          title
+          cover_image {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
               }
             }
-            author {
-              name
-              img {
-                childImageSharp {
-                  fixed(width: 24) {
-                    ...GatsbyImageSharpFixed
-                  }
-                }
+          }
+          primary_author {
+            name
+            image {
+              childImageSharp {		
+                fixed(width: 24) {		
+                  ...GatsbyImageSharpFixed		
+                }		
               }
             }
           }
