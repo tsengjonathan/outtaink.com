@@ -1,3 +1,23 @@
+img {
+  margin: 0
+}
+
+p {
+  text-align: justify;
+}
+
+figcaption {
+  font-size: .8375rem;
+  text-align: center;
+}
+
+/* Article Styles
+/* ---------------------------------------------------------- */
+
+article > section > p {
+  line-height: 1.75rem;
+}
+
 /* Koenig Styles
 /* ---------------------------------------------------------- */
 
