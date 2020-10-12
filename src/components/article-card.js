@@ -21,7 +21,7 @@ function ArticleCard({ node }) {
   ) : null
 
   return (
-    <article className="inline-block mb-4" key={node.slug}>
+    <article className="break-inside-avoid mb-4" key={node.slug}>
       <Link
         className={`text-current hover:text-gray-700 ${hoverEffect}`}
         to={node.slug}

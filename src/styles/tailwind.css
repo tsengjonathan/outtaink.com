@@ -1,2 +1,8 @@
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+}
