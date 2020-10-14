@@ -84,6 +84,7 @@ module.exports = {
         // To be used when `delayLoad` is set to `true`
         delayLoadTime: 1000
       }
-    }
+    },
+    `gatsby-plugin-sitemap`
   ]
 };
