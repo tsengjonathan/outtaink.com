@@ -58,6 +58,8 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
         schemas: {
           article: require("./src/schemas/article.json"),
+          author: require("./src/schemas/author.json"),
+          tag: require("./src/schemas/tag.json"),
         },
       },
     },
