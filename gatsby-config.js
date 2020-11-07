@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `OuttaInk`,
@@ -44,6 +48,17 @@ module.exports = {
       options: {
         apiUrl: `https://cms.outtaink.com`,
         contentApiKey: `13318b8ef106fc7806c8345400`,
+      },
+    },
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `outtaink`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        schemas: {
+          article: require("./src/schemas/article.json"),
+        },
       },
     },
     {
