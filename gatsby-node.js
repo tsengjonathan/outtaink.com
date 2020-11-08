@@ -31,7 +31,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  // Create pages for each Ghost post
+  // Create pages for each Prismic article
   const items = result.data.allPrismicArticle.edges
   items.forEach(({ node }, index) => {
     const previous = index === items.length - 1 ? null : items[index + 1].node;

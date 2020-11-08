@@ -5,7 +5,7 @@ import 'typeface-merriweather';
 import 'prismjs/themes/prism.css';
 
 import './src/styles/tailwind.css';
-import './src/styles/ghost.css';
+import './src/styles/global.css';
 
 var trustAllScripts = function () {
   var scriptNodes = document.querySelectorAll('.load-external-scripts script');
