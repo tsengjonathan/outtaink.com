@@ -1,31 +1,27 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const ArticleTemplate = ({ data, pageContext, location }) => {
-  const post = data.ghostPost;
+  const article = data.prismicArticle.data;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
-        title={post.title}
-        description={post.description || post.excerpt}
+        title={article.title.text}
+        description={article.excerpt}
       />
-      <Helmet>
-          <style type="text/css">{`${post.codeinjection_styles}`}</style>
-      </Helmet>
       <div className="mx-auto my-8 max-w-2xl">
         <article>
           <header>
-            <h1 className="mt-6 mb-0">{post.title}</h1>
-            <p className="text-sm block mb-6">{post.date}</p>
+            <h1 className="mt-6 mb-0">{article.title.text}</h1>
+            <p className="text-sm block mb-6">{article.date}</p>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <section dangerouslySetInnerHTML={{ __html: article.body.html }} />
           <hr className="mb-6" />
           <footer />
         </article>
@@ -34,15 +30,15 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
           <ul className="flex flex-wrap justify-between list-none p-0 m-0">
             <li>
               {previous && (
-                <Link to={previous.slug} rel="prev">
-                  ← {previous.title}
+                <Link to={previous.url} rel="prev">
+                  ← {previous.data.title.text}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.slug} rel="next">
-                  {next.title} →
+                <Link to={next.url} rel="next">
+                  {next.data.title.text} →
                 </Link>
               )}
             </li>
@@ -56,18 +52,43 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
 export default ArticleTemplate;
 
 export const pageQuery = graphql`
-  query ArticleBySlug($slug: String!) {
+  query ArticleBySlug($url: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    ghostPost(slug: {eq: $slug}) {
-      title
-      published_at(formatString: "MMMM DD, YYYY")
-      excerpt
-      html
-      codeinjection_styles
+    prismicArticle(url: {eq: $url}) {
+      url
+      data {
+        excerpt
+        date(formatString: "MMMM DD, YYYY")
+        body {
+          html
+        }
+        title {
+          text
+        }
+        author {
+          document {
+            ... on PrismicAuthor {
+              data {
+                name
+                image {
+                  fixed(width: 24) {		
+                    ...GatsbyPrismicImageFixed		
+                  }		
+                }
+              }
+            }
+          }
+        }
+        cover {
+          fluid(maxWidth: 800) {
+            ...GatsbyPrismicImageFluid
+          }
+        }
+      }
     }
   }
 `;
