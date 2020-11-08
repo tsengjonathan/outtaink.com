@@ -17,7 +17,6 @@ module.exports = {
   },
   pathPrefix: '/outtaink.com',
   plugins: [
-    `gatsby-transformer-yaml`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -43,13 +42,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-source-ghost`,
-      options: {
-        apiUrl: `https://cms.outtaink.com`,
-        contentApiKey: `13318b8ef106fc7806c8345400`,
-      },
-    },
     {
       resolve: `gatsby-source-prismic`,
       options: {
