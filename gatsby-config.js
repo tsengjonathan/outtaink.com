@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `OuttaInk`,
@@ -13,7 +17,6 @@ module.exports = {
   },
   pathPrefix: '/outtaink.com',
   plugins: [
-    `gatsby-transformer-yaml`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -40,10 +43,16 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-source-ghost`,
+      resolve: `gatsby-source-prismic`,
       options: {
-        apiUrl: `https://cms.outtaink.com`,
-        contentApiKey: `13318b8ef106fc7806c8345400`,
+        repositoryName: `outtaink`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        schemas: {
+          article: require("./src/schemas/article.json"),
+          author: require("./src/schemas/author.json"),
+          tag: require("./src/schemas/tag.json"),
+        },
       },
     },
     {

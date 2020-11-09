@@ -9,14 +9,14 @@ import '../styles/index.css';
 
 const ArticleIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allGhostPost.edges;
+  const posts = data.allPrismicArticle.edges;
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <div className="mx-auto my-8 masonry">
         {posts.map(({ node }) => (
-          <ArticleCard key={node.slug} node={node} />
+          <ArticleCard key={node.url} node={node} />
         ))}
       </div>
     </Layout>
@@ -32,27 +32,33 @@ export const pageQuery = graphql`
         title
       }
     }
-    allGhostPost(sort: {fields: published_at, order: DESC}) {
+    allPrismicArticle(sort: {fields: data___date, order: DESC}) {
       edges {
         node {
-          excerpt
-          slug
-          published_at(formatString: "MMMM DD, YYYY")
-          title
-          cover_image {
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid
+          url
+          data {
+            excerpt
+            date(formatString: "MMMM DD, YYYY")
+            title {
+              text
+            }
+            author {
+              document {
+                ... on PrismicAuthor {
+                  data {
+                    name
+                    image {
+                      fixed(width: 24) {		
+                        ...GatsbyPrismicImageFixed		
+                      }		
+                    }
+                  }
+                }
               }
             }
-          }
-          primary_author {
-            name
-            image {
-              childImageSharp {		
-                fixed(width: 24) {		
-                  ...GatsbyImageSharpFixed		
-                }		
+            cover {
+              fluid(maxWidth: 800) {
+                ...GatsbyPrismicImageFluid
               }
             }
           }
