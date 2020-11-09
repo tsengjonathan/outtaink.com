@@ -1,4 +1,7 @@
 // custom typefaces
+import * as React from 'react'
+import { PreviewStoreProvider } from 'gatsby-source-prismic'
+
 import 'prismjs/themes/prism.css';
 
 import './src/styles/tailwind.css';
@@ -25,3 +28,7 @@ var trustAllScripts = function () {
 export function onRouteUpdate() {
   trustAllScripts();
 };
+
+export const wrapRootElement = ({ element }) => (
+  <PreviewStoreProvider>{element}</PreviewStoreProvider>
+)
