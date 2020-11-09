@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import { withPreview } from 'gatsby-source-prismic'
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -49,7 +50,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
   );
 };
 
-export default ArticleTemplate;
+export default withPreview(ArticleTemplate);
 
 export const pageQuery = graphql`
   query ArticleBySlug($url: String!) {
