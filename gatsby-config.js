@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+var linkResolver = require("./linkResolver");
+
 module.exports = {
   siteMetadata: {
     title: `OuttaInk`,
@@ -47,7 +49,7 @@ module.exports = {
       options: {
         repositoryName: `outtaink`,
         accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        linkResolver: linkResolver,
         schemas: {
           article: require("./src/schemas/article.json"),
           author: require("./src/schemas/author.json"),
