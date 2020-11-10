@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: `outtaink`,
+        repositoryName: `${process.env.GATSBY_PRISMIC_REPOSITORY_NAME}`,
         accessToken: `${process.env.API_KEY}`,
         linkResolver: linkResolver,
         schemas: {
