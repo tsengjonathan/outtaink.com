@@ -1,5 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { withUnpublishedPreview } from 'gatsby-source-prismic';
+
+import ArticleTemplate from '../templates/article';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -16,7 +19,12 @@ const NotFoundPage = ({ data, location }) => {
   );
 };
 
-export default NotFoundPage;
+// If an unpublished `page` document is previewed, PageTemplate will be rendered.
+export default withUnpublishedPreview(NotFoundPage, {
+  templateMap: {
+    article: ArticleTemplate,
+  },
+})
 
 export const pageQuery = graphql`
   query {
