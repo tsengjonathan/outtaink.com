@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { withPreviewResolver } from 'gatsby-source-prismic'
 
-import { linkResolver } from '../../linkResolver'
+import linkResolver from '../../linkResolver'
 
 import Layout from '../components/layout'
 
