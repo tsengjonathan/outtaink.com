@@ -5,7 +5,11 @@ module.exports = {
     './src/**/*.jsx'
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        'sidebar': '85px 1fr'
+      }
+    },
   },
   variants: {},
   plugins: [],

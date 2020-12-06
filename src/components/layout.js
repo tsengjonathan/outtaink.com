@@ -3,7 +3,7 @@ import Header from '../components/header';
 
 const Layout = ({ children }) => {
   return (
-    <div className="flex">
+    <div className="grid grid-cols-sidebar">
       <Header />
       <main className="flex flex-1 h-screen">{children}</main>
     </div>
