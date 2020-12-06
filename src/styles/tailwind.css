@@ -2,7 +2,11 @@
 @tailwind utilities;
 
 @layer utilities {
-  .break-inside-avoid {
-    break-inside: avoid;
-  }
+  .writing-mode-horizontal { writing-mode: horizontal-tb }
+  .writing-mode-vertical { writing-mode: vertical-lr }
+  .writing-mode-vertical-rl { writing-mode: vertical-rl }
+
+  .text-orientation-mixed { text-orientation: mixed }
+  .text-orientation-upright { text-orientation: upright }
+  .text-orientation-sideways { text-orientation: sideways }
 }
