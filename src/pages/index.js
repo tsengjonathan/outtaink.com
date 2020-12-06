@@ -11,13 +11,24 @@ const ArticleIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allPrismicArticle.edges;
 
+  const midPoint = Math.floor(posts.length / 2);
+  const leftArticles = posts.slice(0, midPoint)
+  const rightArticles = posts.slice(midPoint, posts.length)
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="mx-auto my-8 masonry">
-        {posts.map(({ node }) => (
-          <ArticleCard key={node.url} node={node} />
-        ))}
+      <div className="my-8 mx-4 w-full flex">
+        <div className="h-full w-3/5 mr-4">
+          {leftArticles.map(({ node }) => (
+            <ArticleCard key={node.url} node={node} />
+          ))}
+        </div>
+        <div className="h-full w-2/5">
+        {rightArticles.map(({ node }) => (
+            <ArticleCard key={node.url} node={node} />
+          ))}
+        </div>
       </div>
     </Layout>
   );
