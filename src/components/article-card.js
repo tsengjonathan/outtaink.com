@@ -7,7 +7,6 @@ function ArticleCard({ node }) {
   const data = node.data;
   const title = data.title.text || node.url;
   const cover = data.cover;
-  const author = data.author.document.data;
 
   const hoverEffect = "transition duration-300 ease-in-out no-underline";
 
@@ -17,12 +16,8 @@ function ArticleCard({ node }) {
     </div>
   ) : null  
 
-  const authorImage = author.image.fixed ? (
-    <Img className="h-4 rounded-full mr-2" fixed={author.image.fixed} />
-  ) : null
-
   return (
-    <article className="break-inside-avoid mb-4" key={node.url}>
+    <article className="pb-4 mb-8 border-0 border-b border-solid border-gray-500" key={node.url}>
       <Link
         className={`text-current hover:text-gray-700 ${hoverEffect}`}
         to={node.url}
@@ -41,10 +36,6 @@ function ArticleCard({ node }) {
               __html: node.data.excerpt,
             }}
           />
-          <div className="flex items-center">
-            { authorImage }
-            <small className="py-2">{author.name}</small>
-          </div>
         </section>
       </Link>
     </article>
