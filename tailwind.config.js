@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'sidebar': '85px 1fr'
+        'sidebar': '5rem 1fr'
       }
     },
     colors: {
