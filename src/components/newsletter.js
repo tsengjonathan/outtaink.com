@@ -30,8 +30,8 @@ export default function Newsletter() {
   };
 
   return (
-    <div className={`h-32 flex ${borderStyle}`}>
-      <div className="flex flex-1 flex-col justify-center items-center text-sm">
+    <div className={`flex min-h-24 ${borderStyle}`}>
+      <div className="flex flex-1 flex-col justify-center items-center text-sm my-4">
         <div>加入我們的 Newsletter 一起發現更多最新故事吧！</div>
         <div className={`w-1/3 flex`}>
           <form
