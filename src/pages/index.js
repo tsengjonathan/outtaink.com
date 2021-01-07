@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ArticleCard from '../components/article-card';
+import Newsletter from '../components/newsletter';
 
 import '../styles/index.css';
 
@@ -18,7 +19,8 @@ const ArticleIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="my-8 mx-10 w-full flex">
+      <Newsletter />
+      <div className="my-8 mx-10 flex">
         <div className="h-full w-7/12 mr-10">
           {leftArticles.map(({ node }) => (
             <ArticleCard key={node.url} node={node} />
