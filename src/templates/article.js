@@ -1,14 +1,18 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import { withPreview } from 'gatsby-source-prismic'
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Colon from '../../content/svg/colon.svg';
 
 const ArticleTemplate = ({ data, pageContext, location }) => {
   const article = data.prismicArticle.data;
   const siteTitle = data.site.siteMetadata.title;
-  const { previous, next } = pageContext;
+  const author = article.author.document.data.name;
+
+  const title = article.title.text;
+  const [ interviewee, headline ] = title.split(/\s*[:：]\s*/)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -16,35 +20,26 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
         title={article.title.text}
         description={article.excerpt}
       />
-      <div className="mx-auto my-8 max-w-2xl">
+      <div className="grid grid-cols-article mx-40 my-20">
         <article>
           <header>
-            <h1 className="mt-6 mb-0">{article.title.text}</h1>
-            <p className="text-sm block mb-6">{article.date}</p>
+            <div className='mt-6 mb-2 flex items-center'>
+              <h1 className="mb-0 mr-2">{interviewee}</h1>
+              <Colon />
+            </div>
+            <h1 className="mb-6">{headline}</h1>
+            <div className="text-sm font-sans flex mb-6 w-1/2">
+              <p className="flex-1 m-0 font-semibold text-default-200">{author}</p>
+              <p className="flex-1 m-0">{article.date}</p>
+            </div>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: article.body.html }} />
+          <section className='font-sans font-extralight tracking-wide' dangerouslySetInnerHTML={{ __html: article.body.html }} />
           <hr className="mb-6" />
           <footer />
         </article>
+        <div>
 
-        <nav>
-          <ul className="flex flex-wrap justify-between list-none p-0 m-0">
-            <li>
-              {previous && (
-                <Link to={previous.url} rel="prev">
-                  ← {previous.data.title.text}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.url} rel="next">
-                  {next.data.title.text} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
+        </div>
       </div>
     </Layout>
   );
@@ -63,7 +58,7 @@ export const pageQuery = graphql`
       url
       data {
         excerpt
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MM/DD/YYYY")
         body {
           html
         }

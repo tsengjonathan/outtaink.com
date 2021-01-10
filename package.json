@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "outtaink.com",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
@@ -15,6 +15,7 @@
     "gatsby-plugin-offline": "^3.2.13",
     "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.6",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-segment-js": "^3.5.0",
     "gatsby-plugin-sharp": "^2.6.38",
     "gatsby-plugin-sitemap": "^2.4.16",
@@ -30,10 +31,12 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "autoprefixer": "^9.8.6",
     "dotenv": "^8.2.0",
     "gh-pages": "^3.1.0",
+    "postcss": "^7.0.35",
     "prettier": "2.0.5",
-    "tailwindcss": "^1.6.0"
+    "tailwindcss": "^2.0.1-compat"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
