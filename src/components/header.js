@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 const navs = [
-  { name: '精選故事', src: '/' },
-  { name: '分類編目', src: '/' },
-  { name: '快問快答', src: '/' },
+  { name: '無墨精選集', src: '/' },
+  { name: '他們的故事', src: '/' },
+  { name: '回憶留言板', src: '/' },
   { name: '關於', src: '/' },
 ];
 
