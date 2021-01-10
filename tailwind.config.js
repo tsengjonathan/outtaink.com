@@ -10,7 +10,8 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'sidebar': '5rem 1fr'
+        'sidebar': '5rem 1fr',
+        'article': '5fr 2fr',
       },
       colors: {
         default: {
