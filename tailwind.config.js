@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: [
     './src/**/*.html',
@@ -26,6 +28,10 @@ module.exports = {
       },
       minHeight: {
         24: '6rem'
+      },
+      fontFamily: {
+        'sans': ['Noto Sans TC', ...defaultTheme.fontFamily.sans],
+        'serif': ['Noto Sans Serif', ...defaultTheme.fontFamily.serif],
       }
     },
   },

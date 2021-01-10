@@ -19,7 +19,7 @@ export default function Header() {
         <Link
           className={`flex flex-1 justify-center items-center ${
             idx !== 0 ? leftStyle : null
-          }`}
+          } font-sans`}
           to={nav.src}
         >
           {nav.name}
