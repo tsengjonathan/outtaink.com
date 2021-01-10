@@ -2,7 +2,7 @@ import Typography from 'typography';
 
 const typography = new Typography({
   googleFonts: [
-    { name: 'Noto Sans TC', styles: ['200', '400', '600', '700'] },
+    { name: 'Noto Sans TC', styles: ['100', '200', '400', '600', '700'] },
     { name: 'Noto Serif TC', styles: ['400', '700'] }
   ]
 });

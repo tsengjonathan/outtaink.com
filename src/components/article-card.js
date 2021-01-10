@@ -31,7 +31,7 @@ function ArticleCard({ node }) {
         </header>
         <section>
           <p
-            className="mb-2"
+            className="mb-2 font-sans font-extralight"
             dangerouslySetInnerHTML={{
               __html: node.data.excerpt,
             }}
