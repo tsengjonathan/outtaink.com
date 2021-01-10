@@ -96,6 +96,14 @@ module.exports = {
         delayLoadTime: 1000
       }
     },
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /svg/
+        }
+      }
+    }
   ]
 };
