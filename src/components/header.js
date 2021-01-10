@@ -17,6 +17,7 @@ export default function Header() {
     <div className={`h-14 flex ${botStyle}`}>
       {navs.map((nav, idx) => (
         <Link
+          key={idx}
           className={`flex flex-1 justify-center items-center ${
             idx !== 0 ? leftStyle : null
           } font-sans`}
