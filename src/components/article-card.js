@@ -2,13 +2,16 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 import Img from "gatsby-image"
+import Colon from '../../content/svg/colon.svg';
 
 function ArticleCard({ node }) {
   const data = node.data;
-  const title = data.title.text || node.url;
+  const title = data.title.text;
   const cover = data.cover;
 
   const hoverEffect = "transition duration-300 ease-in-out no-underline";
+
+  const [ interviewee, headline ] = title.split(/\s*[:：]\s*/)
 
   const coverImage = cover ? (
     <div className="bg-white">
@@ -24,9 +27,11 @@ function ArticleCard({ node }) {
       >
         { coverImage }
         <header>
-          <h3 className="mb-2">
-            {title}
-          </h3>
+          <div className="mb-2 flex items-center">
+            <h3 className="mb-0 mr-2">{interviewee}</h3>
+            <Colon className="h-4" />
+            <h3 className="mb-0 ml-2">{headline}</h3>
+          </div>
           <small>{node.published_at}</small>
         </header>
         <section>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="24px" viewBox="0 0 12 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>colon</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desktop_features" transform="translate(-369.000000, -1851.000000)" fill="#231F20" fill-rule="nonzero">
+            <g id="Group-9" transform="translate(127.000000, 811.000000)">
+                <g id="stories" transform="translate(1.000000, 0.000000)">
+                    <g id="Group-3-Copy" transform="translate(0.000000, 615.000000)">
+                        <g id="Group" transform="translate(0.000000, 421.000000)">
+                            <g id="colon" transform="translate(241.000000, 4.000000)">
+                                <path d="M0,4.53241379 C0,1.96137931 2.41655172,0 5.65517241,0 C8.94344828,0 11.36,1.96137931 11.36,4.53241379 C11.36,7.15034483 8.94344828,9.11172414 5.65517241,9.11172414 C2.41655172,9.10344828 0,7.15034483 0,4.53241379 Z" id="Path"></path>
+                                <path d="M0,19.3103448 C0,16.7393103 2.41655172,14.7282759 5.65517241,14.7282759 C8.94344828,14.7282759 11.36,16.7393103 11.36,19.3103448 C11.36,21.8813793 8.94344828,23.8344828 5.65517241,23.8344828 C2.41655172,23.8344828 0,21.8703448 0,19.3103448 Z" id="Path"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

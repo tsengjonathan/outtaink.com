@@ -4,11 +4,15 @@ import { withPreview } from 'gatsby-source-prismic'
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Colon from '../../content/svg/colon.svg';
 
 const ArticleTemplate = ({ data, pageContext, location }) => {
   const article = data.prismicArticle.data;
   const siteTitle = data.site.siteMetadata.title;
   const author = article.author.document.data.name;
+
+  const title = article.title.text;
+  const [ interviewee, headline ] = title.split(/\s*[:：]\s*/)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -19,7 +23,11 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
       <div className="grid grid-cols-article mx-40 my-20">
         <article>
           <header>
-            <h1 className="my-6">{article.title.text}</h1>
+            <div className='mt-6 mb-2 flex items-center'>
+              <h1 className="mb-0 mr-2">{interviewee}</h1>
+              <Colon />
+            </div>
+            <h1 className="mb-6">{headline}</h1>
             <div className="text-sm font-sans flex mb-6 w-1/2">
               <p className="flex-1 m-0 font-semibold text-default-200">{author}</p>
               <p className="flex-1 m-0">{article.date}</p>
