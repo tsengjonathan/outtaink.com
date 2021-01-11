@@ -32,7 +32,9 @@ export default function Newsletter() {
   return (
     <div className={`flex min-h-24 ${borderStyle}`}>
       <div className="flex flex-1 flex-col justify-center items-center text-sm my-4">
-        <p className="m-0 font-sans">加入我們的 Newsletter 一起發現更多最新故事吧！</p>
+        <p className="m-0 font-sans">
+          加入我們的 Newsletter 一起發現更多最新故事吧！
+        </p>
         <div className={`w-1/3 flex`}>
           <form
             name="email"
@@ -51,7 +53,10 @@ export default function Newsletter() {
               value={email}
               onChange={handleChange}
             />
-            <button type="submit" className="border-0 bg-white cursor-pointer font-sans">
+            <button
+              type="submit"
+              className="border-0 bg-white cursor-pointer font-sans"
+            >
               JOIN
             </button>
           </form>

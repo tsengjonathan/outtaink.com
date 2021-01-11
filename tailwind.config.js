@@ -1,17 +1,13 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: [
-    './src/**/*.html',
-    './src/**/*.js',
-    './src/**/*.jsx'
-  ],
+  purge: ['./src/**/*.html', './src/**/*.js', './src/**/*.jsx'],
   darkMode: false,
   theme: {
     extend: {
       gridTemplateColumns: {
-        'sidebar': '5rem 1fr',
-        'article': '5fr 2fr',
+        sidebar: '5rem 1fr',
+        article: '5fr 2fr',
       },
       colors: {
         default: {
@@ -25,19 +21,19 @@ module.exports = {
           700: '#b2d5d3',
           800: '#cce3e2',
           900: '#e5f1f0',
-        }
+        },
       },
       minHeight: {
-        24: '6rem'
+        24: '6rem',
       },
       fontFamily: {
-        'sans': ['Noto Sans TC', ...defaultTheme.fontFamily.sans],
-        'serif': ['Noto Sans Serif', ...defaultTheme.fontFamily.serif],
-      }
+        sans: ['Noto Sans TC', ...defaultTheme.fontFamily.sans],
+        serif: ['Noto Sans Serif', ...defaultTheme.fontFamily.serif],
+      },
     },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};

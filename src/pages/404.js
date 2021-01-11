@@ -24,7 +24,7 @@ export default withUnpublishedPreview(NotFoundPage, {
   templateMap: {
     article: ArticleTemplate,
   },
-})
+});
 
 export const pageQuery = graphql`
   query {

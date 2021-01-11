@@ -13,8 +13,8 @@ const ArticleIndex = ({ data, location }) => {
   const posts = data.allPrismicArticle.edges;
 
   const midPoint = Math.floor(posts.length / 2);
-  const leftArticles = posts.slice(0, midPoint)
-  const rightArticles = posts.slice(midPoint, posts.length)
+  const leftArticles = posts.slice(0, midPoint);
+  const rightArticles = posts.slice(midPoint, posts.length);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -27,7 +27,7 @@ const ArticleIndex = ({ data, location }) => {
           ))}
         </div>
         <div className="h-full w-5/12">
-        {rightArticles.map(({ node }) => (
+          {rightArticles.map(({ node }) => (
             <ArticleCard key={node.url} node={node} />
           ))}
         </div>
@@ -45,7 +45,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allPrismicArticle(sort: {fields: data___date, order: DESC}) {
+    allPrismicArticle(sort: { fields: data___date, order: DESC }) {
       edges {
         node {
           url
@@ -61,9 +61,9 @@ export const pageQuery = graphql`
                   data {
                     name
                     image {
-                      fixed(width: 24) {		
-                        ...GatsbyPrismicImageFixed		
-                      }		
+                      fixed(width: 24) {
+                        ...GatsbyPrismicImageFixed
+                      }
                     }
                   }
                 }

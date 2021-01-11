@@ -1,8 +1,8 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
-var linkResolver = require("./linkResolver");
+var linkResolver = require('./linkResolver');
 
 module.exports = {
   siteMetadata: {
@@ -51,9 +51,9 @@ module.exports = {
         accessToken: `${process.env.API_KEY}`,
         linkResolver: linkResolver,
         schemas: {
-          article: require("./src/schemas/article.json"),
-          author: require("./src/schemas/author.json"),
-          tag: require("./src/schemas/tag.json"),
+          article: require('./src/schemas/article.json'),
+          author: require('./src/schemas/author.json'),
+          tag: require('./src/schemas/tag.json'),
         },
       },
     },
@@ -64,17 +64,17 @@ module.exports = {
         // when process.env.NODE_ENV === 'production'
         // required; non-empty string
         prodKey: `r1BQEKQCHHZrEbPniJQhf6Q1B1Cc0QuF`,
-  
+
         // if you have a development env for your segment account, paste that key here
         // when process.env.NODE_ENV === 'development'
         // optional; non-empty string
         devKey: `lPHDbhUfQSEgXF2Kje4AC91ECM2n8lgR`,
-  
+
         // boolean (defaults to false) on whether you want
         // to include analytics.page() automatically
         // if false, see below on how to track pageviews manually
         trackPage: true,
-  
+
         // boolean (defaults to false); whether to delay load Segment
         // ADVANCED FEATURE: only use if you leverage client-side routing (ie, Gatsby <Link>)
         // This feature will force Segment to load _after_ either a page routing change
@@ -90,20 +90,20 @@ module.exports = {
         // TTI: https://github.com/GoogleChrome/lighthouse/blob/master/docs/scoring.md#performance
         // Problem/solution: https://marketingexamples.com/seo/performance
         delayLoad: true,
-  
+
         // number (default to 1000); time to wait after scroll or route change
         // To be used when `delayLoad` is set to `true`
-        delayLoadTime: 1000
-      }
+        delayLoadTime: 1000,
+      },
     },
     `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /svg/
-        }
-      }
-    }
-  ]
+          include: /svg/,
+        },
+      },
+    },
+  ],
 };
