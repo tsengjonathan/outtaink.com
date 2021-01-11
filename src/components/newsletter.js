@@ -42,6 +42,7 @@ export default function Newsletter() {
             className={`flex flex-1 m-0 ${borderStyle}`}
             onSubmit={handleSubmit}
           >
+            <input type="hidden" name="email" value="email" />
             <input
               type="email"
               name="email"
