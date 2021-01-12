@@ -20,13 +20,13 @@ const ArticleIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Newsletter />
-      <div className="my-8 mx-10 flex">
-        <div className="h-full w-7/12 mr-10">
+      <div className="my-8 mx-4 lg:mx-10 flex flex-col lg:flex-row">
+        <div className="h-full lg:w-7/12 lg:mr-10">
           {leftArticles.map(({ node }) => (
             <ArticleCard key={node.url} node={node} />
           ))}
         </div>
-        <div className="h-full w-5/12">
+        <div className="h-full lg:w-5/12">
           {rightArticles.map(({ node }) => (
             <ArticleCard key={node.url} node={node} />
           ))}
