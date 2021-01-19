@@ -36,7 +36,7 @@ function ArticleCard({ node }) {
           <div className="mb-2 flex items-center">
             <h3 className="mb-0 mr-2">{interviewee}</h3>
             <Colon className="h-4" />
-            <h3 className="mb-0 ml-2">{headline}</h3>
+            <h3 className="mb-0 ml-2 flex-1">{headline}</h3>
           </div>
           <small>{node.published_at}</small>
         </header>
