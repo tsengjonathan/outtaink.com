@@ -18,7 +18,9 @@
       "config": {
         "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
         "label": "Body",
-        "labels": ["quote", "right-align"]
+        "labels": [
+          "caption"
+        ]
       }
     }
   },
@@ -27,6 +29,16 @@
       "type": "UID",
       "config": {
         "label": "URL"
+      }
+    },
+    "author": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": [
+          "author"
+        ],
+        "label": "Author"
       }
     },
     "cover": {
@@ -43,28 +55,26 @@
         "label": "Excerpt"
       }
     },
-    "author": {
+    "interviewee": {
       "type": "Link",
       "config": {
         "select": "document",
-        "customtypes": ["author"],
-        "label": "Author"
+        "label": "Interviewee"
+      }
+    }
+  },
+  "Interviewee": {
+    "name": {
+      "type": "Text",
+      "config": {
+        "label": "Name"
       }
     },
-    "tags": {
-      "type": "Group",
+    "bio": {
+      "type": "StructuredText",
       "config": {
-        "fields": {
-          "tag": {
-            "type": "Link",
-            "config": {
-              "select": "document",
-              "customtypes": ["tag"],
-              "label": "Tag"
-            }
-          }
-        },
-        "label": "Tags"
+        "multi": "paragraph, preformatted, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+        "label": "Bio"
       }
     }
   }
