@@ -71,10 +71,16 @@
       }
     },
     "bio": {
+      "type": "Text",
+      "config": {
+        "label": "Bio"
+      }
+    },
+    "links": {
       "type": "StructuredText",
       "config": {
         "multi": "paragraph, preformatted, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
-        "label": "Bio"
+        "label": "Links"
       }
     }
   }
