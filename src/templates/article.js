@@ -16,8 +16,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
   const title = article.title.text;
   const [interviewee, headline] = title.split(/\s*[:：]\s*/);
 
-  const name = article.name;
-  const bio = article.bio.html;
+  const { name, bio, links: { html: links } } = article;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -44,7 +43,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
           <hr className="mb-6" />
           <footer />
         </article>
-        <Interviewee name={name} bio={bio} />
+        <Interviewee name={name} bio={bio} links={links} />
       </div>
     </Layout>
   );
@@ -90,7 +89,8 @@ export const pageQuery = graphql`
           }
         }
         name
-        bio {
+        bio
+        links {
           html
         }
       }
