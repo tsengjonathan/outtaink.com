@@ -4,6 +4,7 @@ img {
 
 p {
   text-align: justify;
+  margin: 0;
 }
 
 figcaption {
@@ -16,4 +17,5 @@ figcaption {
 
 article > section > p {
   line-height: 1.75rem;
+  margin-bottom: 1.45rem;
 }

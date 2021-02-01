@@ -20,7 +20,7 @@ export default function Header() {
           key={idx}
           className={`flex flex-1 justify-center items-center ${
             idx !== 0 ? leftStyle : null
-          } font-sans`}
+          } font-sans no-underline`}
           to={nav.src}
         >
           {nav.name}

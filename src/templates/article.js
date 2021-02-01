@@ -4,6 +4,8 @@ import { withPreview } from 'gatsby-source-prismic';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Interviewee from '../components/interviewee';
+
 import Colon from '../../content/svg/colon.svg';
 
 const ArticleTemplate = ({ data, pageContext, location }) => {
@@ -13,6 +15,8 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
 
   const title = article.title.text;
   const [interviewee, headline] = title.split(/\s*[:：]\s*/);
+
+  const { name, bio, links: { html: links } } = article;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -39,7 +43,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
           <hr className="mb-6" />
           <footer />
         </article>
-        <div></div>
+        <Interviewee name={name} bio={bio} links={links} />
       </div>
     </Layout>
   );
@@ -83,6 +87,11 @@ export const pageQuery = graphql`
           fluid(maxWidth: 800) {
             ...GatsbyPrismicImageFluid
           }
+        }
+        name
+        bio
+        links {
+          html
         }
       }
     }
