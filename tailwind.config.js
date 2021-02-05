@@ -30,6 +30,9 @@ module.exports = {
         sans: ['Noto Sans TC', ...defaultTheme.fontFamily.sans],
         serif: ['Noto Sans Serif', ...defaultTheme.fontFamily.serif],
       },
+      height: {
+        'mobile-nav': 'calc(100% - 3.5rem)' 
+      }
     },
   },
   variants: {
