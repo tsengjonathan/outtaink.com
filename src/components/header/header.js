@@ -12,18 +12,17 @@ const navs = [
   { name: '關於', subname: 'About', src: '/' },
 ];
 
-const botStyle = 'border-0 border-gray-500 border-solid border-b';
-
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div
-      className={`h-14 flex my-auto lg:flex-row items-start lg:items-center ${botStyle}`}
-    >
+    <div className="h-14 flex my-auto lg:flex-row items-start lg:items-center border-0 border-gray-500 border-solid border-b">
       <NavItems navItems={navs} isMobile={false} />
-      <Link className="flex-grow w-20 lg:hidden h-full border-0 border-solid border-r no-underline" to="/">
-        <MobileLogo className="h-full w-full px-6 py-3"/>
+      <Link
+        className="flex-grow w-20 lg:hidden h-full border-0 border-solid border-r no-underline"
+        to="/"
+      >
+        <MobileLogo className="h-full w-full px-6 py-3" />
       </Link>
       <button
         className="border-0 bg-transparent w-14 h-full items-center justify-center mx-4 p-2.5 cursor-pointer lg:hidden"
