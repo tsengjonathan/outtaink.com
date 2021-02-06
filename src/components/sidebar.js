@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-export default function Sidebar({className}) {
+import DesktopLogo from '../../content/svg/desktop-logo.svg';
+
+export default function Sidebar({ className }) {
   return (
     <>
       <div className={`${className} w-20`} />
-      <div className={`${className} fixed h-screen w-20 border-0 border-r border-solid border-black`}>
-        <h1 className="writing-mode-vertical text-orientation-sideways absolute transform translate-x-6 mt-8">
-          <Link className="shadow-none text-current no-underline" to={`/`}>
-            Outtaink: 記錄留學生的故事
-          </Link>
-        </h1>
+      <div
+        className={`${className} fixed h-screen w-20 border-0 border-r border-solid border-black`}
+      >
+        <Link className="shadow-none text-current no-underline" to={`/`}>
+          <DesktopLogo className="mt-8 ml-6"/>
+        </Link>
       </div>
     </>
   );
