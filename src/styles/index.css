@@ -35,3 +35,11 @@ article > section > p {
 .nav-name:hover::before {
   opacity: 1;
 }
+
+.article-card:hover h3 {
+  color: #00524d;
+}
+
+.article-card:hover .article-card-img {
+  opacity: 0.75;
+}
