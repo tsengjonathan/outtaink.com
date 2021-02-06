@@ -12,10 +12,10 @@ figcaption {
   text-align: center;
 }
 
-/* Article Styles
-/* ---------------------------------------------------------- */
+a:link {
+  color: inherit;
+}
 
-article > section > p {
-  line-height: 1.75rem;
-  margin-bottom: 1.45rem;
+a:visited {
+  color: inherit;
 }
