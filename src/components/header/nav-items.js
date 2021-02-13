@@ -19,7 +19,7 @@ export default function NavItems({ navItems, isMobile }) {
       }
       to={nav.src}
     >
-      <p className="nav-name">{nav.name}</p>
+      <p className="highlight-text">{nav.name}</p>
       <p
         className={`text-default-50 mt-0.5 ${isMobile ? 'text-sm' : 'text-xs'}`}
       >

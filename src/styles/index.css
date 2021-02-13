@@ -3,7 +3,7 @@ article > section > p {
   margin-bottom: 1.45rem;
 }
 
-.nav-name {
+.highlight-text {
   position: relative;
   background-image: linear-gradient(
     180deg,
@@ -13,7 +13,7 @@ article > section > p {
   z-index: 1;
 }
 
-.nav-name::before {
+.highlight-text::before {
   position: absolute;
   content: "";
   top: 0;
@@ -32,6 +32,53 @@ article > section > p {
   opacity: 0;
 }
 
-.nav-name:hover::before {
+.highlight-text:hover::before {
   opacity: 1;
+}
+
+.article-card h3, .article-card .colon {
+  position: relative;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  z-index: 1;
+}
+
+.article-card h3::before, .article-card .colon::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 50%,
+    #cce3e2 50%
+  );
+  z-index: -1;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  opacity: 0;
+}
+
+.article-card:hover h3::before, .article-card:hover .colon::before {
+  opacity: 1;
+}
+
+.article-card:hover .article-card-img {
+  opacity: 0.75;
+}
+
+.article-card:hover p {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  color: #00524D;
+}
+
+.colon > svg {
+  transform: translateY(2.5px);
 }

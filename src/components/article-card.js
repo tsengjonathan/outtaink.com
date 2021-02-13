@@ -16,7 +16,7 @@ function ArticleCard({ node }) {
   const coverImage = cover ? (
     <div className="bg-white">
       <Img
-        className={`mb-4 hover:opacity-75 ${hoverEffect}`}
+        className={`mb-4 article-card-img ${hoverEffect}`}
         fluid={cover.fluid}
       />
     </div>
@@ -28,17 +28,16 @@ function ArticleCard({ node }) {
       key={node.url}
     >
       <Link
-        className={`text-current hover:text-gray-700 ${hoverEffect}`}
+        className={`text-current article-card ${hoverEffect}`}
         to={node.url}
       >
         {coverImage}
         <header>
-          <div className="mb-2 flex items-center">
-            <h3 className="mb-0 mr-2">{interviewee}</h3>
-            <Colon className="h-4" />
-            <h3 className="mb-0 ml-2 flex-1">{headline}</h3>
+          <div className="mb-2 inline-flex items-center">
+            <h3 className={`mb-0 pr-2`}>{interviewee}</h3>
+            <div className="colon w-2"><Colon /></div>
+            <h3 className={`mb-0 pl-2 flex-1`}>{headline}</h3>
           </div>
-          <small>{node.published_at}</small>
         </header>
         <section>
           <p
