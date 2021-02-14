@@ -12,7 +12,7 @@ export default function NavItems({ navItems, isMobile }) {
       key={idx}
       className={
         isMobile
-          ? `${commonStyle} ${mobileBorder} flex h-20`
+          ? `${commonStyle} ${mobileBorder} flex min-h-20`
           : `${commonStyle} ${
               idx !== 0 ? webBorder : null
             } h-full hidden lg:flex`

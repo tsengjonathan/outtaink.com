@@ -24,6 +24,7 @@ module.exports = {
         },
       },
       minHeight: {
+        20: '5rem',
         24: '6rem',
       },
       fontFamily: {
