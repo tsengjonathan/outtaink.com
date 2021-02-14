@@ -8,6 +8,8 @@ import Interviewee from '../components/interviewee';
 
 import Colon from '../../content/svg/colon.svg';
 
+import { sanitizeArticle } from '../utils/sanitize';
+
 const ArticleTemplate = ({ data, pageContext, location }) => {
   const article = data.prismicArticle.data;
   const siteTitle = data.site.siteMetadata.title;
@@ -17,6 +19,8 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
   const [interviewee, headline] = title.split(/\s*[:：]\s*/);
 
   const { name, bio, links: { html: links } } = article;
+
+  const renderedHTML = sanitizeArticle(article.body.html);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -38,7 +42,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
           </header>
           <section
             className="font-sans font-extralight tracking-wide"
-            dangerouslySetInnerHTML={{ __html: article.body.html }}
+            dangerouslySetInnerHTML={{ __html: renderedHTML }}
           />
           <hr className="mb-6" />
           <footer />
