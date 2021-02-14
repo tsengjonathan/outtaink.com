@@ -34,14 +34,14 @@ function ArticleCard({ node }) {
         {coverImage}
         <header>
           <div className="mb-2 inline-flex items-center">
-            <h3 className={`mb-0 pr-2`}>{interviewee}</h3>
+            <h3 className="mb-0 pr-2 font-medium">{interviewee}</h3>
             <div className="colon w-2"><Colon /></div>
-            <h3 className={`mb-0 pl-2 flex-1`}>{headline}</h3>
+            <h3 className="mb-0 pl-2 flex-1 font-medium">{headline}</h3>
           </div>
         </header>
         <section>
           <p
-            className="mb-2 font-sans font-extralight"
+            className="mb-2 font-sans font-light"
             dangerouslySetInnerHTML={{
               __html: node.data.excerpt,
             }}

@@ -19,9 +19,9 @@ export default function NavItems({ navItems, isMobile }) {
       }
       to={nav.src}
     >
-      <p className="highlight-text">{nav.name}</p>
+      <p className="highlight-text font-medium">{nav.name}</p>
       <p
-        className={`text-default-50 mt-0.5 ${isMobile ? 'text-sm' : 'text-xs'}`}
+        className={`text-default-50 font-bold mt-0.5 ${isMobile ? 'text-sm' : 'text-xs'}`}
       >
         {nav.subname.toUpperCase()}
       </p>
