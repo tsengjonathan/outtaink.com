@@ -26,7 +26,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
           <header>
             <div className="mt-6 mb-2 flex items-center">
               <h1 className="mb-0 mr-2 font-medium">{interviewee}</h1>
-              <Colon />
+              <Colon className="h-5"/>
             </div>
             <h1 className="mb-6 font-medium">{headline}</h1>
             <div className="text-sm font-sans flex mb-6 w-1/2">
