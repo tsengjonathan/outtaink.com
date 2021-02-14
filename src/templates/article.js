@@ -29,19 +29,19 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
         <article>
           <header>
             <div className="mt-6 mb-2 flex items-center">
-              <h1 className="mb-0 mr-2">{interviewee}</h1>
-              <Colon />
+              <h1 className="mb-0 mr-2 font-medium">{interviewee}</h1>
+              <Colon className="h-5"/>
             </div>
-            <h1 className="mb-6">{headline}</h1>
+            <h1 className="mb-6 font-medium">{headline}</h1>
             <div className="text-sm font-sans flex mb-6 w-1/2">
-              <p className="flex-1 m-0 font-semibold text-default-200">
-                {author}
+              <p className="flex-1 m-0 font-bold text-default-200">
+                {author.toUpperCase()}
               </p>
-              <p className="flex-1 m-0">{article.date}</p>
+              <p className="flex-1 m-0 font-light">{article.date}</p>
             </div>
           </header>
           <section
-            className="font-sans font-extralight tracking-wide"
+            className="font-sans font-light tracking-wide"
             dangerouslySetInnerHTML={{ __html: renderedHTML }}
           />
           <hr className="mb-6" />

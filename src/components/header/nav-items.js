@@ -12,16 +12,16 @@ export default function NavItems({ navItems, isMobile }) {
       key={idx}
       className={
         isMobile
-          ? `${commonStyle} ${mobileBorder} flex h-20`
+          ? `${commonStyle} ${mobileBorder} flex min-h-20`
           : `${commonStyle} ${
               idx !== 0 ? webBorder : null
             } h-full hidden lg:flex`
       }
       to={nav.src}
     >
-      <p className="highlight-text">{nav.name}</p>
+      <p className="highlight-text font-medium">{nav.name}</p>
       <p
-        className={`text-default-50 mt-0.5 ${isMobile ? 'text-sm' : 'text-xs'}`}
+        className={`text-default-50 font-bold mt-0.5 ${isMobile ? 'text-sm' : 'text-xs'}`}
       >
         {nav.subname.toUpperCase()}
       </p>
