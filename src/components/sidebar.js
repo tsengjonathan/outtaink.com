@@ -11,7 +11,7 @@ export default function Sidebar({ className }) {
         className={`${className} fixed h-screen w-20 border-0 border-r border-solid border-black`}
       >
         <Link className="shadow-none text-current no-underline" to={`/`}>
-          <DesktopLogo className="mt-8 ml-6"/>
+          <DesktopLogo className="mt-8 ml-6" />
         </Link>
       </div>
     </>

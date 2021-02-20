@@ -28,12 +28,13 @@ module.exports = {
         24: '6rem',
       },
       fontFamily: {
-        sans: ['Noto Sans TC', ...defaultTheme.fontFamily.sans],
-        serif: ['Noto Sans Serif', ...defaultTheme.fontFamily.serif],
+        en: ['Gopher', ...defaultTheme.fontFamily.sans],
+        zh: ['Noto Sans TC', ...defaultTheme.fontFamily.sans],
+        mixed: ['Gopher', 'Noto Sans TC', ...defaultTheme.fontFamily.sans],
       },
       height: {
-        'mobile-nav': 'calc(100% - 3.5rem)' 
-      }
+        'mobile-nav': 'calc(100% - 3.5rem)',
+      },
     },
   },
   variants: {

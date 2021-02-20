@@ -2,6 +2,11 @@
 import * as React from 'react';
 import { PreviewStoreProvider } from 'gatsby-source-prismic';
 
+import '@fontsource/noto-sans-tc/300.css';
+import '@fontsource/noto-sans-tc/400.css';
+import '@fontsource/noto-sans-tc/500.css';
+import '@fontsource/noto-sans-tc/700.css';
+
 import 'prismjs/themes/prism.css';
 
 import './src/styles/tailwind.css';
