@@ -72,3 +72,7 @@ article > section > p {
 .article-card:hover .article-card-img {
   opacity: 0.75;
 }
+
+.interviewee-links a {
+  text-decoration: underline;
+}

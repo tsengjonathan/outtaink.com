@@ -6,7 +6,7 @@ export default function Interviewee({ name, bio, links }) {
       <p className="font-zh mb-4 font-medium">{name}</p>
       <p className="font-zh mb-4 text-sm font-light text-left leading-5 text-gray-600">{bio}</p>
       <section
-        className="font-zh text-sm font-light leading-6"
+        className="font-zh text-sm font-light leading-6 interviewee-links"
         dangerouslySetInnerHTML={{ __html: links }}
       />
     </div>
