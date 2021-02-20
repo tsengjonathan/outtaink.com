@@ -6,15 +6,14 @@ var linkResolver = require('./linkResolver');
 
 module.exports = {
   siteMetadata: {
-    title: `OuttaInk`,
+    title: `Outtaink`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Jonathan Tseng`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `A community for students to voice their experiences and lessons as they embrace the challenges of studying abroad.`,
+    siteUrl: `https://outtaink.com/`,
     social: {
-      twitter: `kylemathews`,
+      instagram: `outta.ink`,
     },
   },
   pathPrefix: '/outtaink.com',
