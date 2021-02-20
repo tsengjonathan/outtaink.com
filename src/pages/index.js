@@ -18,7 +18,7 @@ const ArticleIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Outtaink" />
       <Newsletter />
       <div className="my-8 mx-4 lg:mx-10 flex flex-col lg:flex-row">
         <div className="h-full lg:w-7/12 lg:mr-10">
