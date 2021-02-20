@@ -33,8 +33,8 @@ module.exports = {
         mixed: ['Gopher', 'Noto Sans TC', ...defaultTheme.fontFamily.sans],
       },
       height: {
-        'mobile-nav': 'calc(100% - 3.5rem)' 
-      }
+        'mobile-nav': 'calc(100% - 3.5rem)',
+      },
     },
   },
   variants: {

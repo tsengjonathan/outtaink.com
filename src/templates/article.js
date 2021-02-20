@@ -18,7 +18,11 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
   const title = article.title.text;
   const [interviewee, headline] = title.split(/\s*[:：]\s*/);
 
-  const { name, bio, links: { html: links } } = article;
+  const {
+    name,
+    bio,
+    links: { html: links },
+  } = article;
 
   const renderedHTML = sanitizeArticle(article.body.html);
 
@@ -29,15 +33,19 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
         <article>
           <header>
             <div className="mt-6 mb-2 flex items-center">
-              <h1 className="mb-0 mr-2 text-4xl font-medium font-en">{interviewee}</h1>
-              <Colon className="h-5"/>
+              <h1 className="mb-0 mr-2 text-4xl font-medium font-en">
+                {interviewee}
+              </h1>
+              <Colon className="h-5" />
             </div>
             <h1 className="mb-6 text-4xl font-medium font-zh">{headline}</h1>
             <div className="flex mb-6 w-3/4">
               <p className="flex-1 m-0 text-sm font-bold font-en tracking-widest text-default-200">
                 {author.toUpperCase()}
               </p>
-              <p className="flex-1 m-0 text-sm font-light font-en tracking-widest">{article.date}</p>
+              <p className="flex-1 m-0 text-sm font-light font-en tracking-widest">
+                {article.date}
+              </p>
             </div>
           </header>
           <section

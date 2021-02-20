@@ -33,10 +33,16 @@ function ArticleCard({ node }) {
       >
         {coverImage}
         <header>
-        <div className="header mb-2 inline-flex items-center">
-            <h3 className="mb-0 pr-2 text-xl font-medium font-mixed">{interviewee}</h3>
-            <div className="colon w-2"><Colon /></div>
-            <h3 className="mb-0 pl-2 flex-1 text-xl font-medium font-mixed">{headline}</h3>
+          <div className="header mb-2 inline-flex items-center">
+            <h3 className="mb-0 pr-2 text-xl font-medium font-mixed">
+              {interviewee}
+            </h3>
+            <div className="colon w-2">
+              <Colon />
+            </div>
+            <h3 className="mb-0 pl-2 flex-1 text-xl font-medium font-mixed">
+              {headline}
+            </h3>
           </div>
         </header>
         <section>

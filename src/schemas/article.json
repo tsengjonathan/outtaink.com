@@ -18,9 +18,7 @@
       "config": {
         "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
         "label": "Body",
-        "labels": [
-          "caption"
-        ]
+        "labels": ["caption"]
       }
     }
   },
@@ -35,9 +33,7 @@
       "type": "Link",
       "config": {
         "select": "document",
-        "customtypes": [
-          "author"
-        ],
+        "customtypes": ["author"],
         "label": "Author"
       }
     },
