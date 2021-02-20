@@ -29,19 +29,19 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
         <article>
           <header>
             <div className="mt-6 mb-2 flex items-center">
-              <h1 className="mb-0 mr-2 font-medium">{interviewee}</h1>
+              <h1 className="mb-0 mr-2 text-4xl font-medium font-en">{interviewee}</h1>
               <Colon className="h-5"/>
             </div>
-            <h1 className="mb-6 font-medium">{headline}</h1>
-            <div className="text-sm font-sans flex mb-6 w-1/2">
-              <p className="flex-1 m-0 font-bold text-default-200">
+            <h1 className="mb-6 text-4xl font-medium font-zh">{headline}</h1>
+            <div className="flex mb-6 w-3/4">
+              <p className="flex-1 m-0 text-sm font-bold font-en tracking-widest text-default-200">
                 {author.toUpperCase()}
               </p>
-              <p className="flex-1 m-0 font-light">{article.date}</p>
+              <p className="flex-1 m-0 text-sm font-light font-en tracking-widest">{article.date}</p>
             </div>
           </header>
           <section
-            className="font-sans font-light tracking-wide"
+            className="text-base font-light font-zh tracking-wide"
             dangerouslySetInnerHTML={{ __html: renderedHTML }}
           />
           <hr className="mb-6" />
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
       url
       data {
         excerpt
-        date(formatString: "MM/DD/YYYY")
+        date(formatString: "MM.DD.YYYY")
         body {
           html
         }

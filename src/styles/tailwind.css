@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: Noto Sans TC;
+    unicode-range: U+4E00-9FFF;
+  }
+  @font-face {
+    font-family: Gopher;
+    unicode-range: U+0020-0071;
+    letter-spacing: 0.1em;
+  }
+}
+
 @layer utilities {
   .writing-mode-horizontal { writing-mode: horizontal-tb }
   .writing-mode-vertical { writing-mode: vertical-lr }
