@@ -12,9 +12,6 @@ module.exports = {
     },
     description: `A community for students to voice their experiences and lessons as they embrace the challenges of studying abroad.`,
     siteUrl: `https://outtaink.com/`,
-    social: {
-      instagram: `outta.ink`,
-    },
   },
   pathPrefix: '/outtaink.com',
   plugins: [
