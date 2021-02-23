@@ -18,15 +18,17 @@ export default function Newsletter() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.target;
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...state,
-      }),
-    }).catch(error => console.error(error));
+    if (email.trim()) {
+      const form = e.target;
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': form.getAttribute('name'),
+          ...state,
+        }),
+      }).catch(error => console.error(error));
+    }
   };
 
   return (
