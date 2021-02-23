@@ -35,7 +35,7 @@ export default function Newsletter() {
         <p className="m-0 font-zh font-medium">
           加入我們的 Newsletter 一起發現更多最新故事吧！
         </p>
-        <div className={`px-4 lg:w-1/3 flex`}>
+        <div className={`px-4 w-full lg:w-1/3 flex`}>
           <form
             name="email"
             method="post"
