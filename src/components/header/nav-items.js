@@ -19,7 +19,7 @@ export default function NavItems({ navItems, isMobile }) {
       }
       to={nav.src}
     >
-      <p className="highlight-text font-medium font-zh">{nav.name}</p>
+      <p className={`font-medium font-zh ${nav.isSelected ? 'nav-item-selected' : 'highlight-text'}`}>{nav.name}</p>
       <p
         className={`text-default-50 font-bold font-en tracking-widest mt-0.5 ${
           isMobile ? 'text-sm' : 'text-xs'
