@@ -1,6 +1,6 @@
-article > section > p {
-  line-height: 1.75rem;
-  margin-bottom: 1.45rem;
+#article > section > p {
+  line-height: 2rem;
+  margin-bottom: 2.75rem;
 }
 
 .nav-item .highlight-text {

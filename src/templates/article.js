@@ -30,7 +30,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title={article.title.text} description={article.excerpt} />
       <div className="grid grid-cols-1 lg:grid-cols-article mx-4 lg:mx-40 lg:my-20">
-        <article>
+        <article id="article">
           <header>
             <div className="mt-6 mb-2 flex items-center">
               <h1 className="mb-0 mr-2 text-4xl font-medium font-en">
