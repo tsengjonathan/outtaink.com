@@ -1,7 +1,9 @@
 import React from 'react';
-
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+
+import { sanitizeArticle } from '../utils/sanitize';
+
 import Colon from '../../content/svg/colon.svg';
 
 function ArticleCard({ node }) {
@@ -13,8 +15,10 @@ function ArticleCard({ node }) {
 
   const [interviewee, headline] = title.split(/\s*[:：]\s*/);
 
+  const renderedExcerpt = sanitizeArticle(node.data.excerpt);
+
   const coverImage = cover ? (
-    <div className="bg-white">
+    <div className="bg-black">
       <Img
         className={`mb-4 article-card-img ${hoverEffect}`}
         fluid={cover.fluid}
@@ -49,7 +53,7 @@ function ArticleCard({ node }) {
           <p
             className="mb-2 font-zh font-light"
             dangerouslySetInnerHTML={{
-              __html: node.data.excerpt,
+              __html: renderedExcerpt,
             }}
           />
         </section>
