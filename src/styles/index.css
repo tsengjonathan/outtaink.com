@@ -1,6 +1,6 @@
-article > section > p {
-  line-height: 1.75rem;
-  margin-bottom: 1.45rem;
+#article > section > p {
+  line-height: 2rem;
+  margin-bottom: 2.75rem;
 }
 
 .nav-item .highlight-text {
@@ -34,6 +34,16 @@ article > section > p {
 
 .nav-item:hover .highlight-text::before {
   opacity: 1;
+}
+
+.nav-item-selected {
+  position: relative;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 50%,
+    #cce3e2 50%
+  );
+  z-index: 1;
 }
 
 .article-card .header {
