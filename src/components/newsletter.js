@@ -32,7 +32,7 @@ export default function Newsletter() {
   };
 
   return (
-    <div className={`flex min-h-24 ${borderStyle}`}>
+    <div className={`flex min-h-24 border-t ${borderStyle}`}>
       <div className="flex flex-1 flex-col justify-center items-center text-sm my-4 w-full">
         <p className="m-0 font-zh font-medium">
           加入我們的 Newsletter 一起發現更多最新故事吧！
