@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from './sidebar';
 import Header from './header';
+import Footer from './footer';
 
 const Layout = ({ children }) => {
   return (
@@ -9,6 +10,7 @@ const Layout = ({ children }) => {
       <div className="flex flex-col">
         <Header />
         <main className="flex flex-col flex-1 h-screen">{children}</main>
+        <Footer />
       </div>
     </div>
   );
