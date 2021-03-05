@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       <Sidebar className="hidden lg:block" />
       <div className="flex flex-col">
         <Header />
-        <main className="flex flex-col flex-1 h-screen">{children}</main>
+        <main className="flex flex-col flex-1">{children}</main>
         <Footer />
       </div>
     </div>
