@@ -10,8 +10,6 @@ export default function FeaturedCard({ node, index }) {
   const title = data.title.text;
   const cover = data.cover;
 
-  const hoverEffect = 'transition duration-300 ease-in-out no-underline';
-
   const [interviewee, headline] = title.split(/\s*[:：]\s*/);
 
   const renderedExcerpt = sanitizeArticle(node.data.excerpt);
