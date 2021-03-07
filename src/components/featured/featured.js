@@ -20,6 +20,7 @@ export default function Featured({ articles }) {
       naturalSlideWidth={300}
       naturalSlideHeight={100}
       totalSlides={articles.length}
+      className="hidden lg:block"
     >
       <div className="flex">
         <ButtonBack className={`w-20 ${borderStyle} border-r`}>
