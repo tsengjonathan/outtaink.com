@@ -86,3 +86,7 @@
 .interviewee-links a {
   text-decoration: underline;
 }
+
+.featured-img img {
+  object-fit: contain;
+}
