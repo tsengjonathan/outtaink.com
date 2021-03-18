@@ -20,7 +20,7 @@ export default function FeaturedCard({ node, index }) {
         <div className="h-full">
           <Img
             className="h-full featured-img"
-            imgStyle={{ 'object-fit': 'contain', 'object-position': 'right' }}
+            imgStyle={{ 'objectFit': 'contain', 'objectPosition': 'right' }}
             fluid={cover.fluid}
           />
         </div>

@@ -29,7 +29,7 @@ export default function Featured({ articles }) {
         <div className="w-full">
           <Slider>
             {articles.map(({ node }, idx) => (
-              <Slide index={idx}>
+              <Slide key={idx} index={idx}>
                 <FeaturedCard node={node} index={idx} />
               </Slide>
             ))}
