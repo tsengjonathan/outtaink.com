@@ -26,6 +26,11 @@ const ArticleIndex = ({ data, location }) => {
       <Featured articles={featuredArticles} />
       <Newsletter />
       <div className="my-8 mx-4 lg:mx-10 flex flex-col lg:flex-row">
+        <div className="lg:hidden">
+          {featuredArticles.map(({ node }) => (
+            <ArticleCard key={node.url} node={node} />
+          ))}
+        </div>
         <div className="h-full lg:w-7/12 lg:mr-10">
           {leftArticles.map(({ node }) => (
             <ArticleCard key={node.url} node={node} />
