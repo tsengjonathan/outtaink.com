@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import Newsletter from '../newsletter';
 import FooterLogo from '../../../content/svg/footer-logo.svg';
@@ -13,7 +13,7 @@ export default function Footer() {
     <div className="flex flex-col bg-default-50 px-12 pt-12 pb-4">
       <div className="flex flex-col lg:flex-row mt-4 mb-8">
         <div className="lg:w-1/2">
-          <Newsletter footer/>
+          <Newsletter footer />
         </div>
         <div className="lg:w-1/2 flex flex-col lg:pl-24 lg:pr-12 mt-8 lg:mt-0">
           <h3 className="font-en text-white text-center font-bold">
@@ -39,15 +39,28 @@ export default function Footer() {
         <div className="flex flex-col mt-8 lg:mt-0 lg:flex-row lg:w-1/2">
           <FooterLogo className="flex-grow" />
           <div className="flex mt-4 lg:mt-0">
-            <a className="flex flex-grow justify-center lg:mr-4" href="mailto:contact@outtaink.com">
+            <a
+              className="flex flex-grow justify-center lg:mr-4"
+              href="mailto:contact@outtaink.com"
+            >
               <FontAwesomeIcon icon={faEnvelope} size="2x" />
             </a>
-            <Link className="flex flex-grow justify-center lg:mr-4" to="https://instagram.com/outtaink">
+            <a
+              className="flex flex-grow justify-center lg:mr-4"
+              href="https://instagram.com/outta.ink"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon icon={faInstagram} size="2x" />
-            </Link>
-            <Link className="flex flex-grow justify-center lg:mr-4" to="https://github.com/tsengjonathan/outtaink.com">
+            </a>
+            <a
+              className="flex flex-grow justify-center lg:mr-4"
+              href="https://github.com/tsengjonathan/outtaink.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon icon={faGithub} size="2x" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
