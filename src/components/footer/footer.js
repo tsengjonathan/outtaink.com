@@ -11,15 +11,15 @@ import FooterLogo from '../../../content/svg/footer-logo.svg';
 export default function Footer() {
   return (
     <div className="flex flex-col bg-default-50 px-12 pt-12 pb-4">
-      <div className="flex mt-4 mb-8">
+      <div className="flex flex-col lg:flex-row mt-4 mb-8">
         <div className="w-1/2">
           <Newsletter footer/>
         </div>
-        <div className={`w-1/2 flex flex-col my-4 px-24`}>
+        <div className="w-1/2 flex flex-col pl-24 pr-12">
           <h3 className="font-en text-white text-center font-bold">
             Share your thoughts, make Outtaink grow.
           </h3>
-          <p className="font-zh text-white font-light my-4 text-sm">
+          <p className="font-zh text-white text-center font-light my-4 text-sm">
             “每個人都要經過這個階段，看見一座山，就想知道山的後面是什麼，可能翻過山後面，你會發現沒什麼特別，回頭看，會覺得這邊更好。”
           </p>
         </div>
