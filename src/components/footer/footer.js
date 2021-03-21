@@ -12,10 +12,10 @@ export default function Footer() {
   return (
     <div className="flex flex-col bg-default-50 px-12 pt-12 pb-4">
       <div className="flex flex-col lg:flex-row mt-4 mb-8">
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <Newsletter footer/>
         </div>
-        <div className="w-1/2 flex flex-col pl-24 pr-12">
+        <div className="lg:w-1/2 flex flex-col lg:pl-24 lg:pr-12 mt-8 lg:mt-0">
           <h3 className="font-en text-white text-center font-bold">
             Share your thoughts, make Outtaink grow.
           </h3>
@@ -24,28 +24,28 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="flex border-0 border-t border-white border-solid text-white text-sm font-en py-8 items-center">
-        <div className="flex w-1/2">
-          <Link className="flex mr-16" to="/">
+      <div className="flex flex-col lg:flex-row border-0 border-t border-white border-solid text-white lg:text-sm font-en py-8 items-center">
+        <div className="flex flex-col lg:flex-row lg:w-1/2">
+          <Link className="flex mt-2 lg:mr-16 mx-auto lg:mx-0" to="/">
             Terms of Service
           </Link>
-          <Link className="flex mr-16" to="/">
+          <Link className="flex mt-2 lg:mr-16 mx-auto lg:mx-0" to="/">
             Privacy Statement
           </Link>
-          <Link className="flex mr-16" to="/">
+          <Link className="flex mt-2 lg:mr-16 mx-auto lg:mx-0" to="/">
             Copyright Notice
           </Link>
         </div>
-        <div className="flex w-1/2">
+        <div className="flex flex-col mt-8 lg:mt-0 lg:flex-row lg:w-1/2">
           <FooterLogo className="flex-grow" />
-          <div className="flex">
-            <a className="mr-4" href="mailto:contact@outtaink.com">
+          <div className="flex mt-4 lg:mt-0">
+            <a className="flex flex-grow justify-center lg:mr-4" href="mailto:contact@outtaink.com">
               <FontAwesomeIcon icon={faEnvelope} size="2x" />
             </a>
-            <Link className="mr-4" to="https://instagram.com/outtaink">
+            <Link className="flex flex-grow justify-center lg:mr-4" to="https://instagram.com/outtaink">
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </Link>
-            <Link className="mr-4" to="https://github.com/tsengjonathan/outtaink.com">
+            <Link className="flex flex-grow justify-center lg:mr-4" to="https://github.com/tsengjonathan/outtaink.com">
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </Link>
           </div>
