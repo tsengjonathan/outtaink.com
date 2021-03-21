@@ -33,11 +33,11 @@ export default function Newsletter({ footer = false }) {
 
   return (
     <div className={`flex min-h-24 ${footer ? null : 'lg:border-t'} ${borderStyle}`}>
-      <div className="flex flex-1 flex-col justify-center items-center text-sm my-4 w-full">
+      <div className={`flex flex-1 flex-col justify-center items-center text-sm w-full ${footer ? null : 'my-4'}`}>
         <p className={`m-0 font-mixed font-medium tracking-widest ${footer ? 'text-white' : null}`}>
           加入我們的 Newsletter List 一起發現更多最新故事吧！
         </p>
-        <div className={`px-4 w-full flex ${footer ? 'lg:w-full my-4' : 'lg:w-1/3'}`}>
+        <div className={`w-full flex ${footer ? 'lg:w-full my-4' : 'lg:w-1/3 px-4'}`}>
           <form
             name="email"
             method="post"
