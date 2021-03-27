@@ -52,7 +52,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
             className="text-base font-light font-zh tracking-wide"
             dangerouslySetInnerHTML={{ __html: renderedHTML }}
           />
-          <hr className="mb-6" />
+          <hr className="my-6" />
           <footer />
         </article>
         <Interviewee name={name} bio={bio} links={links} />
