@@ -15,12 +15,12 @@ export default function Footer() {
         <div className="lg:w-1/2">
           <Newsletter footer />
         </div>
-        <div className="lg:w-1/2 flex flex-col lg:pl-24 lg:pr-12 mt-8 lg:mt-0">
+        <div className="lg:w-1/2 flex flex-col lg:pl-18 lg:pr-12 mt-8 lg:mt-0">
           <h3 className="font-en text-white font-bold text-lg">
-            Share your thoughts, make Outtaink grow.
+            Let us hear your stories, keep your memories on Outtaink
           </h3>
           <p className="font-zh text-white font-light my-4">
-            “每個人都要經過這個階段，看見一座山，就想知道山的後面是什麼，可能翻過山後面，你會發現沒什麼特別，回頭看，會覺得這邊更好。”
+            你也想讓自己的故事影響更多留學生嗎？來找我們聊聊吧！你有故事，我有筆。你的坎坷、你的蛻變、你的經歷、你的成長，請讓我陪你一同記錄。
           </p>
         </div>
       </div>
@@ -36,7 +36,7 @@ export default function Footer() {
             Copyright Notice
           </Link>
         </div>
-        <div className="flex flex-col mt-8 lg:pl-24 lg:mt-0 lg:flex-row lg:w-1/2">
+        <div className="flex flex-col mt-8 lg:pl-18 lg:mt-0 lg:flex-row lg:w-1/2">
           <FooterLogo className="flex-grow" />
           <div className="flex mt-4 lg:mt-0">
             <a
