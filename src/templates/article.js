@@ -14,6 +14,8 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
   const article = data.prismicArticle.data;
   const siteTitle = data.site.siteMetadata.title;
   const author = article.author.document.data.name;
+  
+  const coverUrl = article.cover.url;
 
   const title = article.title.text;
   const [interviewee, headline] = title.split(/\s*[:：]\s*/);
@@ -28,7 +30,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={article.title.text} description={article.excerpt} />
+      <SEO title={article.title.text} description={article.excerpt} image={coverUrl} />
       <div className="grid grid-cols-1 lg:grid-cols-article mx-4 lg:mx-40 lg:my-20">
         <article id="article">
           <header>
@@ -96,9 +98,7 @@ export const pageQuery = graphql`
           }
         }
         cover {
-          fluid(maxWidth: 800) {
-            ...GatsbyPrismicImageFluid
-          }
+          url
         }
         name
         bio
