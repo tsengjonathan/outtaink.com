@@ -59,7 +59,11 @@ const SEO = ({ description, lang, meta, title, image }) => {
         {
           property: `og:image`,
           content: image,
-        }
+        },
+        {
+          property: `og:image:secure_url`,
+          content: image,
+        },
       ].concat(meta)}
     />
   );
