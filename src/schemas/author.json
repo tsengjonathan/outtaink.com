@@ -12,6 +12,12 @@
         "label": "Name"
       }
     },
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title"
+      }
+    },
     "image": {
       "type": "Image",
       "config": {
