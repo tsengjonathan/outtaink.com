@@ -18,6 +18,12 @@
         "label": "Title"
       }
     },
+    "joined": {
+      "type": "Date",
+      "config": {
+        "label": "Joined"
+      }
+    },
     "image": {
       "type": "Image",
       "config": {
