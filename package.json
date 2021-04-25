@@ -1,11 +1,11 @@
 {
   "name": "outtaink.com",
-  "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "private": false,
+  "description": "A Voice for Students Studying Abroad",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jonathan <me@tsengjonathan.com.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/tsengjonathan/outtaink.com/issues"
   },
   "dependencies": {
     "@fontsource/noto-sans-tc": "^4.2.2",
@@ -42,7 +42,7 @@
     "tailwindcss": "^2.0.4",
     "typescript": "^4.2.3"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://outtaink.com",
   "keywords": [
     "gatsby"
   ],
@@ -50,7 +50,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/tsengjonathan/outtaink.com.git"
   },
   "scripts": {
     "build": "gatsby build",
