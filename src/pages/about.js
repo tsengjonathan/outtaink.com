@@ -8,8 +8,8 @@ const About = ({ data, pageContext, location }) => {
   const members = data.allPrismicAuthor.nodes.map(node => node.data);
   return (
     <Layout location={location} title="About Us">
-      <div className="my-10">
-        <h1 className="text-center font-en text-5xl font-bold">About Us</h1>
+      <div className="pt-10 pb-4 h-80 mb-10 flex justify-center items-center bg-default-50">
+        <h1 className="text-center text-white font-en text-5xl font-bold">About Us</h1>
       </div>
       <div className="mx-12">
         <p className="font-en my-2">
