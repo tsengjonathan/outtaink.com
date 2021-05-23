@@ -15,6 +15,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "babel-preset-gatsby": "^1.1.0",
+    "classnames": "^2.3.1",
     "gatsby": "^3.1.1",
     "gatsby-image": "^3.1.0",
     "gatsby-plugin-fathom": "^2.1.0",
