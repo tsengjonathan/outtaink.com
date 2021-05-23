@@ -6,7 +6,7 @@ import { sanitizeArticle } from '../utils/sanitize';
 
 import Colon from '../../content/svg/colon.svg';
 
-function ArticleCard({ node }) {
+function ArticleCard({ node, imgClass }) {
   const data = node.data;
   const title = data.title.text;
   const cover = data.cover;
@@ -20,7 +20,7 @@ function ArticleCard({ node }) {
   const coverImage = cover ? (
     <div className="bg-black">
       <Img
-        className={`mb-4 article-card-img ${hoverEffect}`}
+        className={`mb-4 article-card-img ${imgClass} ${hoverEffect}`}
         fluid={cover.fluid}
       />
     </div>
