@@ -101,3 +101,13 @@
 .featured-img img {
   object-fit: contain;
 }
+
+.article-card-transition-exit-active {
+  opacity: 0;
+  animation: fadeout .5s ease-out;
+}
+
+@keyframes fadeout {
+  0% { opacity: 1; }
+  100% { opacity: 0; } 
+} 

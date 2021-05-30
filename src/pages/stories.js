@@ -12,13 +12,6 @@ const Stories = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
 
   const allPosts = data.allPrismicArticle.edges;
-  const posts = allPosts.filter(({node}) => {
-    if (filters.length === 0) {
-      return true;
-    }
-
-    return node.tags.some(tag => filters.includes(tag));
-  });
 
   const tags = allPosts.map(({node}) => node.tags).flat().filter((v, i, a) => a.indexOf(v) === i);
 
@@ -37,9 +30,10 @@ const Stories = ({ data, location }) => {
       <SEO title="Outtaink" />
       <Filter options={tags} filters={filters} handleFilter={handleFilter} />
       <div className="m-8 grid grid-cols-3 gap-4">
-        {posts.map(({ node }) => (
-          <ArticleCard key={node.url} node={node} imgClass={imgClass} />
-        ))}
+        {allPosts.map(({ node }) => {
+          const visible = filters.length === 0 || node.tags.some(tag => filters.includes(tag));
+          return <ArticleCard key={node.url} node={node} imgClass={imgClass} visible={visible} />
+        })}
       </div>
     </Layout>
   )
