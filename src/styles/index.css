@@ -104,7 +104,7 @@
 
 .article-card-transition-exit-active {
   opacity: 0;
-  animation: fadeout .5s ease-out;
+  animation: fadeout .3s ease-in;
 }
 
 @keyframes fadeout {

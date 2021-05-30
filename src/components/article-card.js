@@ -28,7 +28,7 @@ function ArticleCard({ node, imgClass, visible }) {
   ) : null;
 
   return (
-    <CSSTransition in={visible} timeout={500} classNames="article-card-transition" unmountOnExit>
+    <CSSTransition in={visible} timeout={300} classNames="article-card-transition" unmountOnExit>
       <article
         className="pb-4 mb-8 border-0 border-b border-solid border-gray-500"
         key={node.url}
