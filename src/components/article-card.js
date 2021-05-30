@@ -7,7 +7,7 @@ import { sanitizeArticle } from '../utils/sanitize';
 
 import Colon from '../../content/svg/colon.svg';
 
-function ArticleCard({ node, imgClass, visible }) {
+function ArticleCard({ node, imgClass, visible = true }) {
   const data = node.data;
   const title = data.title.text;
   const cover = data.cover;
