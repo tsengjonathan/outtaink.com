@@ -70,14 +70,14 @@
         "label": "Name"
       }
     },
-    "bio": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "text": {
-            "type": "Text",
-            "config": {
-              "label": "text"
+    "bio_group" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "text" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "text"
             }
           }
         },
