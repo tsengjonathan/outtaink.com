@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   core: {
     "builder": "webpack5"
@@ -18,6 +20,18 @@ module.exports = {
     config.module.rules[0].use[0].options.plugins.push(
         require.resolve("babel-plugin-remove-graphql-queries")
     )
+
+    config.module.rules = config.module.rules.filter((f) => f.test.toString() !== '/\\.css$/');
+		config.module.rules.push({
+			rules: [
+				{
+					test: /\.css$/i,
+					use: ['style-loader', 'css-loader', 'postcss-loader']
+				}
+			],
+			include: path.resolve(__dirname, '../src')
+    });
+    
     return config
   },
 }
