@@ -22,7 +22,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
 
   const {
     name,
-    bio,
+    bio_group: bio,
     links: { html: links },
   } = article;
 
@@ -101,7 +101,9 @@ export const pageQuery = graphql`
           url
         }
         name
-        bio
+        bio_group {
+          text
+        }
         links {
           html
         }
