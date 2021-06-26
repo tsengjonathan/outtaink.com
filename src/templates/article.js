@@ -101,7 +101,9 @@ export const pageQuery = graphql`
           url
         }
         name
-        bio
+        bio {
+          text
+        }
         links {
           html
         }
