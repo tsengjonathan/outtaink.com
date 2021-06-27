@@ -1,5 +1,11 @@
 import '../src/styles/tailwind.css';
 import '../src/styles/global.css';
+import '../src/styles/storybook.css';
+
+import '@fontsource/noto-sans-tc/300.css';
+import '@fontsource/noto-sans-tc/400.css';
+import '@fontsource/noto-sans-tc/500.css';
+import '@fontsource/noto-sans-tc/700.css';
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.

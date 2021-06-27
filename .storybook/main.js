@@ -10,7 +10,15 @@ module.exports = {
   ],
   addons: [
     "@storybook/addon-links",
-    "@storybook/addon-essentials"
+    "@storybook/addon-essentials",
+    {
+      name: "@storybook/addon-postcss",
+      options: {
+        postcssLoaderOptions: {
+          implementation: require("postcss")
+        }
+      }
+    }
   ],
   webpackFinal: async config => {
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
@@ -20,18 +28,6 @@ module.exports = {
     config.module.rules[0].use[0].options.plugins.push(
         require.resolve("babel-plugin-remove-graphql-queries")
     )
-
-    config.module.rules = config.module.rules.filter((f) => f.test.toString() !== '/\\.css$/');
-		config.module.rules.push({
-			rules: [
-				{
-					test: /\.css$/i,
-					use: ['style-loader', 'css-loader', 'postcss-loader']
-				}
-			],
-			include: path.resolve(__dirname, '../src')
-    });
-    
     return config
   },
 }
