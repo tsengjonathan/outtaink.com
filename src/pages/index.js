@@ -9,8 +9,11 @@ import Featured from '../components/featured';
 
 import '../styles/index.css';
 
+const supportedLanguages = ['zh-tw', 'zh-cn']
+
 const ArticleIndex = ({ data, location }) => {
-  const [locale, setLocale] = useState('zh-tw')
+  const navLang = navigator.language || navigator.userLanguage
+  const [locale, setLocale] = useState(supportedLanguages.includes(navLang) ? navLang : 'zh-tw')
   
   const siteTitle = data.site.siteMetadata.title;
   const allPosts = data.allPrismicArticle.edges;
