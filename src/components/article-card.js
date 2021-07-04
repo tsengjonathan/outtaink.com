@@ -20,7 +20,7 @@ function ArticleCard({ node }) {
   const coverImage = cover ? (
     <div className="bg-black">
       <Img
-        className={`mb-4 article-card-img ${hoverEffect}`}
+        className={`mb-4 article-card-img h-96 ${hoverEffect}`}
         fluid={cover.fluid}
       />
     </div>
@@ -28,7 +28,7 @@ function ArticleCard({ node }) {
 
   return (
     <article
-      className="pb-4 mb-8 border-0 border-b border-solid border-gray-500"
+      className="p-4"
       key={node.url}
     >
       <Link
@@ -37,7 +37,7 @@ function ArticleCard({ node }) {
       >
         {coverImage}
         <header>
-          <div className="header mb-2 inline-flex items-center">
+          <div className="mb-2 inline-flex items-center">
             <h3 className="mb-0 pr-2 text-xl font-medium font-mixed">
               {interviewee}
             </h3>

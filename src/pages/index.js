@@ -4,8 +4,6 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ArticleCard from '../components/article-card';
-import Newsletter from '../components/newsletter';
-import Featured from '../components/featured';
 
 import '../styles/index.css';
 
@@ -13,34 +11,13 @@ const ArticleIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allPrismicArticle.edges;
 
-  const featuredArticles = posts.slice(0, 3);
-  const remainingArticles = posts.slice(3);
-
-  const midPoint = Math.floor(remainingArticles.length / 2);
-  const leftArticles = remainingArticles.slice(0, midPoint);
-  const rightArticles = remainingArticles.slice(midPoint, posts.length);
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Outtaink" />
-      <Featured articles={featuredArticles} />
-      <Newsletter />
-      <div className="my-8 mx-4 lg:mx-10 flex flex-col lg:flex-row">
-        <div className="lg:hidden">
-          {featuredArticles.map(({ node }) => (
-            <ArticleCard key={node.url} node={node} />
-          ))}
-        </div>
-        <div className="h-full lg:w-7/12 lg:mr-10">
-          {leftArticles.map(({ node }) => (
-            <ArticleCard key={node.url} node={node} />
-          ))}
-        </div>
-        <div className="h-full lg:w-5/12">
-          {rightArticles.map(({ node }) => (
-            <ArticleCard key={node.url} node={node} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 my-4 max-w-screen-xl mx-auto">
+        {posts.map(({ node }) => (
+          <ArticleCard key={node.url} node={node} />
+        ))}
       </div>
     </Layout>
   );
@@ -55,7 +32,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allPrismicArticle(sort: { fields: data___date, order: DESC }) {
+    allPrismicArticle(sort: { fields: data___date, order: DESC }, limit: 10) {
       edges {
         node {
           url
