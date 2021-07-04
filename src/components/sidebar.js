@@ -16,8 +16,8 @@ export default function Sidebar({ className, changeLanguage }) {
           <DesktopLogo className="mt-8 ml-6" />
         </Link>
         <div className="flex flex-grow" />
-        <div className="flex w-full h-20 border-0 border-t border-solid border-black items-center justify-center cursor-pointer" onClick={changeLanguage}>
-          <FontAwesomeIcon icon={faExchangeAlt} size="2x" />
+        <div className="flex w-full h-10 border-0 border-t border-solid border-black items-center justify-center cursor-pointer" onClick={changeLanguage}>
+          <FontAwesomeIcon icon={faExchangeAlt} />
         </div>
       </div>
     </>
