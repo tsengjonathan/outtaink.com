@@ -6,10 +6,9 @@ import MobileLogo from '../../../content/svg/mobile-logo.svg';
 import MobileNavOpen from '../../../content/svg/mobile-nav-open.svg';
 
 const navs = [
-  { name: '無墨精選集', subname: 'Featured', src: '/', isSelected: true },
-  { name: '他們的故事', subname: 'Stories', src: '/', isSelected: false },
-  { name: '回憶留言板', subname: 'Memories', src: '/', isSelected: false },
-  { name: '關於', subname: 'About', src: '/', isSelected: false },
+  { name: '無墨精選集', subname: 'Featured', src: '/' },
+  { name: '他們的故事', subname: 'Stories', src: '/stories' },
+  { name: '關於', subname: 'About', src: '/' },
 ];
 
 export default function Header() {
