@@ -7,6 +7,7 @@ const commonStyle =
   'nav-item flex-1 flex-col justify-center items-center font-sans font-medium no-underline';
 
 export default function NavItems({ navItems, isMobile }) {
+  const currentPage = window.location.pathname || '/'
   return navItems.map((nav, idx) => (
     <Link
       key={idx}
@@ -19,7 +20,7 @@ export default function NavItems({ navItems, isMobile }) {
       }
       to={nav.src}
     >
-      <p className={`font-medium font-zh ${nav.isSelected ? 'nav-item-selected' : 'highlight-text'}`}>{nav.name}</p>
+      <p className={`font-medium font-zh ${nav.src === currentPage ? 'nav-item-selected' : 'highlight-text'}`}>{nav.name}</p>
       <p
         className={`text-default-50 font-bold font-en tracking-widest mt-0.5 ${
           isMobile ? 'text-sm' : 'text-xs'
