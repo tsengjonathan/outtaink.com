@@ -35,17 +35,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create pages for each Prismic article
   const items = result.data.allPrismicArticle.edges;
   items.forEach(({ node }, index) => {
-    const previous = index === items.length - 1 ? null : items[index + 1].node;
-    const next = index === 0 ? null : items[index - 1].node;
-
     actions.createPage({
       path: node.url,
       component: postTemplate,
       context: {
         url: node.url,
         lang: node.lang,
-        previous,
-        next,
       },
     });
   });
