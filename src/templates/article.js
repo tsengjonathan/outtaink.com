@@ -66,13 +66,13 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
 export default withPreview(ArticleTemplate);
 
 export const pageQuery = graphql`
-  query ArticleBySlug($url: String!) {
+  query ArticleBySlug($url: String!, $lang: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    prismicArticle(url: { eq: $url }) {
+    prismicArticle(url: { eq: $url }, lang: { eq: $lang }) {
       url
       data {
         excerpt
