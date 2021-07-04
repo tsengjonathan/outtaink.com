@@ -14,6 +14,8 @@ const supportedLanguages = ['zh-tw', 'zh-cn']
 const ArticleIndex = ({ data, location }) => {
   const navLang = navigator.language || navigator.userLanguage
   const [locale, setLocale] = useState(supportedLanguages.includes(navLang) ? navLang : 'zh-tw')
+
+  const changeLanguage = () => locale === 'zh-tw' ? setLocale('zh-cn') : setLocale('zh-tw')
   
   const siteTitle = data.site.siteMetadata.title;
   const allPosts = data.allPrismicArticle.edges;
@@ -27,7 +29,7 @@ const ArticleIndex = ({ data, location }) => {
   const rightArticles = remainingArticles.slice(midPoint, posts.length);
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} changeLanguage={changeLanguage}>
       <SEO title="Outtaink" />
       <Featured articles={featuredArticles} />
       <Newsletter />
