@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
@@ -10,8 +10,11 @@ import Featured from '../components/featured';
 import '../styles/index.css';
 
 const ArticleIndex = ({ data, location }) => {
+  const [locale, setLocale] = useState('zh-tw')
+  
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allPrismicArticle.edges;
+  const allPosts = data.allPrismicArticle.edges;
+  const posts = allPosts.filter(({node}) => node.lang === locale)
 
   const featuredArticles = posts.slice(0, 3);
   const remainingArticles = posts.slice(3);
@@ -59,6 +62,7 @@ export const pageQuery = graphql`
       edges {
         node {
           url
+          lang
           data {
             excerpt
             date(formatString: "MMMM DD, YYYY")
