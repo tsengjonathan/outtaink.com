@@ -1,0 +1,2 @@
+/* Manually import TypeKit fonts since this is configured in prod via gatsby-plugin-web-font-loader */
+@import url(https://use.typekit.net/vec2ezm.css);
