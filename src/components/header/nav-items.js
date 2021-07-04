@@ -3,11 +3,12 @@ import { Link } from 'gatsby';
 
 const webBorder = 'border-0 border-gray-500 border-solid border-l';
 const mobileBorder = 'border-0 border-solid border-b';
-const commonStyle =
-  'nav-item flex-1 flex-col justify-center items-center font-sans font-medium no-underline';
+const commonStyle = 'nav-item flex-1 flex-col justify-center items-center font-sans font-medium no-underline';
+
+const isBrowser = typeof window !== 'undefined';
 
 export default function NavItems({ navItems, isMobile }) {
-  const currentPage = window.location.pathname || '/'
+  const currentPage = isBrowser ? window.location.pathname : '/'
   return navItems.map((nav, idx) => (
     <Link
       key={idx}
