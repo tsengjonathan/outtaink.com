@@ -29,7 +29,7 @@ const Stories = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Outtaink" />
       <Filter options={tags} filters={filters} handleFilter={handleFilter} />
-      <div className="m-8 grid grid-cols-3 gap-4">
+      <div className="m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {allPosts.map(({ node }) => {
           const visible = filters.length === 0 || node.tags.some(tag => filters.includes(tag));
           return <ArticleCard key={node.url} node={node} imgClass={imgClass} visible={visible} />
@@ -48,7 +48,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allPrismicArticle(sort: { fields: data___date, order: DESC }) {
+    allPrismicArticle(sort: { fields: data___date, order: DESC } filter: { lang: { eq: "zh-tw" } }) {
       edges {
         node {
           url
