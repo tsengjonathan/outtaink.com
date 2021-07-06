@@ -18,14 +18,16 @@ export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div className={`flex my-auto lg:flex-row items-start lg:items-center lg:justify-between lg:mx-4 ${bottomBorder} lg:border-0`}>
+    <div className={`h-14 lg:h-auto flex my-auto lg:flex-row items-start lg:items-center lg:justify-between lg:mx-4 ${bottomBorder} lg:border-0`}>
       <button
         className="border-0 bg-transparent w-14 h-full items-center justify-center mx-4 p-2.5 cursor-pointer lg:hidden"
         onClick={() => setNavOpen(!navOpen)}
       >
         <MobileNavOpen />
       </button>
-      <Logo className="hidden lg:block" color="#000" />
+      <Link to="/">
+        <Logo className="hidden lg:block" color="#000" />
+      </Link>
       <NavItems navItems={navs} isMobile={false} />
       <div className="lg:w-8" />
       <Link
