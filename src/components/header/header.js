@@ -27,7 +27,7 @@ export default function Header() {
       </button>
       <Logo className="hidden lg:block" color="#000" />
       <NavItems navItems={navs} isMobile={false} />
-      <div className="w-8" />
+      <div className="lg:w-8" />
       <Link
         className="flex-grow w-20 lg:hidden h-full border-0 border-solid border-l no-underline"
         to="/"
