@@ -26,7 +26,7 @@ export default function Header() {
         <MobileNavOpen />
       </button>
       <Link to="/">
-        <Logo className="hidden lg:block" color="#000" />
+        <Logo className="hidden lg:block" textColor="#000000" colonColor="#00524D" />
       </Link>
       <NavItems navItems={navs} isMobile={false} />
       <div className="lg:w-8" />
