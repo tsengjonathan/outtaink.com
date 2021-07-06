@@ -6,7 +6,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import Newsletter from '../newsletter';
-import FooterLogo from '../../../content/svg/footer-logo.svg';
+import Logo from '../Logo';
 
 export default function Footer() {
   return (
@@ -37,7 +37,7 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex flex-col mt-8 lg:pl-18 lg:mt-0 lg:flex-row lg:w-1/2">
-          <FooterLogo className="flex-grow" />
+          <Logo className="flex-grow" />
           <div className="flex mt-4 lg:mt-0">
             <a
               className="flex flex-grow justify-center lg:mr-4"
