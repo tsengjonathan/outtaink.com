@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Hero from '../components/Hero';
 import ArticleCard from '../components/article-card';
 
 import '../styles/index.css';
@@ -14,6 +15,7 @@ const ArticleIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Outtaink" />
+      <Hero />
       <div className="grid grid-cols-1 lg:grid-cols-2 my-4 max-w-screen-xl mx-auto">
         {posts.map(({ node }) => (
           <ArticleCard key={node.url} node={node} />

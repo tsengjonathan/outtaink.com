@@ -20,7 +20,7 @@ module.exports = {
           600: '#99c8c5',
           700: '#b2d5d3',
           800: '#cce3e2',
-          900: '#e5f1f0',
+          900: '#E2F1E0',
         },
       },
       minHeight: {
