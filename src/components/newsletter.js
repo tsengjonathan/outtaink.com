@@ -32,7 +32,7 @@ export default function Newsletter({ footer = false }) {
   };
 
   return (
-    <div className={`flex min-h-24 ${footer ? null : 'lg:border-t'} ${borderStyle}`}>
+    <div className={`flex min-h-24 ${borderStyle}`}>
       <div className={`flex flex-1 flex-col justify-center text-sm w-full ${footer ? null : 'my-4 items-center'}`}>
         <p className={`m-0 font-mixed font-medium tracking-widest ${footer ? 'text-white text-lg' : null}`}>
           加入我們的 Newsletter List 一起發現更多最新故事吧！

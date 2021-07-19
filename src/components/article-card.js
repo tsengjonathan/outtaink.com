@@ -21,25 +21,27 @@ function ArticleCard({ node, imgClass, visible = true }) {
   const coverImage = cover ? (
     <div className="bg-black">
       <Img
-        className={`mb-4 article-card-img ${imgClass} ${hoverEffect}`}
+        className={`mb-4 article-card-img h-96 ${imgClass} ${hoverEffect}`}
         fluid={cover.fluid}
       />
     </div>
   ) : null;
 
   return (
-    <CSSTransition in={visible} timeout={300} classNames="article-card-transition" unmountOnExit>
-      <article
-        className="pb-4 mb-8 border-0 border-b border-solid border-gray-500"
-        key={node.url}
-      >
+    <CSSTransition
+      in={visible}
+      timeout={300}
+      classNames="article-card-transition"
+      unmountOnExit
+    >
+      <article className="p-4" key={node.url}>
         <Link
           className={`text-current article-card ${hoverEffect}`}
           to={node.url}
         >
           {coverImage}
           <header>
-            <div className="header mb-2 inline-flex items-center">
+            <div className="mb-2 inline-flex items-center">
               <h3 className="mb-0 pr-2 text-xl font-medium font-mixed">
                 {interviewee}
               </h3>
