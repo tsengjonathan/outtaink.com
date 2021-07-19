@@ -25,10 +25,14 @@ export default function Header() {
       >
         <MobileNavOpen />
       </button>
-      <Link to="/">
-        <Logo className="hidden lg:block" textColor="#000000" colonColor="#00524D" />
-      </Link>
-      <NavItems navItems={navs} isMobile={false} />
+      <div className="hidden lg:block w-full">
+        <div className="flex justify-center">
+          <Link to="/">
+            <Logo className="mt-4" textColor="#000000" colonColor="#00524D" />
+          </Link>
+        </div>
+        <NavItems navItems={navs} isMobile={false} />
+      </div>
       <div className="lg:w-8" />
       <Link
         className="flex-grow w-20 lg:hidden h-full border-0 border-solid border-l no-underline"

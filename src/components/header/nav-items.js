@@ -10,7 +10,7 @@ const isBrowser = typeof window !== 'undefined';
 export default function NavItems({ navItems, isMobile }) {
   const currentPage = isBrowser ? window.location.pathname : '/';
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row lg:justify-center">
       {navItems.map((nav, idx) => (
         <Link
           key={idx}
