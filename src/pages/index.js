@@ -24,7 +24,6 @@ const ArticleIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Outtaink" />
       <Featured articles={featuredArticles} />
-      <Newsletter />
       <div className="my-8 mx-4 lg:mx-10 flex flex-col lg:flex-row">
         <div className="lg:hidden">
           {featuredArticles.map(({ node }) => (

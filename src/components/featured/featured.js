@@ -12,7 +12,7 @@ import FeaturedCard from './featured-card';
 import PrevIcon from '../../../content/svg/prev.svg';
 import NextIcon from '../../../content/svg/next.svg';
 
-const borderStyle = "border-0 border-black border-solid"
+const borderStyle = "border-black border-solid"
 
 export default function Featured({ articles }) {
   return (
@@ -20,7 +20,7 @@ export default function Featured({ articles }) {
       naturalSlideWidth={300}
       naturalSlideHeight={100}
       totalSlides={articles.length}
-      className="hidden lg:block"
+      className={`hidden lg:block ${borderStyle} border-b`}
     >
       <div className="flex">
         <ButtonBack className={`w-20 ${borderStyle} border-r`}>
