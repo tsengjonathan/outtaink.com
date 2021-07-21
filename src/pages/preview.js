@@ -3,15 +3,11 @@ import { withPreviewResolver } from 'gatsby-source-prismic';
 
 import linkResolver from '../../linkResolver';
 
-import Layout from '../components/layout';
-
-const PreviewPage = ({ isPreview, isLoading }) => {
+const PreviewPage = ({ isPreview }) => {
   if (isPreview === false) return 'Not a preview!';
 
   return (
-    <Layout>
-      <p>Loading</p>
-    </Layout>
+    <p>Loading</p>
   );
 };
 

@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ArticleCard from '../components/article-card';
 import Filter from '../components/filter';
 
 const Stories = ({ data, location }) => {
   const [filters, setFilters] = useState([]);
-
-  const siteTitle = data.site.siteMetadata.title;
 
   const allPosts = data.allPrismicArticle.edges;
 
@@ -26,7 +23,7 @@ const Stories = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <>
       <SEO title="Outtaink" />
       <Filter options={tags} filters={filters} handleFilter={handleFilter} />
       <div className="m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -35,7 +32,7 @@ const Stories = ({ data, location }) => {
           return <ArticleCard key={node.url} node={node} imgClass={imgClass} visible={visible} />
         })}
       </div>
-    </Layout>
+    </>
   )
 }
 
