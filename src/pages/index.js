@@ -54,7 +54,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allPrismicArticle(sort: { fields: data___date, order: DESC }) {
+    allPrismicArticle(
+      sort: {fields: data___date, order: DESC}
+      filter: {lang: {eq: "zh-tw"}}
+    ) {
       edges {
         node {
           url

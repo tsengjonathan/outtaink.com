@@ -10,6 +10,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             url
+            lang
             data {
               title {
                 text
@@ -42,6 +43,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: postTemplate,
       context: {
         url: node.url,
+        lang: node.lang,
         previous,
         next,
       },
