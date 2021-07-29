@@ -9,12 +9,12 @@ import Colon from '../../content/svg/colon.svg';
 
 function ArticleCard({ node, imgClass, visible = true }) {
   const data = node.data;
-  const title = data.title.text;
   const cover = data.cover;
 
-  const hoverEffect = 'transition duration-300 ease-in-out no-underline';
+  const interviewee = data.name;
+  const headline = data.title.text;
 
-  const [interviewee, headline] = title.split(/\s*[:：]\s*/);
+  const hoverEffect = 'transition duration-300 ease-in-out no-underline';
 
   const renderedExcerpt = sanitizeArticle(node.data.excerpt);
 

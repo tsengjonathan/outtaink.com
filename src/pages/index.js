@@ -64,6 +64,7 @@ export const pageQuery = graphql`
           data {
             excerpt
             date(formatString: "MMMM DD, YYYY")
+            name
             title {
               text
             }
