@@ -59,6 +59,7 @@ export const pageQuery = graphql`
             title {
               text
             }
+            name
             author {
               document {
                 ... on PrismicAuthor {
