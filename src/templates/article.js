@@ -17,8 +17,8 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
   
   const coverUrl = article.cover.url;
 
-  const title = article.title.text;
-  const [interviewee, headline] = title.split(/\s*[:：]\s*/);
+  const interviewee = article.name;
+  const headline = article.title.text;
 
   const {
     name,

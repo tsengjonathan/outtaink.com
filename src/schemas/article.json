@@ -1,5 +1,11 @@
 {
   "Main": {
+    "name": {
+      "type": "Text",
+      "config": {
+        "label": "Name"
+      }
+    },
     "title": {
       "type": "StructuredText",
       "config": {
@@ -64,12 +70,6 @@
     }
   },
   "Interviewee": {
-    "name": {
-      "type": "Text",
-      "config": {
-        "label": "Name"
-      }
-    },
     "bio_group" : {
       "type" : "Group",
       "config" : {

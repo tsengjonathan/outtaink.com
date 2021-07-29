@@ -7,10 +7,10 @@ import { sanitizeArticle } from '../../utils/sanitize';
 
 export default function FeaturedCard({ node, index }) {
   const data = node.data;
-  const title = data.title.text;
   const cover = data.cover;
 
-  const [interviewee, headline] = title.split(/\s*[:：]\s*/);
+  const interviewee = data.name;
+  const headline = data.title.text;
 
   const renderedExcerpt = sanitizeArticle(node.data.excerpt);
 
