@@ -1,8 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { withUnpublishedPreview } from 'gatsby-source-prismic';
+import {
+  withPrismicUnpublishedPreview,
+  componentResolverFromMap,
+} from 'gatsby-plugin-prismic-previews';
 
 import ArticleTemplate from '../templates/article';
+import linkResolver from '../../linkResolver';
 
 import SEO from '../components/seo';
 
@@ -17,11 +21,13 @@ const NotFoundPage = () => {
 };
 
 // If an unpublished `page` document is previewed, PageTemplate will be rendered.
-export default withUnpublishedPreview(NotFoundPage, {
-  templateMap: {
+export default withPrismicUnpublishedPreview(NotFoundPage, [{
+  repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
+  linkResolver,
+  componentResolver: componentResolverFromMap({
     article: ArticleTemplate,
-  },
-});
+  })
+}]);
 
 export const pageQuery = graphql`
   query {

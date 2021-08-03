@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Colon from '../../../content/svg/colon.svg';
 import { sanitizeArticle } from '../../utils/sanitize';
@@ -18,10 +18,10 @@ export default function FeaturedCard({ node, index }) {
     <Link to={node.url}>
       <div className="relative h-full">
         <div className="h-full">
-          <Img
+          <GatsbyImage
             className="h-full featured-img"
             imgStyle={{ 'objectFit': 'contain', 'objectPosition': 'right' }}
-            fluid={cover.fluid}
+            image={cover.gatsbyImageData}
           />
         </div>
         <div className="flex flex-col h-full w-2/5 absolute top-0 left-16 justify-center z-10">

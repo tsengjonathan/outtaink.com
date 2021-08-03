@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { CSSTransition } from 'react-transition-group';
 
 import { sanitizeArticle } from '../utils/sanitize';
@@ -20,9 +20,9 @@ function ArticleCard({ node, imgClass, visible = true }) {
 
   const coverImage = cover ? (
     <div className="bg-black">
-      <Img
+      <GatsbyImage
         className={`mb-4 article-card-img ${imgClass} ${hoverEffect}`}
-        fluid={cover.fluid}
+        image={cover.gatsbyImageData}
       />
     </div>
   ) : null;
