@@ -71,18 +71,20 @@ export const pageQuery = graphql`
                   data {
                     name
                     image {
-                      fixed(width: 24) {
-                        ...GatsbyPrismicImageFixed
-                      }
+                      gatsbyImageData(
+                        layout: FIXED
+                        width: 24
+                      )
                     }
                   }
                 }
               }
             }
             cover {
-              fluid(maxWidth: 800) {
-                ...GatsbyPrismicImageFluid
-              }
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                width: 800
+              )
             }
           }
         }

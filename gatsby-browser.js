@@ -1,6 +1,7 @@
 // custom typefaces
 import * as React from 'react';
-import { PreviewStoreProvider } from 'gatsby-source-prismic';
+import { PrismicPreviewProvider } from 'gatsby-plugin-prismic-previews';
+import 'gatsby-plugin-prismic-previews/dist/styles.css'
 
 import '@fontsource/noto-sans-tc/300.css';
 import '@fontsource/noto-sans-tc/400.css';
@@ -37,5 +38,5 @@ export function onRouteUpdate() {
 }
 
 export const wrapRootElement = ({ element }) => (
-  <PreviewStoreProvider>{element}</PreviewStoreProvider>
+  <PrismicPreviewProvider>{element}</PrismicPreviewProvider>
 );

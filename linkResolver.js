@@ -1,1 +1,1 @@
-module.exports = ({ node, key, value }) => post => `/${post.uid}`;
+module.exports = post => `/${post.uid}`;

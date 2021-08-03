@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { withPreview } from 'gatsby-source-prismic';
+import { withPrismicPreviewResolver } from 'gatsby-plugin-prismic-previews'
 
 import SEO from '../components/seo';
 import Interviewee from '../components/interviewee';
@@ -8,6 +8,7 @@ import Interviewee from '../components/interviewee';
 import Colon from '../../content/svg/colon.svg';
 
 import { sanitizeArticle } from '../utils/sanitize';
+import linkResolver from '../../linkResolver';
 
 const ArticleTemplate = ({ data }) => {
   const article = data.prismicArticle.data;
@@ -61,7 +62,10 @@ const ArticleTemplate = ({ data }) => {
   );
 };
 
-export default withPreview(ArticleTemplate);
+export default withPrismicPreviewResolver(ArticleTemplate, [{
+  repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
+  linkResolver,
+}]);
 
 export const pageQuery = graphql`
   query ArticleBySlug($url: String!) {
@@ -87,9 +91,9 @@ export const pageQuery = graphql`
               data {
                 name
                 image {
-                  fixed(width: 24) {
-                    ...GatsbyPrismicImageFixed
-                  }
+                  gatsbyImageData(
+                    width: 24
+                  )
                 }
               }
             }
