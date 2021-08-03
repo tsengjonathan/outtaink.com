@@ -55,5 +55,6 @@ module.exports = {
         component: require.resolve(`./src/components/layout.js`),
       },
     },
+    `gatsby-plugin-image`
   ],
 };
