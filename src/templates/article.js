@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { withPreview } from 'gatsby-source-prismic';
 
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Interviewee from '../components/interviewee';
 
@@ -10,9 +9,8 @@ import Colon from '../../content/svg/colon.svg';
 
 import { sanitizeArticle } from '../utils/sanitize';
 
-const ArticleTemplate = ({ data, pageContext, location }) => {
+const ArticleTemplate = ({ data }) => {
   const article = data.prismicArticle.data;
-  const siteTitle = data.site.siteMetadata.title;
   const author = article.author.document.data.name;
   
   const coverUrl = article.cover.url;
@@ -29,7 +27,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
   const renderedHTML = sanitizeArticle(article.body.html);
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <>
       <SEO title={article.title.text} description={article.excerpt} image={coverUrl} />
       <div className="grid grid-cols-1 lg:grid-cols-article mx-4 lg:mx-40 lg:my-20">
         <article id="article">
@@ -59,7 +57,7 @@ const ArticleTemplate = ({ data, pageContext, location }) => {
         </article>
         <Interviewee name={name} bio={bio} links={links} />
       </div>
-    </Layout>
+    </>
   );
 };
 

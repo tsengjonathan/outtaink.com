@@ -1,16 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ArticleCard from '../components/article-card';
-import Newsletter from '../components/newsletter';
 import Featured from '../components/featured';
 
 import '../styles/index.css';
 
-const ArticleIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title;
+const ArticleIndex = ({ data }) => {
   const posts = data.allPrismicArticle.edges;
 
   const featuredArticles = posts.slice(0, 3);
@@ -21,7 +18,7 @@ const ArticleIndex = ({ data, location }) => {
   const rightArticles = remainingArticles.slice(midPoint, posts.length);
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <>
       <SEO title="Outtaink" />
       <Featured articles={featuredArticles} />
       <div className="my-8 mx-4 lg:mx-10 flex flex-col lg:flex-row">
@@ -41,7 +38,7 @@ const ArticleIndex = ({ data, location }) => {
           ))}
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
