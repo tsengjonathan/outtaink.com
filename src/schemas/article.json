@@ -60,24 +60,17 @@
       "config": {
         "label": "Excerpt"
       }
-    },
-    "interviewee": {
-      "type": "Link",
-      "config": {
-        "select": "document",
-        "label": "Interviewee"
-      }
     }
   },
   "Interviewee": {
-    "bio_group" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "text" : {
-            "type" : "Text",
-            "config" : {
-              "label" : "text"
+    "bio_group": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "text": {
+            "type": "Text",
+            "config": {
+              "label": "text"
             }
           }
         },
@@ -89,6 +82,21 @@
       "config": {
         "multi": "paragraph,preformatted,strong,em,hyperlink,embed,list-item,o-list-item,rtl",
         "label": "Links"
+      }
+    }
+  },
+  "Deprecated": {
+    "bio": {
+      "type": "Text",
+      "config": {
+        "label": "Bio"
+      }
+    },
+    "interviewee": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "label": "Interviewee"
       }
     }
   }

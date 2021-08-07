@@ -3,9 +3,7 @@ import { withPrismicPreviewResolver } from 'gatsby-plugin-prismic-previews';
 
 import linkResolver from '../../linkResolver';
 
-const PreviewPage = ({ isPreview }) => {
-  if (isPreview === false) return 'Not a preview!';
-
+const PreviewPage = () => {
   return (
     <p>Loading</p>
   );

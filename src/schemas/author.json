@@ -12,6 +12,18 @@
         "label": "Name"
       }
     },
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title"
+      }
+    },
+    "joined": {
+      "type": "Date",
+      "config": {
+        "label": "Joined"
+      }
+    },
     "image": {
       "type": "Image",
       "config": {

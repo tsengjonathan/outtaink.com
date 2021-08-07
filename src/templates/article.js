@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { withPrismicPreviewResolver } from 'gatsby-plugin-prismic-previews'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
 import SEO from '../components/seo';
 import Interviewee from '../components/interviewee';
@@ -62,7 +62,7 @@ const ArticleTemplate = ({ data }) => {
   );
 };
 
-export default withPrismicPreviewResolver(ArticleTemplate, [{
+export default withPrismicPreview(ArticleTemplate, [{
   repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
   linkResolver,
 }]);
