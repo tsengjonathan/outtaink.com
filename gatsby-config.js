@@ -32,6 +32,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-prismic-previews',
+      options: {
+        repositoryName: `${process.env.GATSBY_PRISMIC_REPOSITORY_NAME}`,
+        accessToken: `${process.env.API_KEY}`,
+      },
+    },
     `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-react-svg',
