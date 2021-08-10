@@ -67,6 +67,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
       ].concat(meta)}
     >
       <script async defer data-domain="outtaink.com" src="https://plausible.io/js/plausible.js"></script>
+      <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-61866.js"></script>
     </Helmet>
   );
 };
