@@ -22,6 +22,7 @@ module.exports = {
           800: '#cce3e2',
           900: '#e5f1f0',
         },
+        border: '#656565',
       },
       minHeight: {
         20: '5rem',
@@ -31,10 +32,17 @@ module.exports = {
         en: ['Gopher', ...defaultTheme.fontFamily.sans],
         zh: ['Noto Sans TC', ...defaultTheme.fontFamily.sans],
         mixed: ['Gopher', 'Noto Sans TC', ...defaultTheme.fontFamily.sans],
+        hand: ['lihsianti', ...defaultTheme.fontFamily.sans]
       },
       height: {
         'mobile-nav': 'calc(100% - 3.5rem)',
       },
+      boxShadow: {
+        heading: '8px 8px #B2D5D3'
+      },
+      letterSpacing: {
+        'lihsianti': '-.125em'
+      }
     },
   },
   variants: {
