@@ -8,7 +8,7 @@ import MobileNavOpen from '../../../content/svg/mobile-nav-open.svg';
 const navs = [
   { name: '無墨精選集', subname: 'Featured', src: '/' },
   { name: '他們的故事', subname: 'Stories', src: '/stories' },
-  { name: '關於', subname: 'About', src: '/' },
+  { name: '關於', subname: 'About', src: '/about' },
 ];
 
 export default function Header() {
