@@ -22,6 +22,7 @@ export default function FeaturedCard({ node, index }) {
             className="h-full featured-img"
             imgStyle={{ 'objectFit': 'contain', 'objectPosition': 'right' }}
             image={cover.gatsbyImageData}
+            alt="Cover"
           />
         </div>
         <div className="flex flex-col h-full w-2/5 absolute top-0 left-16 justify-center z-10">

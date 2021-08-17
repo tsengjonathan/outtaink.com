@@ -23,6 +23,7 @@ function ArticleCard({ node, imgClass, visible = true }) {
       <GatsbyImage
         className={`mb-4 article-card-img ${imgClass} ${hoverEffect}`}
         image={cover.gatsbyImageData}
+        alt="Article Cover"
       />
     </div>
   ) : null;
