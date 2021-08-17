@@ -8,7 +8,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, withPrefix } from 'gatsby';
 
 const SEO = ({ description, lang, meta, title, image }) => {
   const { site } = useStaticQuery(
@@ -67,7 +67,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
       ].concat(meta)}
     >
       <script async defer data-domain="outtaink.com" src="https://plausible.io/js/plausible.js"></script>
-      <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-61866.js"></script>
+      <script type="text/javascript" src={withPrefix('justfont.js')}></script>
     </Helmet>
   );
 };
