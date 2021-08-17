@@ -1,37 +1,104 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image'
+import { graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
+import { PrismicAboutUsPage, PrismicAuthorDataType, PrismicLinkType } from '../../graphql';
 import Heading from '../components/Heading'
 
-const About = ({ data }) => {
-  const {
-    allInstaNode: instagramPosts
-  } = data
+const isAuthor = (data: any): data is PrismicAuthorDataType => {
+  return (data as PrismicAuthorDataType).illustration !== undefined
+}
 
-  const instagramPostCount = instagramPosts.edges.length;
-  
-  console.log(instagramPostCount)
+const renderIllustration = (link: PrismicLinkType) => {
+  const data = link.document.data
+  if (!isAuthor(data)) {
+    return null
+  }
+
+  const {
+    gatsbyImageData, alt
+  } = data.illustration
+  return <GatsbyImage image={gatsbyImageData} alt={alt} />
+}
+
+type AboutUsPageTypes = {
+  data: {
+    prismicAboutUsPage: PrismicAboutUsPage
+  }
+}
+
+const About = ({ data }: AboutUsPageTypes) => {
+  const {
+    header_image: headerImage,
+    chinese,
+    cofounders,
+    english,
+    members
+  } = data.prismicAboutUsPage.data
+
   return (
-    <div className="flex flex-col max-w-screen-lg mx-auto my-32">
-      <StaticImage
-        className="mx-auto mb-20"
-        src="../../content/assets/we_are_outtaink.webp"
-        alt="We Are Outtaink"
-        width={580}
-        layout="constrained"
-      />
+    <div className="flex flex-col max-w-screen-lg mx-auto my-32 p-8">
+      <GatsbyImage className="mx-auto mb-20" image={headerImage.gatsbyImageData} alt={headerImage.alt} />
       <p className="font-hand text-3xl tracking-lihsianti mb-10">
-        Outtaink is a community for students studying abroad to share their experiences as they embrace the challenges of living in a different culture. For people who have not lived abroad, the rite of passage and culture shock can bring a lot of fruitful stories that people are genuinely curious to learn more about. Outtaink is a platform for people to share these stories, and use this platform as a chance to related and reach out to those who are in similar positions.
+        {english}
       </p>
       <p className="font-hand text-3xl tracking-tight mb-20">
-        我們是一群漂泊異鄉的留學生，出國追夢的我們想與你們分享在國外我們所碰到，聽到，看到最真實的感受。通過這個平臺分享我們看到的世界，記錄留學生在海外的點點滴滴...
+        {chinese}
       </p>
-      <div className="mx-auto">
+      <div className="mx-auto mb-24">
         <Heading name="Meet the Team" />
+      </div>
+      <div className="flex flex-col lg:flex-row">
+        {cofounders.map(cofounder => renderIllustration(cofounder.cofounder))}
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
+        {members.map(member => renderIllustration(member.member))}
       </div>
     </div>
   )
 }
 
 export default About
+
+export const AboutUsPageQuery = graphql`
+  query {
+    prismicAboutUsPage {
+      data {
+        header_image {
+          alt
+          gatsbyImageData(width: 580)
+        }
+        chinese
+        cofounders {
+          cofounder {
+            document {
+              ... on PrismicAuthor {
+                data {
+                  illustration {
+                    alt
+                    gatsbyImageData
+                  }
+                }
+              }
+            }
+          }
+        }
+        english
+        members {
+          member {
+            document {
+              ... on PrismicAuthor {
+                data {
+                  illustration {
+                    alt
+                    gatsbyImageData
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
