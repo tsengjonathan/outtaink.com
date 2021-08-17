@@ -29,6 +29,7 @@ module.exports = {
         schemas: {
           article: require('./src/schemas/article.json'),
           author: require('./src/schemas/author.json'),
+          about_us_page: require('./src/schemas/about_us.json')
         },
       },
     },

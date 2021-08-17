@@ -31,6 +31,14 @@
         "thumbnails": [],
         "label": "Image"
       }
+    },
+    "illustration": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Illustration"
+      }
     }
   }
 }
