@@ -10,15 +10,20 @@ const isAuthor = (data: any): data is PrismicAuthorDataType => {
 }
 
 const renderIllustration = (link: PrismicLinkType) => {
-  const data = link.document.data
-  if (!isAuthor(data)) {
+  const document = link.document
+  if (!isAuthor(document.data)) {
     return null
   }
 
   const {
-    gatsbyImageData, alt
-  } = data.illustration
-  return <GatsbyImage image={gatsbyImageData} alt={alt} />
+    id,
+    data: {
+      illustration: {
+        gatsbyImageData, alt
+      }
+    }
+  } = document
+  return <GatsbyImage image={gatsbyImageData} alt={alt} key={id} />
 }
 
 type AboutUsPageTypes = {
@@ -73,6 +78,7 @@ export const AboutUsPageQuery = graphql`
           cofounder {
             document {
               ... on PrismicAuthor {
+                id
                 data {
                   illustration {
                     alt
@@ -88,6 +94,7 @@ export const AboutUsPageQuery = graphql`
           member {
             document {
               ... on PrismicAuthor {
+                id
                 data {
                   illustration {
                     alt
