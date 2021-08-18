@@ -29,6 +29,7 @@ module.exports = {
         schemas: {
           article: require('./src/schemas/article.json'),
           author: require('./src/schemas/author.json'),
+          about_us_page: require('./src/schemas/about_us.json')
         },
       },
     },
@@ -62,6 +63,13 @@ module.exports = {
         component: require.resolve(`./src/components/layout.js`),
       },
     },
-    `gatsby-plugin-image`
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./graphql.d.ts`
+      }
+    }
   ],
 };
