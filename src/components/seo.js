@@ -72,12 +72,6 @@ const SEO = ({ description, lang, meta, title, image }) => {
         data-domain="outtaink.com"
         src="https://plausible.io/js/plausible.js"
       ></script>
-      <script
-        async
-        defer
-        type="text/javascript"
-        src="https://d3gc6cgx8oosp4.cloudfront.net/js/stable/v/5.0.7/id/330895371788"
-      ></script>
     </Helmet>
   );
 };
