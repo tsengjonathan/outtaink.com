@@ -8,6 +8,7 @@ module.exports = {
       gridTemplateColumns: {
         sidebar: '5rem 1fr',
         article: '5fr 2fr',
+        featured: '45% 55%',
       },
       colors: {
         default: {
@@ -23,6 +24,7 @@ module.exports = {
           900: '#e5f1f0',
         },
         border: '#656565',
+        background: '#F3F3F3',
       },
       minHeight: {
         20: '5rem',

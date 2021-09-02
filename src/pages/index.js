@@ -3,30 +3,20 @@ import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import ArticleCard from '../components/article-card';
-import Featured from '../components/featured';
 
 import '../styles/index.css';
 
 const ArticleIndex = ({ data }) => {
   const posts = data.allPrismicArticle.edges;
 
-  const featuredArticles = posts.slice(0, 3);
-  const remainingArticles = posts.slice(3);
-
-  const midPoint = Math.floor(remainingArticles.length / 2);
-  const leftArticles = remainingArticles.slice(0, midPoint);
-  const rightArticles = remainingArticles.slice(midPoint, posts.length);
+  const midPoint = Math.floor(posts.length / 2);
+  const leftArticles = posts.slice(0, midPoint);
+  const rightArticles = posts.slice(midPoint, posts.length);
 
   return (
     <>
       <SEO title="Outtaink" />
-      <Featured articles={featuredArticles} />
       <div className="my-8 mx-4 lg:mx-10 flex flex-col lg:flex-row">
-        <div className="lg:hidden">
-          {featuredArticles.map(({ node }) => (
-            <ArticleCard key={node.url} node={node} />
-          ))}
-        </div>
         <div className="h-full lg:w-7/12 lg:mr-10">
           {leftArticles.map(({ node }) => (
             <ArticleCard key={node.url} node={node} />
