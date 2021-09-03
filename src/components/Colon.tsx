@@ -6,7 +6,7 @@ type ColonType = {
   className?: string
 }
 
-const Colon = ({ width = 12, className }: ColonType) => {
+const Colon = ({ width = 10, className }: ColonType) => {
   const classes = classnames("colon", className)
   return (
     <div className={classes}>

@@ -19,21 +19,22 @@ const Featured = ({ node }) => {
 
   // TODO: Replace SVG with @heroicons/react once https://github.com/tailwindlabs/heroicons/pull/281 is merged
   return (
-    <section className="flex max-w-screen-xl mx-auto grid grid-cols-featured">
+    <section className="flex max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-featured">
       <GatsbyImage
         image={cover.gatsbyImageData}
         alt="Featured Cover"
+        className="m-6 md:m-0 z-10"
       />
       <div className="flex flex-col">
-        <div className="h-16" />
-        <div className="bg-white">
-          <div className="h-full pt-40 pb-10 px-10">
+        <div className="hidden md:block h-16" />
+        <div className="bg-white mr-14 md:mr-0 transform -translate-y-10">
+          <div className="h-full mt-8 md:pt-40 pb-4 md:pb-10 px-6 md:px-10">
             <div className="flex items-center">
-              <h1 className="font-mixed text-2xl mr-2">{name}</h1>
+              <h1 className="font-mixed font-medium text-2xl mr-2">{name}</h1>
               <Colon />
             </div>
-            <h1 className="font-mixed text-2xl mt-1">{title}</h1>
-            <p className="font-mixed mt-10 font-light">{excerpt}</p>
+            <h1 className="font-mixed font-medium text-2xl mt-1">{title}</h1>
+            <p className="font-mixed mt-6 md:mt-10 font-light">{excerpt}</p>
             <div className="flex mt-6">
               <div className="flex-grow" />
               <Link className="flex" to={url}>
@@ -45,7 +46,7 @@ const Featured = ({ node }) => {
             </div>
           </div>
         </div>
-        <div className="h-16" />
+        <div className="hidden md:block h-16" />
       </div>
     </section>
   )
