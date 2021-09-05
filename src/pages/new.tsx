@@ -2,13 +2,15 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Featured from '../components/Featured'
+import Introduction from '../components/Introduction'
 
 const New = ({ data }) => {
-  const article = data.allPrismicArticle.edges[0]
+  const featuredArticle = data.allPrismicArticle.edges[0]
 
   return (
     <main className="bg-background">
-      <Featured node={article.node}/>
+      <Featured node={featuredArticle.node} />
+      <Introduction />
     </main>
   )
 }
