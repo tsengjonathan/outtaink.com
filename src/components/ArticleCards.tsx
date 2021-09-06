@@ -1,0 +1,14 @@
+import React from 'react'
+
+import ArticleCard from './ArticleCard'
+
+const ArticleCards = ({ articles }) => {
+
+  return (
+    <section className="column-2 cg-16 max-w-screen-xl mx-auto">
+      {articles.map(article => <ArticleCard node={article.node} />)}
+    </section>
+  )
+}
+
+export default ArticleCards

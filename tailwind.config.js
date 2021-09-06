@@ -30,6 +30,9 @@ module.exports = {
         20: '5rem',
         24: '6rem',
       },
+      maxHeight: {
+        112: '28rem',
+      },
       fontFamily: {
         en: ['Gopher', ...defaultTheme.fontFamily.sans],
         zh: ['Noto Sans TC', ...defaultTheme.fontFamily.sans],

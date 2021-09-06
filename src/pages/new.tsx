@@ -3,14 +3,17 @@ import { graphql } from 'gatsby'
 
 import Featured from '../components/Featured'
 import Introduction from '../components/Introduction'
+import ArticleCards from '../components/ArticleCards'
 
 const New = ({ data }) => {
   const featuredArticle = data.allPrismicArticle.edges[0]
+  const articles = data.allPrismicArticle.edges.slice(1)
 
   return (
     <main className="bg-background">
       <Featured node={featuredArticle.node} />
       <Introduction />
+      <ArticleCards articles={articles} />
     </main>
   )
 }
