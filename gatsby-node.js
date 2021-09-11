@@ -6,7 +6,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Query Prismic data
   const result = await graphql(`
     {
-      allPrismicArticle(sort: { fields: data___date, order: DESC }) {
+      allPrismicArticle(
+        sort: { fields: data___date, order: DESC }
+        filter: { lang: { eq: "zh-tw" } }
+      ) {
         edges {
           node {
             url
