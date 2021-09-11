@@ -18,6 +18,7 @@
     "@types/react-transition-group": "^4.4.2",
     "babel-preset-gatsby": "^1.11.0",
     "classnames": "^2.3.1",
+    "daisyui": "^1.14.0",
     "gatsby": "^3.11.0",
     "gatsby-plugin-feed": "^3.11.0",
     "gatsby-plugin-graphql-codegen": "^3.0.0",
