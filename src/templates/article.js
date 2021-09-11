@@ -74,7 +74,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    prismicArticle(url: { eq: $url }) {
+    prismicArticle(url: {eq: $url}, lang: {eq: "zh-tw"}) {
       url
       data {
         excerpt
