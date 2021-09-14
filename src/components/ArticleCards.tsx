@@ -5,7 +5,7 @@ import ArticleCard from './ArticleCard'
 const ArticleCards = ({ articles }) => {
 
   return (
-    <section className="column-2 cg-16 max-w-screen-xl mx-auto">
+    <section className="column-1 md:column-2 cg-16 max-w-screen-page mx-auto">
       {articles.map(article => <ArticleCard node={article.node} />)}
     </section>
   )

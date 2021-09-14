@@ -47,6 +47,9 @@ module.exports = {
       },
       letterSpacing: {
         'lihsianti': '-.125em'
+      },
+      screens: {
+        page: '1200px'
       }
     },
   },

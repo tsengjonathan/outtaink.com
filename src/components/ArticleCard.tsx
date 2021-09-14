@@ -22,7 +22,6 @@ const ArticleCard = ({ node }) => {
         <GatsbyImage
           image={cover.gatsbyImageData}
           alt={name}
-          className="max-h-112"
         />
         <div className="mt-4">
           <div className="flex items-center">
