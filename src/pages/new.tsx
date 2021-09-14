@@ -37,6 +37,7 @@ export const pageQuery = graphql`
     allPrismicArticle(
       sort: {fields: data___date, order: DESC}
       filter: {lang: {eq: "zh-tw"}}
+      limit: 10
     ) {
       edges {
         node {

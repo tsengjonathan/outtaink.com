@@ -5,7 +5,7 @@ import { navs } from './Navigation'
 
 const Drawer = ({ children, toggleId }) => {
   return (
-    <div className="drawer">
+    <div className="drawer drawer-end">
       <input id={toggleId} type="checkbox" className="drawer-toggle"/> 
       <div className="drawer-content">
         { children }
