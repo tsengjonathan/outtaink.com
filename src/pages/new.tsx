@@ -4,16 +4,23 @@ import { graphql } from 'gatsby'
 import Featured from '../components/Featured'
 import Introduction from '../components/Introduction'
 import ArticleCards from '../components/ArticleCards'
+import Navigation from '../components/Navigation'
+import Drawer from '../components/Drawer'
 
 const New = ({ data }) => {
   const featuredArticle = data.allPrismicArticle.edges[0]
   const articles = data.allPrismicArticle.edges.slice(1)
 
+  const drawerToggleId = 'drawer-toggle'
+
   return (
     <main className="bg-background">
-      <Featured node={featuredArticle.node} />
-      <Introduction />
-      <ArticleCards articles={articles} />
+      <Drawer toggleId={drawerToggleId}>
+        <Navigation drawerToggleId={drawerToggleId} />
+        <Featured node={featuredArticle.node} />
+        <Introduction />
+        <ArticleCards articles={articles} />
+      </Drawer>
     </main>
   )
 }

@@ -19,7 +19,7 @@ const Featured = ({ node }) => {
 
   // TODO: Replace SVG with @heroicons/react once https://github.com/tailwindlabs/heroicons/pull/281 is merged
   return (
-    <section className="flex max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-featured">
+    <section className="flex max-w-screen-page mx-auto grid grid-cols-1 md:grid-cols-featured">
       <GatsbyImage
         image={cover.gatsbyImageData}
         alt="Featured Cover"
