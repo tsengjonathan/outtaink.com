@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import { navs } from './Navigation'
+import NavigationItem from './NavigationItem'
 
 const Drawer = ({ children, toggleId }) => {
   return (
@@ -15,9 +15,7 @@ const Drawer = ({ children, toggleId }) => {
         <ul className="menu w-80 bg-white py-6">
           {navs.map(nav => (
             <li>
-              <Link to={nav.src}>
-                <span className="mx-auto font-zh text-xl">{nav.name}</span>
-              </Link>
+              <NavigationItem to={nav.src} text={nav.name} hoverText={nav.subname} />
             </li>
           ))}
         </ul>
