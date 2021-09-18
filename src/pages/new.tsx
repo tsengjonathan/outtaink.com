@@ -6,6 +6,7 @@ import Introduction from '../components/Introduction'
 import ArticleCards from '../components/ArticleCards'
 import Navigation from '../components/Navigation'
 import Drawer from '../components/Drawer'
+import StickyNavigation from '../components/StickyNavigation'
 
 const New = ({ data }) => {
   const featuredArticle = data.allPrismicArticle.edges[0]
@@ -16,6 +17,7 @@ const New = ({ data }) => {
   return (
     <main className="bg-background">
       <Drawer toggleId={drawerToggleId}>
+        <StickyNavigation />
         <Navigation drawerToggleId={drawerToggleId} />
         <Featured node={featuredArticle.node} />
         <Introduction />
