@@ -13,7 +13,7 @@ export const navs = [
 const Navigation = ({ drawerToggleId }) => {
   return (
     <div className="max-w-screen-page mx-auto py-7 flex items-center justify-between">
-      <SearchButton />
+      <SearchButton className="tooltip-right" />
       <Logo />
       <DrawerButton toggleId={drawerToggleId} />
     </div>
