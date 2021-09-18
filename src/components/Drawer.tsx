@@ -21,7 +21,7 @@ const Drawer = ({ children, toggleId, scrollRef }: DrawerType) => {
         <ul className="menu w-80 bg-white py-6">
           {navs.map(nav => (
             <li>
-              <NavigationItem to={nav.src} text={nav.name} hoverText={nav.subname} />
+              <NavigationItem to={nav.src} text={nav.name} hoverText={nav.subname} className="mx-auto my-4" />
             </li>
           ))}
         </ul>
