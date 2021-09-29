@@ -5,7 +5,7 @@ import Featured from '../components/Featured'
 import Introduction from '../components/Introduction'
 import ArticleCards from '../components/ArticleCards'
 
-const New = ({ data }) => {
+const LandingPage = ({ data }) => {
 
   const featuredArticle = data.allPrismicArticle.edges[0]
   const articles = data.allPrismicArticle.edges.slice(1)
@@ -19,7 +19,7 @@ const New = ({ data }) => {
   )
 }
 
-export default New
+export default LandingPage
 
 export const pageQuery = graphql`
   query {

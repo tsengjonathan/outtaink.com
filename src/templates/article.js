@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
-import SEO from '../components/seo';
+import SEO from '../components/SEO';
 import Interviewee from '../components/interviewee';
 
 import Colon from '../../content/svg/colon.svg';
