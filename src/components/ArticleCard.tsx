@@ -17,7 +17,7 @@ const ArticleCard = ({ node }) => {
   } = node
 
   return (
-    <div className="bg-white p-4 mb-10 break-inside-avoid">
+    <div className="bg-white p-4 mx-6 mt-6 mb-10 break-inside-avoid">
       <Link to={url}>
         <GatsbyImage
           image={cover.gatsbyImageData}

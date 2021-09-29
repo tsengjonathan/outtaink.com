@@ -8,6 +8,7 @@ import ArticleCards from '../components/ArticleCards'
 import Navigation from '../components/Navigation'
 import Drawer from '../components/Drawer'
 import StickyNavigation from '../components/StickyNavigation'
+import Footer from '../components/footer'
 
 const New = ({ data }) => {
   const scrollRef = useRef(null)
@@ -26,6 +27,7 @@ const New = ({ data }) => {
         <Featured node={featuredArticle.node} />
         <Introduction />
         <ArticleCards articles={articles} />
+        <Footer />
       </Drawer>
     </main>
   )
