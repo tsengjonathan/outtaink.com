@@ -12,7 +12,7 @@ const ArrowCircleDownIcon = () => (
 const Introduction = () => {
   return (
     <section className="bg-default-200 py-10 my-0 md:my-12">
-      <div className="flex flex-col items-center max-w-screen-md mx-6 md:mx-auto">
+      <div className="flex flex-col items-start md:items-center max-w-screen-md mx-6 md:mx-auto">
         <div className="flex items-center">
           <ArrowCircleDownIcon />
           <h1 className="text-white text-xl font-en font-bold tracking-tight w-4/5 md:w-full">A Voice for Students Studying Abroad</h1>

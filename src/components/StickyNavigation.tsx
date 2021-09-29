@@ -18,7 +18,7 @@ const StickyNavigation = ({ className, isVisible = false }: StickyNavigationType
     transition,
     { '-translate-y-16': !isVisible },
     { 'translate-y-0': isVisible },
-    'h-16 bg-white px-14 flex items-center justify-between fixed w-full z-20'
+    'h-16 bg-white px-14 hidden md:flex items-center justify-between fixed w-full z-20'
   )
   return (
     <div className={classes}>
