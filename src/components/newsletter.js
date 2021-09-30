@@ -6,8 +6,8 @@ function encode(data) {
     .join('&');
 }
 
-export default function Newsletter({ footer = false }) {
-  const borderStyle = `border-0 border-solid ${footer ? 'border-white' : 'border-b border-black'}`;
+export default function Newsletter() {
+  const borderStyle = 'border-0 border-solid border-white';
 
   const [state, setState] = useState({ email: '' });
   const { email } = state;
@@ -32,12 +32,12 @@ export default function Newsletter({ footer = false }) {
   };
 
   return (
-    <div className={`flex min-h-24 ${footer ? null : 'lg:border-t'} ${borderStyle}`}>
-      <div className={`flex flex-1 flex-col justify-center text-sm w-full ${footer ? null : 'my-4 items-center'}`}>
-        <p className={`m-0 font-mixed font-medium tracking-widest ${footer ? 'text-white text-lg' : null}`}>
+    <div className={`flex min-h-24 ${borderStyle}`}>
+      <div className="flex flex-1 flex-col justify-center text-sm w-full">
+        <p className="m-0 font-mixed md:font-medium tracking-wider text-white text-lg">
           加入我們的 Newsletter List 一起發現更多最新故事吧！
         </p>
-        <div className={`w-full flex ${footer ? 'lg:w-4/5 my-4' : 'lg:w-1/3 px-4'}`}>
+        <div className="w-full flex lg:w-4/5 my-4">
           <form
             name="email"
             method="post"
@@ -57,7 +57,7 @@ export default function Newsletter({ footer = false }) {
             />
             <button
               type="submit"
-              className={`border-0 cursor-pointer font-en tracking-widest bg-transparent ${footer ? 'text-white' : null}`}
+              className="border-0 cursor-pointer font-en tracking-widest bg-transparent text-white"
             >
               JOIN
             </button>

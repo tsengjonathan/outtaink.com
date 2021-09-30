@@ -4,7 +4,7 @@ import { useScroll } from 'react-use'
 import Navigation from './Navigation'
 import Drawer from './Drawer'
 import StickyNavigation from './StickyNavigation'
-import Footer from './footer'
+import Footer from './Footer'
 
 const Layout = ({ children }) => {
   const scrollRef = useRef(null)
