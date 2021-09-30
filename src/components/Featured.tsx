@@ -26,7 +26,7 @@ const Featured = ({ node }) => {
         className="m-6 md:m-0 z-10"
       />
       <div className="flex flex-col">
-        <div className="hidden md:block h-16" />
+        <div className="hidden md:block h-32" />
         <div className="bg-white mr-14 md:mr-0 transform -translate-y-10 -mb-10 md:mb-0">
           <div className="h-full mt-8 md:pt-40 pb-4 md:pb-10 px-6 md:pl-10 md:pr-16">
             <div className="flex items-center">
@@ -34,10 +34,10 @@ const Featured = ({ node }) => {
               <Colon />
             </div>
             <h1 className="font-mixed font-medium text-3xl mt-1">{title}</h1>
-            <p className="font-mixed mt-6 md:mt-10 font-light text-lg">{excerpt}</p>
+            <p className="font-mixed mt-6 md:mt-10 font-light text-xl">{excerpt}</p>
             <div className="flex mt-6">
               <div className="flex-grow" />
-              <LearnMore className="text-lg" url={url} text="了解更多" />
+              <LearnMore className="text-xl text-black" url={url} text="了解更多" />
             </div>
           </div>
         </div>

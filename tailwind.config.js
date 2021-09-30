@@ -8,7 +8,7 @@ module.exports = {
       gridTemplateColumns: {
         sidebar: '5rem 1fr',
         article: '5fr 2fr',
-        featured: '45% 55%',
+        featured: '55% 45%',
       },
       colors: {
         default: {
@@ -49,7 +49,7 @@ module.exports = {
         'lihsianti': '-.125em'
       },
       screens: {
-        page: '1200px'
+        page: '1272px'
       }
     },
   },

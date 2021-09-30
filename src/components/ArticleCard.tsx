@@ -17,12 +17,12 @@ const ArticleCard = ({ node }) => {
   } = node
 
   return (
-    <div className="bg-white p-4 m-6 md:mb-10 break-inside-avoid">
+    <div className="bg-white p-4 mx-6 mb-6 md:mb-10 break-inside-avoid">
       <Link to={url}>
         <GatsbyImage
           image={cover.gatsbyImageData}
           alt={name}
-          className="max-h-112"
+          // className="max-h-112"
         />
         <div className="mt-4">
           <div className="flex items-center">
