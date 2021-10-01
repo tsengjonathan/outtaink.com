@@ -20,20 +20,20 @@ const Footer = () => {
             <h3 className="font-en text-white font-bold text-lg">
               Let us hear your stories, keep your memories on Outtaink
             </h3>
-            <p className="font-zh text-white font-light my-4">
+            <p className="font-zh text-white text-lg font-light my-4">
               你也想讓自己的故事影響更多留學生嗎？來找我們聊聊吧！你有故事，我有筆。你的坎坷、你的蛻變、你的經歷、你的成長，請讓我陪你一同記錄。
             </p>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row border-0 border-t-2 border-white border-solid text-white lg:text-sm font-en py-8 items-center">
           <div className="flex flex-col lg:flex-row lg:w-1/2">
-            <Link className="flex mt-2 lg:mr-14 mx-auto lg:mx-0 text-lg" to="/">
+            <Link className="flex mt-2 lg:mr-16 mx-auto lg:mx-0" to="/">
               Terms of Service
             </Link>
-            <Link className="flex mt-2 lg:mr-14 mx-auto lg:mx-0 text-lg" to="/">
+            <Link className="flex mt-2 lg:mr-16 mx-auto lg:mx-0" to="/">
               Privacy Statement
             </Link>
-            <Link className="flex mt-2 lg:mr-14 mx-auto lg:mx-0 text-lg" to="/">
+            <Link className="flex mt-2 lg:mr-16 mx-auto lg:mx-0" to="/">
               Copyright Notice
             </Link>
           </div>

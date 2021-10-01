@@ -22,7 +22,7 @@ const StickyNavigation = ({ className, isVisible = false }: StickyNavigationType
   )
   return (
     <div className={classes}>
-      <div className="flex">
+      <div className="flex items-center">
         <Logo className="mr-6" />
         {navs.map(nav => <NavigationItem className="mx-6" to={nav.src} text={nav.name} hoverText={nav.subname} fontSize="lg" />)}
       </div>
