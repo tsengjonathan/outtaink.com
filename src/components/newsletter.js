@@ -50,7 +50,7 @@ export default function Newsletter() {
             <input
               type="email"
               name="email"
-              className="flex-1 py-2 border-0 focus:outline-none font-en tracking-widest bg-transparent"
+              className="flex-1 py-2 border-0 focus:outline-none font-en tracking-widest bg-transparent text-white"
               placeholder="Your email"
               value={email}
               onChange={handleChange}

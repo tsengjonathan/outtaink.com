@@ -22,14 +22,13 @@ const ArticleCard = ({ node }) => {
         <GatsbyImage
           image={cover.gatsbyImageData}
           alt={name}
-          // className="max-h-112"
         />
-        <div className="mt-4">
+        <div className="mt-3 md:mt-4">
           <div className="flex items-center">
-            <h1 className="font-mixed font-medium text-2xl mr-2">{name}</h1>
-            <Colon />
+            <h1 className="font-mixed font-medium text-xl md:text-2xl mr-2">{name}</h1>
+            <Colon width={8} />
           </div>
-          <h1 className="font-mixed font-medium text-xl mt-1">{title}</h1>
+          <h1 className="font-mixed font-medium text-lg md:text-xl mt-1">{title}</h1>
         </div>
       </Link>
     </div>
