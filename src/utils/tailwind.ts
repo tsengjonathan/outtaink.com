@@ -11,3 +11,13 @@ export const getFontSize = (type: Size) => {
   }
   return mapping[type]
 }
+
+export type Color = 'black' | 'white'
+
+export const getTextColor = (type: Color) => {
+  const mapping = {
+    'black': 'text-black',
+    'white': 'text-white',
+  }
+  return mapping[type]
+}
