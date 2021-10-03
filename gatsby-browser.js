@@ -12,6 +12,7 @@ import 'prismjs/themes/prism.css';
 
 import './src/styles/tailwind.css';
 import './src/styles/global.css';
+import './src/styles/index.css'
 
 import 'pure-react-carousel/dist/react-carousel.es.css';
 

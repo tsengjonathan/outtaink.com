@@ -111,3 +111,40 @@
   0% { opacity: 1; }
   100% { opacity: 0; } 
 } 
+
+.hover-text {
+  padding: .75rem 0;
+}
+
+.menu li > a {
+  padding: 0;
+}
+
+.down-enter-active { animation: 1s down-enter; }
+.down-leave-active { animation: 1s down-leave; }
+
+@keyframes down-enter {
+  0% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0); }
+}
+
+@keyframes down-leave {
+  0% { clip-path: inset(0); }
+  100% { clip-path: inset(0 0 0 100%); }
+}
+
+.nav-item-covered {
+  clip-path: inset(0);
+}
+
+.nav-item-uncovered {
+  clip-path: inset(0 0 0 100%);
+}
+
+.transition-clip-path {
+  transition: 0.3s ease clip-path;
+}
+
+.highlight {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 75%, #cce3e2 25%)
+}

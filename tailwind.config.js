@@ -8,6 +8,7 @@ module.exports = {
       gridTemplateColumns: {
         sidebar: '5rem 1fr',
         article: '5fr 2fr',
+        featured: '55% 45%',
       },
       colors: {
         default: {
@@ -23,10 +24,14 @@ module.exports = {
           900: '#e5f1f0',
         },
         border: '#656565',
+        background: '#F3F3F3',
       },
       minHeight: {
         20: '5rem',
         24: '6rem',
+      },
+      maxHeight: {
+        112: '28rem',
       },
       fontFamily: {
         en: ['Gopher', ...defaultTheme.fontFamily.sans],
@@ -42,11 +47,19 @@ module.exports = {
       },
       letterSpacing: {
         'lihsianti': '-.125em'
+      },
+      screens: {
+        page: '1272px'
       }
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
+  daisyui: {
+    base: false,
+  },
 };

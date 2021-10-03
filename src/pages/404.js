@@ -8,7 +8,7 @@ import {
 import ArticleTemplate from '../templates/article';
 import linkResolver from '../../linkResolver';
 
-import SEO from '../components/seo';
+import SEO from '../components/SEO';
 
 const NotFoundPage = () => {
   return (
