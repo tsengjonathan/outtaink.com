@@ -30,7 +30,7 @@ const ArticleTemplate = ({ data }) => {
   return (
     <>
       <SEO title={article.title.text} description={article.excerpt} image={coverUrl} />
-      <div className="grid grid-cols-1 lg:grid-cols-article mx-4 lg:mx-40 lg:my-20">
+      <div className="grid grid-cols-1 lg:grid-cols-article mx-4 lg:mx-40">
         <article id="article">
           <header>
             <div className="mt-6 mb-2 flex items-center">
