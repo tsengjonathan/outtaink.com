@@ -1,4 +1,4 @@
-import React, { ReactNode, RefObject } from 'react'
+import React, { MutableRefObject, ReactNode } from 'react'
 
 import { navs } from './Navigation'
 import NavigationItem from './NavigationItem'
@@ -6,14 +6,15 @@ import NavigationItem from './NavigationItem'
 type DrawerType = {
   children: ReactNode[]
   toggleId: string
-  scrollRef?: RefObject<HTMLDivElement>
+  scrollRef?: MutableRefObject<HTMLDivElement>
+  onScroll?: () => void
 }
 
-const Drawer = ({ children, toggleId, scrollRef }: DrawerType) => {
+const Drawer = ({ children, toggleId, scrollRef, onScroll }: DrawerType) => {
   return (
     <div className="drawer drawer-end">
       <input id={toggleId} type="checkbox" className="drawer-toggle"/> 
-      <div className="drawer-content" ref={scrollRef}>
+      <div className="drawer-content" ref={scrollRef} onScroll={onScroll}>
         { children }
       </div>
       <div className="drawer-side">
