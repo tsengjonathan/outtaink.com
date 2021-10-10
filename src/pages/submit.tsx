@@ -10,6 +10,7 @@ const SubmitPage = () => {
         className="flex justify-center filter drop-shadow-lg"
         height={720} width={1080}
         id={formId}
+        inlineOnMobile={true}
       />
     </div>
   )
