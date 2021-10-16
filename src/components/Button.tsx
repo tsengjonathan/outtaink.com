@@ -9,11 +9,12 @@ type ButtonProps = {
 
 const Button = ({ text, selected = false, onClick }: ButtonProps) => {
     const classes = classNames(
-      'm1 py-1 px-4',
+      'mt-1 mx-4 py-1 px-1',
       'text-lg text-gray-400',
       'cursor-pointer',
-      'transition-colors hover:text-default-50',
-      { 'underline text-default-50': selected },
+      'border-b border-transparent',
+      'transition-colors hover:text-default-200',
+      { 'border-black text-default-200': selected },
     )
 
     return (
