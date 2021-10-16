@@ -8,6 +8,7 @@ export const navs = [
   { name: '無墨精選集', subname: 'FEATURED', src: '/' },
   { name: '他們的故事', subname: 'STORIES', src: '/stories' },
   { name: '關於', subname: 'ABOUT', src: '/about' },
+  { name: '投稿', subname: 'SURVEY', src: '/survey' },
 ];
 
 const Navigation = ({ drawerToggleId }) => {
