@@ -1,5 +1,6 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { useScroll } from 'react-use'
+import { useScrollRestoration } from 'gatsby-react-router-scroll'
 
 import Navigation from './Navigation'
 import Drawer from './Drawer'
@@ -7,14 +8,14 @@ import StickyNavigation from './StickyNavigation'
 import Footer from './Footer'
 
 const Layout = ({ children }) => {
-  const scrollRef = useRef(null)
-  const { y } = useScroll(scrollRef)
+  const { ref, onScroll } = useScrollRestoration<HTMLDivElement>(`page-component-drawer`)
+  const { y } = useScroll(ref)
 
   const drawerToggleId = 'drawer-toggle'
 
   return (
     <main className="bg-background h-full">
-      <Drawer toggleId={drawerToggleId} scrollRef={scrollRef}>
+      <Drawer toggleId={drawerToggleId} scrollRef={ref} onScroll={onScroll}>
         <StickyNavigation isVisible={y > 0} />
         <Navigation drawerToggleId={drawerToggleId} />
         { children }
