@@ -6,20 +6,19 @@ import ArticleCard from '../components/ArticleCard';
 import Filter from '../components/Filter';
 
 const Stories = ({ data }) => {
-  const [filters, setFilters] = useState([]);
+  const [filters, setFilters] = useState(new Set<string>());
 
   const allPosts = data.allPrismicArticle.edges;
 
-  const tags = allPosts.map(({node}) => node.tags).flat().filter((v, i, a) => a.indexOf(v) === i);
+  const tags: Set<string> = new Set(allPosts.map(({node}) => node.tags).flat())
 
-  const posts = allPosts.filter(({ node }) => node.tags.some(tag => filters.length === 0 || filters.includes(tag)))
+  const posts = allPosts.filter(({ node }) => node.tags.some((tag: string) => filters.size === 0 || filters.has(tag)))
 
-  const handleFilter = (option) => {
-    if (filters.includes(option)) {
-        setFilters(filters.slice().filter(filter => filter !== option))
-    } else {
-        setFilters([...filters, option])
-    }
+  const handleFilter = (option: string) => {
+    // Copy iterable to force state update
+    const newFilters = new Set(filters)
+    newFilters.has(option) ? newFilters.delete(option) : newFilters.add(option)
+    setFilters(newFilters)
   }
 
   return (
