@@ -11,6 +11,12 @@ type DrawerType = {
 }
 
 const Drawer = ({ children, toggleId, scrollRef, onScroll }: DrawerType) => {
+  const liOnClick = () => {
+    const inputElements = document && document.getElementsByTagName('input')
+    const toggle = inputElements.namedItem(toggleId)
+    toggle.checked = false
+  }
+
   return (
     <div className="drawer drawer-end">
       <input id={toggleId} type="checkbox" className="drawer-toggle"/> 
@@ -21,7 +27,7 @@ const Drawer = ({ children, toggleId, scrollRef, onScroll }: DrawerType) => {
         <label className="drawer-overlay" htmlFor={toggleId} />
         <ul className="menu w-80 bg-white py-6">
           {navs.map(nav => (
-            <li>
+            <li onClick={liOnClick}>
               <NavigationItem to={nav.src} text={nav.name} hoverText={nav.subname} className="mx-auto my-4" />
             </li>
           ))}
