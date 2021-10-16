@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
 import SEO from '../components/SEO';
-import ArticleCard from '../components/article-card';
+import ArticleCard from '../components/ArticleCard';
 import Filter from '../components/Filter';
 
-const Stories = ({ data, location }) => {
+const Stories = ({ data }) => {
   const [filters, setFilters] = useState([]);
 
   const allPosts = data.allPrismicArticle.edges;
 
   const tags = allPosts.map(({node}) => node.tags).flat().filter((v, i, a) => a.indexOf(v) === i);
 
-  const imgClass = 'h-96';
+  const posts = allPosts.filter(({ node }) => node.tags.some(tag => filters.length === 0 || filters.includes(tag)))
 
   const handleFilter = (option) => {
     if (filters.includes(option)) {
@@ -26,11 +26,8 @@ const Stories = ({ data, location }) => {
     <>
       <SEO title="Outtaink" />
       <Filter options={tags} filters={filters} handleFilter={handleFilter} />
-      <div className="m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {allPosts.map(({ node }) => {
-          const visible = filters.length === 0 || node.tags.some(tag => filters.includes(tag));
-          return <ArticleCard key={node.url} node={node} imgClass={imgClass} visible={visible} />
-        })}
+      <div className="m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        {posts.map(({ node }) => <ArticleCard key={node.id} node={node} equalHeight={true} />)}
       </div>
     </>
   )
@@ -48,6 +45,7 @@ export const pageQuery = graphql`
     allPrismicArticle(sort: { fields: data___date, order: DESC } filter: { lang: { eq: "zh-tw" } }) {
       edges {
         node {
+          id
           url
           tags
           data {
