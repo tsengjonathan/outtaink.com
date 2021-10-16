@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import SEO from '../components/SEO';
 import ArticleCard from '../components/article-card';
-import Filter from '../components/filter';
+import Filter from '../components/Filter';
 
 const Stories = ({ data, location }) => {
   const [filters, setFilters] = useState([]);
