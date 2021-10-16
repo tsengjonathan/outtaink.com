@@ -56,7 +56,10 @@ const ArticleTemplate = ({ data }) => {
           <hr className="my-6" />
           <footer />
         </article>
-        <Interviewee name={name} bio={bio} links={links} />
+        <div className="flex flex-col">
+          <Interviewee name={name} bio={bio} links={links} />
+          <div className="flex-grow" />
+        </div>
       </div>
     </>
   );
