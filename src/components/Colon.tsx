@@ -1,12 +1,12 @@
 import React from 'react'
 import classnames from 'classnames'
 
-type ColonType = {
+type ColonProps = {
   width?: number,
   className?: string
 }
 
-const Colon = ({ width = 10, className }: ColonType) => {
+const Colon = ({ width = 10, className }: ColonProps) => {
   const classes = classnames("colon", className)
   return (
     <div className={classes}>

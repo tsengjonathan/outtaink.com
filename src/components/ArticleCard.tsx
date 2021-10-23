@@ -4,8 +4,14 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
 import Colon from './Colon'
+import { PrismicArticle } from '../../graphql'
 
-const ArticleCard = ({ node, equalHeight = false }) => {
+type ArticleCardProps = {
+  node: PrismicArticle
+  equalHeight?: boolean
+}
+
+const ArticleCard = ({ node, equalHeight = false }: ArticleCardProps) => {
   const {
     url,
     data: {

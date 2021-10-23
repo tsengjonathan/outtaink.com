@@ -3,14 +3,14 @@ import React, { MutableRefObject, ReactNode } from 'react'
 import { navs } from './Navigation'
 import NavigationItem from './NavigationItem'
 
-type DrawerType = {
+type DrawerProps = {
   children: ReactNode[]
   toggleId: string
   scrollRef?: MutableRefObject<HTMLDivElement>
   onScroll?: () => void
 }
 
-const Drawer = ({ children, toggleId, scrollRef, onScroll }: DrawerType) => {
+const Drawer = ({ children, toggleId, scrollRef, onScroll }: DrawerProps) => {
   const liOnClick = () => {
     const inputElements = document && document.getElementsByTagName('input')
     const toggle = inputElements.namedItem(toggleId)

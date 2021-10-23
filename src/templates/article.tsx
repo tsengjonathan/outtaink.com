@@ -3,16 +3,27 @@ import { graphql } from 'gatsby';
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
 import SEO from '../components/SEO';
-import Interviewee from '../components/interviewee';
+import Interviewee from '../components/Interviewee';
 
 import Colon from '../../content/svg/colon.svg';
 
 import { sanitizeArticle } from '../utils/sanitize';
 import linkResolver from '../../linkResolver';
+import { PrismicArticle, Site } from '../../graphql'
+import { isPrismicAuthor } from '../utils/graphql';
 
-const ArticleTemplate = ({ data }) => {
+
+type ArticleTemplateProps = {
+  data: {
+    site: Site
+    prismicArticle: PrismicArticle
+  }
+}
+
+const ArticleTemplate = ({ data }: ArticleTemplateProps) => {
   const article = data.prismicArticle.data;
-  const author = article.author.document.data.name;
+  const document = article.author.document;
+  const author = isPrismicAuthor(document) ? document.data.name : 'N/A'
   
   const coverUrl = article.cover.url;
 

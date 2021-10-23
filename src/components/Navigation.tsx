@@ -12,7 +12,11 @@ export const navs = [
   { name: '投稿', subname: 'SURVEY', src: '/survey' },
 ];
 
-const Navigation = ({ drawerToggleId }) => {
+type NavigationProps = {
+  drawerToggleId?: string
+}
+
+const Navigation = ({ drawerToggleId }: NavigationProps) => {
   return (
     <div className="max-w-screen-page mx-6 md:mx-auto pt-6 md:py-10 flex items-center justify-between">
       <SearchButton className="tooltip-right" />

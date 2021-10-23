@@ -2,13 +2,13 @@ import React from 'react'
 
 import Button from './Button'
 
-type FilterType = {
+type FilterProps = {
   options: Set<string>
   filters: Set<string>
   handleFilter: (option: string) => void
 }
 
-const Filter = ({ options, filters, handleFilter }: FilterType) => {
+const Filter = ({ options, filters, handleFilter }: FilterProps) => {
   return (
     <div className="flex flex-wrap justify-center mt-4">
         { Array.from(options).map(option => (

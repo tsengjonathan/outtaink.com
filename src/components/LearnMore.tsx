@@ -4,14 +4,14 @@ import classNames from 'classnames'
 import { Link } from 'gatsby'
 import { Color, getTextColor } from '../utils/tailwind'
 
-type LearnMoreType = {
+type LearnMoreProps = {
   url: string
   text: string
   color?: Color
   className?: string
 }
 
-const LearnMore = ({ url, text, color = 'black', className }: LearnMoreType) => {
+const LearnMore = ({ url, text, color = 'black', className }: LearnMoreProps) => {
   const classes = classNames("flex", className)
   const textClasses = classNames('font-light', 'pr-1', getTextColor(color))
 

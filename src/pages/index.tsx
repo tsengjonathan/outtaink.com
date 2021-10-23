@@ -6,8 +6,18 @@ import Introduction from '../components/Introduction'
 import ArticleCards from '../components/ArticleCards'
 import SEO from '../components/SEO'
 import { introduction } from '../utils/constants'
+import { PrismicArticleEdge, Site } from '../../graphql'
 
-const LandingPage = ({ data }) => {
+type LandingPageProps = {
+  data: {
+    site: Site
+    allPrismicArticle: {
+      edges: PrismicArticleEdge[]
+    }
+  }
+}
+
+const LandingPage = ({ data }: LandingPageProps) => {
 
   const featuredArticle = data.allPrismicArticle.edges[0]
   const articles = data.allPrismicArticle.edges.slice(1)

@@ -1,11 +1,11 @@
 import React from 'react'
 import classNames from 'classnames'
 
-type SearchButtonType = {
+type SearchButtonProps = {
   readonly className?: string
 }
 
-const SearchButton = ({ className }: SearchButtonType) => {
+const SearchButton = ({ className }: SearchButtonProps) => {
   const tooltipText = "Coming Soon!"
 
   const classes = classNames(className, 'tooltip cursor-pointer')

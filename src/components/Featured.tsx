@@ -3,8 +3,13 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 
 import Colon from './Colon'
 import LearnMore from './LearnMore'
+import { PrismicArticle } from '../../graphql'
 
-const Featured = ({ node }) => {
+type FeaturedProps = {
+  node: PrismicArticle
+}
+
+const Featured = ({ node }: FeaturedProps) => {
   const {
     url,
     data: {
