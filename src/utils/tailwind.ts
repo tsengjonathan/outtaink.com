@@ -21,3 +21,17 @@ export const getTextColor = (type: Color) => {
   }
   return mapping[type]
 }
+
+export const getNavItemSize = (length: number, size: Size): string => {
+  const mapping = {
+    'lg': {
+      2: 'w-18',
+      5: 'w-24',
+    },
+    'xl': {
+      2: 'w-20',
+      5: 'w-28',
+    }
+  }
+  return (mapping[size] && mapping[size][length]) || ''
+}

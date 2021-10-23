@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import classNames from 'classnames'
 
-import { getFontSize, Size } from '../utils/tailwind'
+import { getFontSize, getNavItemSize, Size } from '../utils/tailwind'
 
 type NavigationItemProps = {
   readonly className?: string;
@@ -14,7 +14,11 @@ type NavigationItemProps = {
 
 const NavigationItem = ({ className, to, text, hoverText, fontSize = 'xl' }: NavigationItemProps) => {
   const [ isHovered, setIsHovered ] = useState(false)
-  const classes = classNames(className, 'relative h-6 w-28')
+  const classes = classNames(
+    className,
+    'relative h-6',
+    getNavItemSize(text.length, fontSize)
+  )
   const commonClasses = 'absolute text-center h-full w-full font-mixed bg-white transition-clip-path'
   const textClasses = classNames(
     getFontSize(fontSize),

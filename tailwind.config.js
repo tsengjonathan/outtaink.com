@@ -42,6 +42,9 @@ module.exports = {
       },
       screens: {
         page: '1272px'
+      },
+      width: {
+        18: '4.5rem'
       }
     },
   },
