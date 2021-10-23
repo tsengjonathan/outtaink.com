@@ -7,12 +7,12 @@ import NavigationItem from './NavigationItem'
 import { navs } from './Navigation'
 import SearchButton from './SearchButton'
 
-type StickyNavigationType = {
+type StickyNavigationProps = {
   readonly className?: string;
   readonly isVisible?: boolean;
 }
 
-const StickyNavigation = ({ className, isVisible = false }: StickyNavigationType) => {
+const StickyNavigation = ({ className, isVisible = false }: StickyNavigationProps) => {
   const transition = 'transform transition-transform'
   const classes = classNames(
     className,

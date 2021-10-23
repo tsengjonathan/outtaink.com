@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import { getFontSize, Size } from '../utils/tailwind'
 
-type NavigationItemType = {
+type NavigationItemProps = {
   readonly className?: string;
   readonly to: string;
   readonly text: string;
@@ -12,7 +12,7 @@ type NavigationItemType = {
   readonly fontSize?: Size;
 }
 
-const NavigationItem = ({ className, to, text, hoverText, fontSize = 'xl' }: NavigationItemType) => {
+const NavigationItem = ({ className, to, text, hoverText, fontSize = 'xl' }: NavigationItemProps) => {
   const [ isHovered, setIsHovered ] = useState(false)
   const classes = classNames(className, 'relative h-6 w-28')
   const commonClasses = 'absolute text-center h-full w-full font-mixed bg-white transition-clip-path'
