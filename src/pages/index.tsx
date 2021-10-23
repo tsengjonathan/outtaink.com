@@ -4,6 +4,8 @@ import { graphql } from 'gatsby'
 import Featured from '../components/Featured'
 import Introduction from '../components/Introduction'
 import ArticleCards from '../components/ArticleCards'
+import SEO from '../components/SEO'
+import { introduction } from '../utils/constants'
 
 const LandingPage = ({ data }) => {
 
@@ -12,6 +14,7 @@ const LandingPage = ({ data }) => {
 
   return (
     <>
+      <SEO title="Outtaink" description={introduction} />
       <Featured node={featuredArticle.node} />
       <Introduction />
       <ArticleCards articles={articles} />
