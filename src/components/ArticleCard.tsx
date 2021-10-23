@@ -1,10 +1,11 @@
 import React from 'react'
+import classNames from 'classnames'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
 import Colon from './Colon'
 
-const ArticleCard = ({ node }) => {
+const ArticleCard = ({ node, equalHeight = false }) => {
   const {
     url,
     data: {
@@ -16,12 +17,17 @@ const ArticleCard = ({ node }) => {
     }
   } = node
 
+  const imageClasses = classNames(
+    { 'h-72': equalHeight }
+  )
+
   return (
     <div className="bg-white p-4 mx-6 md:mx-0 mb-6 md:mb-10 break-inside-avoid">
       <Link to={url}>
         <GatsbyImage
           image={cover.gatsbyImageData}
           alt={name}
+          className={imageClasses}
         />
         <div className="mt-3 md:mt-4">
           <div className="flex items-center">
