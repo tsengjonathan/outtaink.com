@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 
 import { PrismicAboutUsPage, PrismicAuthorDataType, PrismicLinkType } from '../../graphql';
 import Heading from '../components/Heading'
+import SEO from '../components/SEO';
 
 const isAuthor = (data: any): data is PrismicAuthorDataType => {
   return (data as PrismicAuthorDataType).illustration !== undefined
@@ -44,6 +45,7 @@ const About = ({ data }: AboutUsPageTypes) => {
 
   return (
     <>
+      <SEO title="About Us" />
       <Helmet>
         <script src={withPrefix('justfont.js')}></script>
       </Helmet>
