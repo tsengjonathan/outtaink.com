@@ -1,7 +1,7 @@
 const path = require(`path`);
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const postTemplate = path.resolve(`./src/templates/article.js`);
+  const postTemplate = path.resolve(`./src/templates/article.tsx`);
 
   // Query Prismic data
   const result = await graphql(`

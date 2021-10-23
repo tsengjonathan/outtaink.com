@@ -5,7 +5,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import Newsletter from './newsletter';
+import Newsletter from './Newsletter';
 import FooterLogo from '../../content/svg/footer-logo.svg';
 
 const Footer = () => {
