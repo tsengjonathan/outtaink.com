@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react'
 import { Link } from 'gatsby'
 import classNames from 'classnames'
 
-import { getFontSize, getNavItemSize, Size } from '../utils/tailwind'
+import { Size, getFontSize, getNavItemSize } from '../utils/tailwind'
 
 type NavigationItemProps = {
   readonly className?: string;

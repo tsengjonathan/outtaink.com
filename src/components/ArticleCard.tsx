@@ -3,8 +3,8 @@ import classNames from 'classnames'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
-import Colon from './Colon'
 import { PrismicArticle } from '../../graphql'
+import Colon from './Colon'
 
 type ArticleCardProps = {
   node: PrismicArticle

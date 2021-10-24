@@ -2,11 +2,10 @@ import React, { FC } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram , faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import Newsletter from './Newsletter';
 import FooterLogo from '../../content/svg/footer-logo.svg';
+import Newsletter from './Newsletter';
 
 const Footer: FC = () => {
   return (

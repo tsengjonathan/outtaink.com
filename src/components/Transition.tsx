@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import {
-  TransitionGroup,
   Transition as ReactTransition,
+  TransitionGroup,
 } from 'react-transition-group'
 
 const timeout = 250
