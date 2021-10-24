@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Link } from 'gatsby';
 
 import DrawerButton from './DrawerButton'
@@ -16,7 +16,7 @@ type NavigationProps = {
   drawerToggleId?: string
 }
 
-const Navigation = ({ drawerToggleId }: NavigationProps) => {
+const Navigation: FC<NavigationProps> = ({ drawerToggleId }: NavigationProps) => {
   return (
     <div className="max-w-screen-page mx-6 md:mx-auto pt-6 md:py-10 flex items-center justify-between">
       <SearchButton className="tooltip-right" />

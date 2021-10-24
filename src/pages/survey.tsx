@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Widget } from '@typeform/embed-react'
 import SEO from '../components/SEO'
 
-const SubmitPage = () => {
+const SubmitPage: FC = () => {
   const formId = 'GOaFCYbc'
 
   return (

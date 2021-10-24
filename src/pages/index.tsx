@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { graphql } from 'gatsby'
 
 import Featured from '../components/Featured'
@@ -17,7 +17,7 @@ type LandingPageProps = {
   }
 }
 
-const LandingPage = ({ data }: LandingPageProps) => {
+const LandingPage: FC<LandingPageProps> = ({ data }: LandingPageProps) => {
 
   const featuredArticle = data.allPrismicArticle.edges[0]
   const articles = data.allPrismicArticle.edges.slice(1)

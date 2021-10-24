@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { Link } from 'gatsby'
 import classNames from 'classnames'
 
@@ -12,7 +12,7 @@ type NavigationItemProps = {
   readonly fontSize?: Size;
 }
 
-const NavigationItem = ({ className, to, text, hoverText, fontSize = 'xl' }: NavigationItemProps) => {
+const NavigationItem: FC<NavigationItemProps> = ({ className, to, text, hoverText, fontSize = 'xl' }: NavigationItemProps) => {
   const [ isHovered, setIsHovered ] = useState(false)
   const classes = classNames(
     className,

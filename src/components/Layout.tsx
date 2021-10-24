@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC, ReactNode } from 'react'
 import { useScroll } from 'react-use'
 import { useScrollRestoration } from 'gatsby-react-router-scroll'
 
@@ -7,7 +7,11 @@ import Drawer from './Drawer'
 import StickyNavigation from './StickyNavigation'
 import Footer from './Footer'
 
-const Layout = ({ children }) => {
+type LayoutProps = {
+  children: ReactNode
+}
+
+const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
   const { ref, onScroll } = useScrollRestoration<HTMLDivElement>(`page-component-drawer`)
   const { y } = useScroll(ref)
 

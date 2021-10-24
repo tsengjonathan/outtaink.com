@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import classnames from 'classnames'
 
 type ColonProps = {
@@ -6,7 +6,7 @@ type ColonProps = {
   className?: string
 }
 
-const Colon = ({ width = 10, className }: ColonProps) => {
+const Colon: FC<ColonProps> = ({ width = 10, className }: ColonProps) => {
   const classes = classnames("colon", className)
   return (
     <div className={classes}>

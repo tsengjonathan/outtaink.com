@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 
 function encode(data) {
   return Object.keys(data)
@@ -6,7 +6,7 @@ function encode(data) {
     .join('&');
 }
 
-export default function Newsletter() {
+const Newsletter: FC = () => {
   const borderStyle = 'border-0 border-solid border-white';
 
   const [state, setState] = useState({ email: '' });
@@ -67,3 +67,5 @@ export default function Newsletter() {
     </div>
   );
 }
+
+export default Newsletter

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { PrismicArticleDataBioGroup } from '../../graphql';
 
@@ -8,7 +8,7 @@ type IntervieweeProps = {
   links: string
 }
 
-export default function Interviewee({ name, bio, links }: IntervieweeProps) {
+const Interviewee: FC<IntervieweeProps> = ({ name, bio, links }: IntervieweeProps) => {
   return (
     <div className="mb-8 sticky lg:top-24 lg:mt-44 lg:ml-12 lg:mb-12">
       <p className="font-zh mb-4 font-medium">{name}</p>
@@ -26,3 +26,5 @@ export default function Interviewee({ name, bio, links }: IntervieweeProps) {
     </div>
   );
 }
+
+export default Interviewee

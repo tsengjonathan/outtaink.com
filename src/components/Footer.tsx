@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
@@ -8,7 +8,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Newsletter from './Newsletter';
 import FooterLogo from '../../content/svg/footer-logo.svg';
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <section className="flex flex-col bg-default-50 pt-12 px-6 pb-4">
       <div className="max-w-screen-page mx-auto">

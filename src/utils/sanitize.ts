@@ -3,7 +3,7 @@ const symbolReplacements = {
   '”': '"',
 };
 
-function sanitizeArticle(article: string) {
+const sanitizeArticle = (article: string): string => {
   let buffer = article;
   for (const before in symbolReplacements) {
     const after = symbolReplacements[before];

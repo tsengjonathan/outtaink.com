@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 import classNames from 'classnames'
 
 type LogoProps = {
   readonly className?: string;
 }
 
-const Logo = ({ className }: LogoProps) => {
+const Logo: FC<LogoProps> = ({ className }: LogoProps) => {
   const classes = classNames(className, 'h-6', 'md:h-8')
   return (
     <svg className={classes} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 329.71 52.51">

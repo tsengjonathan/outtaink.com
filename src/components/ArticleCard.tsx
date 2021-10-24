@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import classNames from 'classnames'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
@@ -11,7 +11,7 @@ type ArticleCardProps = {
   equalHeight?: boolean
 }
 
-const ArticleCard = ({ node, equalHeight = false }: ArticleCardProps) => {
+const ArticleCard: FC<ArticleCardProps> = ({ node, equalHeight = false }: ArticleCardProps) => {
   const {
     url,
     data: {

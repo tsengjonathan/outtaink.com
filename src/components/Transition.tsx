@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC, ReactNode } from 'react'
 import {
   TransitionGroup,
   Transition as ReactTransition,
@@ -20,7 +20,12 @@ const getTransitionStyles = {
   },
 }
 
-const Transition = ({ children, location }) => {
+type TransitionProps = {
+  children: ReactNode
+  location: Location
+}
+
+const Transition: FC<TransitionProps> = ({ children, location }: TransitionProps) => {
     return (
       <TransitionGroup>
         <ReactTransition

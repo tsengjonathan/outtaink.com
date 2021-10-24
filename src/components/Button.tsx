@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 import classNames from 'classnames';
 
 type ButtonProps = {
@@ -7,7 +7,7 @@ type ButtonProps = {
   onClick?: () => void
 }
 
-const Button = ({ text, selected = false, onClick }: ButtonProps) => {
+const Button: FC<ButtonProps> = ({ text, selected = false, onClick }: ButtonProps) => {
     const classes = classNames(
       'mt-1 mx-4 py-1 px-1',
       'text-lg text-gray-400',

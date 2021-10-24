@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import classNames from 'classnames'
 
 import { Link } from 'gatsby'
@@ -11,7 +11,7 @@ type LearnMoreProps = {
   className?: string
 }
 
-const LearnMore = ({ url, text, color = 'black', className }: LearnMoreProps) => {
+const LearnMore: FC<LearnMoreProps> = ({ url, text, color = 'black', className }: LearnMoreProps) => {
   const classes = classNames("flex", className)
   const textClasses = classNames('font-light', 'pr-1', getTextColor(color))
 
