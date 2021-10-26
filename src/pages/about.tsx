@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { graphql, withPrefix } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Helmet } from 'react-helmet';
 
-import { PrismicAboutUsPage, PrismicAuthorDataType, PrismicLinkType } from '../../graphql';
+import { PrismicAboutUsPage, PrismicLinkType } from '../../graphql';
 import Heading from '../components/Heading'
 import SEO from '../components/SEO';
-
-const isAuthor = (data: any): data is PrismicAuthorDataType => {
-  return (data as PrismicAuthorDataType).illustration !== undefined
-}
+import { isPrismicAuthor } from '../utils/graphql'
 
 const renderIllustration = (link: PrismicLinkType) => {
   const document = link.document
-  if (!isAuthor(document.data)) {
+  if (!isPrismicAuthor(document)) {
     return null
   }
 
@@ -28,13 +25,13 @@ const renderIllustration = (link: PrismicLinkType) => {
   return <GatsbyImage image={gatsbyImageData} alt={alt} key={id} />
 }
 
-type AboutUsPageTypes = {
+type AboutUsPageProps = {
   data: {
     prismicAboutUsPage: PrismicAboutUsPage
   }
 }
 
-const About = ({ data }: AboutUsPageTypes) => {
+const About: FC<AboutUsPageProps> = ({ data }: AboutUsPageProps) => {
   const {
     header_image: headerImage,
     chinese,

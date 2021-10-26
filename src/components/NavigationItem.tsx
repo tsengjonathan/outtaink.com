@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { Link } from 'gatsby'
 import classNames from 'classnames'
 
-import { getFontSize, getNavItemSize, Size } from '../utils/tailwind'
+import { Size, getFontSize, getNavItemSize } from '../utils/tailwind'
 
 type NavigationItemProps = {
   readonly className?: string;
@@ -12,7 +12,7 @@ type NavigationItemProps = {
   readonly fontSize?: Size;
 }
 
-const NavigationItem = ({ className, to, text, hoverText, fontSize = 'xl' }: NavigationItemProps) => {
+const NavigationItem: FC<NavigationItemProps> = ({ className, to, text, hoverText, fontSize = 'xl' }: NavigationItemProps) => {
   const [ isHovered, setIsHovered ] = useState(false)
   const classes = classNames(
     className,

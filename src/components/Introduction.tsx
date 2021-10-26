@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-import LearnMore from './LearnMore'
 import { introduction } from '../utils/constants'
+import LearnMore from './LearnMore'
 
 // TODO: Replace SVG with @heroicons/react once https://github.com/tailwindlabs/heroicons/pull/281 is merged
 const ArrowCircleDownIcon = () => (
@@ -10,7 +10,7 @@ const ArrowCircleDownIcon = () => (
   </svg>
 )
 
-const Introduction = () => {
+const Introduction: FC = () => {
   return (
     <section className="bg-default-200 py-20 mt-0 mb-6 md:my-12">
       <div className="flex flex-col items-start md:items-center max-w-screen-md mx-6 md:mx-auto">

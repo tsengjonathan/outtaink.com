@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { graphql } from 'gatsby';
 
 import SEO from '../components/SEO';
 import ArticleCard from '../components/ArticleCard';
 import Filter from '../components/Filter';
+import { PrismicArticleEdge, Site } from '../../graphql';
 
-const Stories = ({ data }) => {
+type StoriesProps = {
+  data: {
+    site: Site
+    allPrismicArticle: {
+      edges: PrismicArticleEdge[]
+    }
+  }
+}
+
+const Stories: FC<StoriesProps> = ({ data }: StoriesProps) => {
   const [filters, setFilters] = useState(new Set<string>());
 
   const allPosts = data.allPrismicArticle.edges;

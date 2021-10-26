@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Link } from 'gatsby'
 import classNames from 'classnames'
 
@@ -12,7 +12,7 @@ type StickyNavigationProps = {
   readonly isVisible?: boolean;
 }
 
-const StickyNavigation = ({ className, isVisible = false }: StickyNavigationProps) => {
+const StickyNavigation: FC<StickyNavigationProps> = ({ className, isVisible = false }: StickyNavigationProps) => {
   const transition = 'transform transition-transform'
   const classes = classNames(
     className,

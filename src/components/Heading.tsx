@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 export type HeadingProps = {
   name: string
 }
 
-const Heading = ({ name }: HeadingProps) => {
+const Heading: FC<HeadingProps> = ({ name }: HeadingProps) => {
   const typography = 'font-hand text-3xl'
   const border = 'border-2 border-border'
   return (

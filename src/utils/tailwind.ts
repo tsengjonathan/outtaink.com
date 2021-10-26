@@ -1,7 +1,7 @@
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
-export const getFontSize = (type: Size) => {
+export const getFontSize = (type: Size): string => {
   const mapping = {
     'xs': 'text-xs',
     'sm': 'text-sm',
@@ -14,7 +14,7 @@ export const getFontSize = (type: Size) => {
 
 export type Color = 'black' | 'white'
 
-export const getTextColor = (type: Color) => {
+export const getTextColor = (type: Color): string => {
   const mapping = {
     'black': 'text-black',
     'white': 'text-white',

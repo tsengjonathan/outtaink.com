@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import {
-  withPrismicUnpublishedPreview,
   componentResolverFromMap,
+  withPrismicUnpublishedPreview,
 } from 'gatsby-plugin-prismic-previews';
 
 import ArticleTemplate from '../templates/article';

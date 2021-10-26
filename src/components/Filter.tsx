@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import Button from './Button'
 
@@ -8,7 +8,7 @@ type FilterProps = {
   handleFilter: (option: string) => void
 }
 
-const Filter = ({ options, filters, handleFilter }: FilterProps) => {
+const Filter: FC<FilterProps> = ({ options, filters, handleFilter }: FilterProps) => {
   return (
     <div className="flex flex-wrap justify-center mt-4">
         { Array.from(options).map(option => (

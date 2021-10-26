@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
+import { PrismicArticle } from '../../graphql'
 import Colon from './Colon'
 import LearnMore from './LearnMore'
-import { PrismicArticle } from '../../graphql'
 
 type FeaturedProps = {
   node: PrismicArticle
 }
 
-const Featured = ({ node }: FeaturedProps) => {
+const Featured: FC<FeaturedProps> = ({ node }: FeaturedProps) => {
   const {
     url,
     data: {

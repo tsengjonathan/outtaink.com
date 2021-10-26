@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
 import classNames from 'classnames'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
-import Colon from './Colon'
 import { PrismicArticle } from '../../graphql'
+import Colon from './Colon'
 
 type ArticleCardProps = {
   node: PrismicArticle
   equalHeight?: boolean
 }
 
-const ArticleCard = ({ node, equalHeight = false }: ArticleCardProps) => {
+const ArticleCard: FC<ArticleCardProps> = ({ node, equalHeight = false }: ArticleCardProps) => {
   const {
     url,
     data: {
