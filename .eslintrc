@@ -13,7 +13,7 @@
   "rules": {
     "import/order": "warn",
     "import/no-unresolved": [
-      "error", { "ignore": [ "graphql.d.ts" ]}
+      "error", { "ignore": [ "../../graphql" ]}
     ]
   }
 }
