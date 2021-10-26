@@ -6,18 +6,18 @@
  */
 
 import React, { FC } from 'react';
-import { Helmet, HelmetProps } from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 
 type SEOProps = {
   description?: string
   lang?: string
-  meta?: HelmetProps['meta']
+  meta?: HTMLMetaElement[]
   title: string
   image?: string
 }
 
-const SEO: FC<SEOProps> = ({ description, lang, meta, title, image }: SEOProps) => {
+const SEO: FC<SEOProps> = ({ description, lang, meta = [], title, image }: SEOProps) => {
   const { site } = useStaticQuery(
     graphql`
       query {
