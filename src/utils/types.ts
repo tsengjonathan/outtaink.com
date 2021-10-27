@@ -9,10 +9,7 @@ export type PrismicArticle = {
     title: {
       text: string
     }
-    cover: {
-      gatsbyImageData: IGatsbyImageData
-      url: string
-    }
+    cover: PrismicImage
     author: {
       document: PrismicAllDocumentTypes
     }
@@ -54,10 +51,7 @@ export type Member = {
 
 export type PrismicAboutUsPage = {
   data: {
-    header_image: {
-      gatsbyImageData: IGatsbyImageData
-      alt: string
-    }
+    header_image: PrismicImage
     chinese: string
     english: string
     cofounders: Cofounder[]
@@ -72,10 +66,12 @@ export type PrismicLinkType = {
 export type PrismicAuthor = {
   id: string
   data: {
-    illustration: {
-      gatsbyImageData: IGatsbyImageData
-      alt: string
-    }
+    illustration: PrismicImage
     name: string
   }
+}
+
+export type PrismicImage = {
+  alt: string
+  gatsbyImageData: IGatsbyImageData
 }
