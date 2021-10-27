@@ -3,7 +3,7 @@ import { graphql, withPrefix } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Helmet } from 'react-helmet';
 
-import { PrismicAboutUsPage, PrismicLinkType } from '../../graphql';
+import { PrismicAboutUsPage, PrismicLinkType } from '../utils/types';
 import Heading from '../components/Heading'
 import SEO from '../components/SEO';
 import { isPrismicAuthor } from '../utils/graphql'

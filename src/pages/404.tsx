@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import {
   componentResolverFromMap,
   withPrismicUnpublishedPreview,
@@ -28,13 +27,3 @@ export default withPrismicUnpublishedPreview(NotFoundPage, [{
     article: ArticleTemplate,
   })
 }]);
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;

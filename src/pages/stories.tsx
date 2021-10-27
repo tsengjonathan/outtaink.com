@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import SEO from '../components/SEO';
 import ArticleCard from '../components/ArticleCard';
 import Filter from '../components/Filter';
-import { PrismicArticleEdge, Site } from '../../graphql';
+import { PrismicArticleEdge, Site } from '../utils/types';
 
 type StoriesProps = {
   data: {

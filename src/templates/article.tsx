@@ -9,7 +9,7 @@ import Colon from '../../content/svg/colon.svg';
 
 import { sanitizeArticle } from '../utils/sanitize';
 import linkResolver from '../../linkResolver';
-import { PrismicArticle, Site } from '../../graphql'
+import { PrismicArticle, Site } from '../utils/types'
 import { isPrismicAuthor } from '../utils/graphql';
 
 

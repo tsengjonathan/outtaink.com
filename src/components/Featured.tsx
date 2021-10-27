@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
-import { PrismicArticle } from '../../graphql'
+import { PrismicArticle } from '../utils/types'
 import Colon from './Colon'
 import LearnMore from './LearnMore'
 
