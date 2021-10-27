@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { PrismicArticleDataBioGroup } from '../../graphql';
+import { PrismicArticleDataBioGroup } from '../utils/types';
 
 type IntervieweeProps = {
   name: string

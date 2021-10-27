@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { PrismicArticleEdge } from '../../graphql'
+import { PrismicArticleEdge } from '../utils/types'
 import ArticleCard from './ArticleCard'
 
 type ArticleCardsProps = {

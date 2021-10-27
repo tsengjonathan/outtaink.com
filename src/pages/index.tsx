@@ -6,7 +6,7 @@ import Introduction from '../components/Introduction'
 import ArticleCards from '../components/ArticleCards'
 import SEO from '../components/SEO'
 import { introduction } from '../utils/constants'
-import { PrismicArticleEdge, Site } from '../../graphql'
+import { PrismicArticleEdge, Site } from '../utils/types'
 
 type LandingPageProps = {
   data: {
