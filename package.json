@@ -19,6 +19,7 @@
     "@types/react-transition-group": "^4.4.3",
     "classnames": "^2.3.1",
     "daisyui": "^1.14.2",
+    "next": "^11.1.0",
     "prismjs": "^1.25.0",
     "pure-react-carousel": "^1.27.6",
     "react": "^17.0.2",
@@ -48,14 +49,14 @@
     "url": "git+https://github.com/tsengjonathan/outtaink.com.git"
   },
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "next build",
+    "develop": "next dev",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "start": "npm run develop",
     "local": "npm run develop -- -H 0.0.0.0",
-    "serve": "gatsby serve",
+    "serve": "next start",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 0",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
