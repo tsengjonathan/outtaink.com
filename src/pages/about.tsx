@@ -10,6 +10,7 @@ import { isPrismicAuthor } from '../utils/graphql'
 
 const renderIllustration = (link: PrismicLinkType) => {
   const document = link.document
+  console.log(document)
   if (!isPrismicAuthor(document)) {
     return null
   }
@@ -89,6 +90,7 @@ export const AboutUsPageQuery = graphql`
                     alt
                     gatsbyImageData
                   }
+                  name
                 }
               }
             }
@@ -105,6 +107,7 @@ export const AboutUsPageQuery = graphql`
                     alt
                     gatsbyImageData
                   }
+                  name
                 }
               }
             }
