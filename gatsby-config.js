@@ -65,5 +65,12 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sentry`,
+      options: {
+        dsn: process.env.SENTRY_DSN_URL,
+        environment: process.env.NODE_ENV,
+      },
+    },
   ],
 };

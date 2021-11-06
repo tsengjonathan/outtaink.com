@@ -6,6 +6,7 @@ import Navigation from './Navigation'
 import Drawer from './Drawer'
 import StickyNavigation from './StickyNavigation'
 import Footer from './Footer'
+import ErrorBoundary from './ErrorBoundary'
 
 type LayoutProps = {
   children: ReactNode
@@ -19,12 +20,14 @@ const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
 
   return (
     <main className="bg-background h-full">
-      <Drawer toggleId={drawerToggleId} scrollRef={ref} onScroll={onScroll}>
-        <StickyNavigation isVisible={y > 0} />
-        <Navigation drawerToggleId={drawerToggleId} />
-        { children }
-        <Footer />
-      </Drawer>
+      <ErrorBoundary>
+        <Drawer toggleId={drawerToggleId} scrollRef={ref} onScroll={onScroll}>
+          <StickyNavigation isVisible={y > 0} />
+          <Navigation drawerToggleId={drawerToggleId} />
+          {children}
+          <Footer />
+        </Drawer>
+      </ErrorBoundary>
     </main>
   );
 };
