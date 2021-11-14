@@ -25,7 +25,6 @@ const Stories: FC<StoriesProps> = ({ data }: StoriesProps) => {
   const posts = allPosts.filter(({ node }) => node.tags.some((tag: string) => filters.size === 0 || filters.has(tag)))
 
   const handleFilter = (option: string) => {
-    throw new Error('Test Sentry Integration')
     // Copy iterable to force state update
     const newFilters = new Set(filters)
     newFilters.has(option) ? newFilters.delete(option) : newFilters.add(option)
