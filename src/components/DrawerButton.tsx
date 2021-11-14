@@ -5,6 +5,7 @@ type DrawerButtonProps = {
 }
 
 const DrawerButton: FC<DrawerButtonProps> = ({ toggleId }: DrawerButtonProps) => {
+  throw new Error('Test Sentry Integration')
   return (
     <label className="cursor-pointer" htmlFor={toggleId}>
       <svg xmlns="http://www.w3.org/2000/svg" className="h-7 md:h-9 drawer-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
