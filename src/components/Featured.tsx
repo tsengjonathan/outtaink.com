@@ -1,34 +1,37 @@
 import React, { FC } from 'react'
-import { GatsbyImage } from 'gatsby-plugin-image'
 
-import { PrismicArticle } from '../utils/types'
+import { PrismicArticle } from '../types/cms'
 import Colon from './Colon'
 import LearnMore from './LearnMore'
 
+import Image from 'next/image'
+
 type FeaturedProps = {
-  node: PrismicArticle
+  article: PrismicArticle
 }
 
-const Featured: FC<FeaturedProps> = ({ node }: FeaturedProps) => {
+const Featured: FC<FeaturedProps> = ({ article }: FeaturedProps) => {
   const {
     url,
     data: {
       excerpt,
       name,
-      title: {
-        text: title
-      },
+      title,
       cover
     }
-  } = node
+  } = article
 
   // TODO: Replace SVG with @heroicons/react once https://github.com/tailwindlabs/heroicons/pull/281 is merged
   return (
     <section className="flex max-w-screen-page mx-auto grid grid-cols-1 md:grid-cols-featured">
-      <GatsbyImage
-        image={cover.gatsbyImageData}
-        alt="Featured Cover"
+      <Image
         className="m-6 md:m-0 z-10"
+        src={cover.url}
+        alt={cover.alt}
+        layout="responsive"
+        height={cover.dimensions.height}
+        width={cover.dimensions.width}
+        objectFit="cover"
       />
       <div className="flex flex-col">
         <div className="hidden md:block h-36" />
@@ -38,7 +41,9 @@ const Featured: FC<FeaturedProps> = ({ node }: FeaturedProps) => {
               <h1 className="font-mixed font-medium text-3xl md:text-4xl mr-2">{name}</h1>
               <Colon />
             </div>
-            <h1 className="font-mixed font-medium text-3xl mt-1">{title}</h1>
+            <h1 className="font-mixed font-medium text-3xl mt-1">
+              { title.map(heading => heading.text) }
+            </h1>
             <p className="font-mixed mt-6 md:mt-10 font-light text-xl">{excerpt}</p>
             <div className="flex mt-6">
               <div className="flex-grow" />

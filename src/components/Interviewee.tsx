@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { PrismicArticleDataBioGroup } from '../utils/types';
+import { PrismicArticleDataBioGroup } from '../types/cms';
 
 type IntervieweeProps = {
   name: string
@@ -19,8 +19,7 @@ const Interviewee: FC<IntervieweeProps> = ({ name, bio, links }: IntervieweeProp
           </p>
         ))
       }
-      <section
-        className="font-zh text-sm font-light leading-6 interviewee-links"
+      <p className="font-zh text-sm font-light leading-6 interviewee-links"
         dangerouslySetInnerHTML={{ __html: links }}
       />
     </div>

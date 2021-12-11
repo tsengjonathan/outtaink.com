@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 import classNames from 'classnames'
 
 import Logo from './Logo'
@@ -24,10 +24,12 @@ const StickyNavigation: FC<StickyNavigationProps> = ({ className, isVisible = fa
   return (
     <div className={classes}>
       <div className="flex items-center">
-        <Link to="/">
+        <Link href="/">
           <Logo className="mr-6" />
         </Link>
-        {navs.map(nav => <NavigationItem className="mx-6" to={nav.src} text={nav.name} hoverText={nav.subname} fontSize="lg" />)}
+        {navs.map(nav => (
+          <NavigationItem key={nav.src} className="mx-6" to={nav.src} text={nav.name} hoverText={nav.subname} fontSize="lg" />)
+        )}
       </div>
       <SearchButton className="tooltip-left" />
     </div>
