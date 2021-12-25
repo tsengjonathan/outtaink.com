@@ -19,7 +19,7 @@ const recursiveQuery = async (query: string | string[], orderings = '', size?: n
 export const fetchArticles = async (size?: number): Promise<PrismicArticle[]> => {
   const response = await recursiveQuery(
     Prismic.Predicates.at('document.type', 'article'),
-    '[document.last_publication_date desc]',
+    '[my.article.date desc]',
     size
   )
   return response.map(document => prismicArticleSchema.cast(document))
