@@ -4,7 +4,7 @@ import { RichText } from 'prismic-dom'
 import SEO from '../components/SEO'
 import Interviewee from '../components/Interviewee'
 
-// import Colon from '../../content/svg/colon.svg'
+import Colon from '../components/Colon'
 
 import { sanitizeArticle } from '../utils/sanitize'
 import { PrismicArticle, PrismicAuthor } from '../types/cms'
@@ -17,21 +17,18 @@ type ArticleProps = {
 }
 
 const Article = ({ article, author }: ArticleProps) => {
-  const coverUrl = article.data.cover.url
-
   const {
     name,
     bio_group,
     links,
     body,
-    cover,
     title,
     excerpt
   } = article.data
 
   const html = sanitizeArticle(body)
-  const linkHTML = RichText.asHtml(links)
 
+  const linkHTML = RichText.asHtml(links)
   const headline = RichText.asText(title)
 
   return (
@@ -44,7 +41,7 @@ const Article = ({ article, author }: ArticleProps) => {
               <h1 className="mb-0 mr-2 text-4xl font-medium font-en">
                 {name}
               </h1>
-              {/* <Colon className="h-5" /> */}
+              <Colon />
             </div>
             <h1 className="mb-6 text-4xl font-medium font-zh">{headline}</h1>
             <div className="flex mb-6 w-3/4">
