@@ -1,5 +1,6 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, useRef } from 'react'
 
+import { useScroll } from 'react-use'
 import Navigation from './Navigation'
 import Drawer from './Drawer'
 import StickyNavigation from './StickyNavigation'
@@ -10,15 +11,15 @@ type LayoutProps = {
 }
 
 const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
-  // const { ref, onScroll } = useScrollRestoration<HTMLDivElement>(`page-component-drawer`)
-  // const { y } = useScroll(ref)
+  const ref = useRef<HTMLDivElement>()
+  const { y } = useScroll(ref)
 
   const drawerToggleId = 'drawer-toggle'
 
   return (
     <main className="bg-background h-full">
-      <Drawer toggleId={drawerToggleId}>
-        <StickyNavigation isVisible={false} />
+      <Drawer toggleId={drawerToggleId} scrollRef={ref}>
+        <StickyNavigation isVisible={y > 0} />
         <Navigation drawerToggleId={drawerToggleId} />
         { children }
         <Footer />
