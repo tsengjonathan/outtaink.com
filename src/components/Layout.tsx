@@ -11,7 +11,7 @@ type LayoutProps = {
 }
 
 const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
-  const ref = useRef<HTMLDivElement>()
+  const ref = useRef<HTMLDivElement>(null)
   const { y } = useScroll(ref)
 
   const drawerToggleId = 'drawer-toggle'

@@ -36,8 +36,8 @@ const ArticleCard: FC<ArticleCardProps> = ({ article, equalHeight = false }: Art
               alt={cover.alt}
               layout={equalHeight ? "fill" : "responsive"}
               objectFit="cover"
-              height={cover.dimensions.height}
-              width={cover.dimensions.width}
+              { ...!equalHeight && { height: cover.dimensions.height }}
+              { ...!equalHeight && { width: cover.dimensions.width }}
             />
           </div>
           <div className="mt-3 md:mt-4">

@@ -21,7 +21,9 @@ const Navigation: FC<NavigationProps> = ({ drawerToggleId }: NavigationProps) =>
     <div className="max-w-screen-page mx-6 md:mx-auto pt-6 md:py-10 flex items-center justify-between">
       <SearchButton className="tooltip-right" />
       <Link href="/">
-        <Logo />
+        <a>
+          <Logo />
+        </a>
       </Link>
       <DrawerButton toggleId={drawerToggleId} />
     </div>

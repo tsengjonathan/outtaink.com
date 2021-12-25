@@ -25,7 +25,7 @@ const Featured: FC<FeaturedProps> = ({ article }: FeaturedProps) => {
   return (
     <section className="flex max-w-screen-page mx-auto grid grid-cols-1 md:grid-cols-featured">
       <Link href={url}>
-        <a className="m-6 md:m-0 z-10 h-64 md:h-full relative">
+        <a className="m-6 md:m-0 z-10 h-80 md:h-full relative">
           <Image
             src={cover.url}
             alt={cover.alt}

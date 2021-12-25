@@ -25,7 +25,9 @@ const StickyNavigation: FC<StickyNavigationProps> = ({ className, isVisible = fa
     <div className={classes}>
       <div className="flex items-center">
         <Link href="/">
-          <Logo className="mr-6" />
+          <a>
+            <Logo className="mr-6" />
+          </a>
         </Link>
         {navs.map(nav => (
           <NavigationItem key={nav.src} className="mx-6" to={nav.src} text={nav.name} hoverText={nav.subname} fontSize="lg" />)
