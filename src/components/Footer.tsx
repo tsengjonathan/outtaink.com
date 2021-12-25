@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faInstagram , faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import FooterLogo from '../../content/svg/footer-logo.svg';
+import FooterLogo from './FooterLogo';
 import Newsletter from './Newsletter';
 
 const Footer: FC = () => {
@@ -43,7 +43,7 @@ const Footer: FC = () => {
             </Link>
           </div>
           <div className="flex flex-col mt-8 lg:pl-18 lg:mt-0 lg:flex-row lg:w-1/2">
-            {/* <FooterLogo className="flex-grow" /> */}
+            <FooterLogo className="flex-grow" />
             <div className="flex mt-4 lg:mt-0">
               <a
                 className="flex flex-grow justify-center lg:mr-4"
