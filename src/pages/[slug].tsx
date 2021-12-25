@@ -94,8 +94,3 @@ export const getStaticPaths = async () => {
   }
 }
 
-// export default withPrismicPreview(ArticleTemplate, [{
-//   repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
-//   linkResolver,
-// }])
-

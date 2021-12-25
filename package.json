@@ -46,9 +46,6 @@
     "typescript": "^4.4.3"
   },
   "homepage": "https://outtaink.com",
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
@@ -63,9 +60,6 @@
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "start": "npm run develop",
     "local": "npm run develop -- -H 0.0.0.0",
-    "serve": "next start",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 0",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "serve": "next start"
   }
 }
