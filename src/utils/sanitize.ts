@@ -1,9 +1,13 @@
+import { RichText } from 'prismic-dom';
+import { PrismicNode } from '../types/cms'
+
 const symbolReplacements = {
   '“': '"',
   '”': '"',
-};
+}
 
-const sanitizeArticle = (article: string): string => {
+const sanitizeArticle = (node: PrismicNode | PrismicNode[]): string => {
+  const article = RichText.asHtml(node)
   let buffer = article;
   for (const before in symbolReplacements) {
     const after = symbolReplacements[before];

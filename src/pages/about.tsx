@@ -1,54 +1,64 @@
 import React, { FC } from 'react';
-import { graphql, withPrefix } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import { Helmet } from 'react-helmet';
 
-import { PrismicAboutUsPage, PrismicLinkType } from '../utils/types';
+import Image from 'next/image'
+import { PrismicAboutUsPage, PrismicAuthor } from '../types/cms'
 import Heading from '../components/Heading'
 import SEO from '../components/SEO';
-import { isPrismicAuthor } from '../utils/graphql'
+import { fetchAboutUsPage, fetchAuthors } from '../utils/queries'
 
-const renderIllustration = (link: PrismicLinkType) => {
-  const document = link.document
-  console.log(document)
-  if (!isPrismicAuthor(document)) {
-    return null
-  }
-
+const renderIllustration = (author: PrismicAuthor) => {
   const {
     id,
     data: {
       illustration: {
-        gatsbyImageData, alt
+        url, alt, dimensions
       }
     }
-  } = document
-  return <GatsbyImage image={gatsbyImageData} alt={alt} key={id} />
+  } = author
+
+  return (
+    <Image
+      src={url}
+      alt={alt}
+      key={id}
+      layout="responsive"
+      height={dimensions.height}
+      width={dimensions.width}
+    />
+  )
 }
 
 type AboutUsPageProps = {
-  data: {
-    prismicAboutUsPage: PrismicAboutUsPage
-  }
+  page: PrismicAboutUsPage
+  authors: { [id: string]: PrismicAuthor }
 }
 
-const About: FC<AboutUsPageProps> = ({ data }: AboutUsPageProps) => {
+const About: FC<AboutUsPageProps> = ({ page, authors }: AboutUsPageProps) => {
   const {
-    header_image: headerImage,
+    header_image,
     chinese,
     cofounders,
     english,
     members
-  } = data.prismicAboutUsPage.data
+  } = page.data
 
   return (
     <>
       <SEO title="About Us" />
       <Helmet>
-        <script src={withPrefix('justfont.js')}></script>
+        <script src={'justfont.js'}></script>
       </Helmet>
       <div className="flex flex-col max-w-screen-lg mx-auto my-32 p-8">
-        <GatsbyImage className="mx-auto mb-20" image={headerImage.gatsbyImageData} alt={headerImage.alt} />
+        <div className="mx-auto mb-20">
+          <Image
+            src={header_image.url}
+            alt={header_image.alt}
+            layout="fixed"
+            height={header_image.dimensions.height}
+            width={header_image.dimensions.width}
+          />
+        </div>
         <p className="font-hand text-3xl mb-10">
           {english}
         </p>
@@ -58,11 +68,11 @@ const About: FC<AboutUsPageProps> = ({ data }: AboutUsPageProps) => {
         <div className="mx-auto mb-24">
           <Heading name="Meet the Team" />
         </div>
-        <div className="flex flex-col lg:flex-row">
-          {cofounders.map(cofounder => renderIllustration(cofounder.cofounder))}
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {cofounders.map(({ cofounder }) => renderIllustration(authors[cofounder.id]))}
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
-          {members.map(member => renderIllustration(member.member))}
+          {members.map(({ member }) => renderIllustration(authors[member.id]))}
         </div>
       </div>
     </>
@@ -71,49 +81,20 @@ const About: FC<AboutUsPageProps> = ({ data }: AboutUsPageProps) => {
 
 export default About
 
-export const AboutUsPageQuery = graphql`
-  query {
-    prismicAboutUsPage {
-      data {
-        header_image {
-          alt
-          gatsbyImageData(width: 580)
-        }
-        chinese
-        cofounders {
-          cofounder {
-            document {
-              ... on PrismicAuthor {
-                id
-                data {
-                  illustration {
-                    alt
-                    gatsbyImageData
-                  }
-                  name
-                }
-              }
-            }
-          }
-        }
-        english
-        members {
-          member {
-            document {
-              ... on PrismicAuthor {
-                id
-                data {
-                  illustration {
-                    alt
-                    gatsbyImageData
-                  }
-                  name
-                }
-              }
-            }
-          }
-        }
-      }
+export const getStaticProps = async () => {
+  const pages = await fetchAboutUsPage()
+  const authors = await fetchAuthors()
+
+  if (pages.length > 1) { console.warn('More than one About Us Page found') }
+
+  const authorById: {[id: string]: PrismicAuthor} = authors.reduce((obj, author) => {
+    return {...obj, [author.id]: author}
+  }, {})
+
+  return {
+    props: {
+      page: pages[0],
+      authors: authorById,
     }
   }
-`
+}

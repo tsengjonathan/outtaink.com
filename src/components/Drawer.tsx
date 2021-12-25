@@ -27,7 +27,7 @@ const Drawer: FC<DrawerProps> = ({ children, toggleId, scrollRef, onScroll }: Dr
         <label className="drawer-overlay" htmlFor={toggleId} />
         <ul className="menu w-80 bg-white py-6">
           {navs.map(nav => (
-            <li onClick={liOnClick}>
+            <li onClick={liOnClick} key={nav.src}>
               <NavigationItem to={nav.src} text={nav.name} hoverText={nav.subname} className="mx-auto my-4" />
             </li>
           ))}

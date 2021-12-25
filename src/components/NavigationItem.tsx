@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 import classNames from 'classnames'
 
 import { Size, getFontSize, getNavItemSize } from '../utils/tailwind'
@@ -32,9 +32,11 @@ const NavigationItem: FC<NavigationItemProps> = ({ className, to, text, hoverTex
     'font-medium highlight align-middle'
   )
   return (
-    <Link className={classes} to={to} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <span className={hoverTextClasses}>{hoverText}</span>
-      <span className={textClasses}>{text}</span>
+    <Link href={to}>
+      <a className={classes} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <span className={hoverTextClasses}>{hoverText}</span>
+        <span className={textClasses}>{text}</span>
+      </a>
     </Link>
   )
 }

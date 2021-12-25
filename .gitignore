@@ -54,9 +54,8 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
-.cache/
-public
+# nextjs files
+.next
 
 # Mac files
 .DS_Store
@@ -68,5 +67,5 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# Gatsby
-graphql.d.ts
+# Sentry
+.sentryclirc

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Link } from 'gatsby';
+import Link from 'next/link'
 
 import DrawerButton from './DrawerButton'
 import Logo from './Logo'
@@ -20,8 +20,10 @@ const Navigation: FC<NavigationProps> = ({ drawerToggleId }: NavigationProps) =>
   return (
     <div className="max-w-screen-page mx-6 md:mx-auto pt-6 md:py-10 flex items-center justify-between">
       <SearchButton className="tooltip-right" />
-      <Link to="/">
-        <Logo />
+      <Link href="/">
+        <a>
+          <Logo />
+        </a>
       </Link>
       <DrawerButton toggleId={drawerToggleId} />
     </div>

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faInstagram , faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import FooterLogo from '../../content/svg/footer-logo.svg';
+import FooterLogo from './FooterLogo';
 import Newsletter from './Newsletter';
 
 const Footer: FC = () => {
@@ -26,14 +26,20 @@ const Footer: FC = () => {
         </div>
         <div className="flex flex-col lg:flex-row border-0 border-t-2 border-white border-solid text-white lg:text-sm font-en py-8 items-center">
           <div className="flex flex-col lg:flex-row lg:w-1/2">
-            <Link className="flex mt-2 lg:mr-16 mx-auto lg:mx-0" to="/">
-              Terms of Service
+            <Link href="/">
+              <a className="flex mt-2 lg:mr-16 mx-auto lg:mx-0">
+                Terms of Service
+              </a>
             </Link>
-            <Link className="flex mt-2 lg:mr-16 mx-auto lg:mx-0" to="/">
-              Privacy Statement
+            <Link href="/">
+              <a className="flex mt-2 lg:mr-16 mx-auto lg:mx-0">
+                Privacy Statement
+              </a>
             </Link>
-            <Link className="flex mt-2 lg:mr-16 mx-auto lg:mx-0" to="/">
-              Copyright Notice
+            <Link href="/">
+              <a className="flex mt-2 lg:mr-16 mx-auto lg:mx-0">
+                Copyright Notice
+              </a>
             </Link>
           </div>
           <div className="flex flex-col mt-8 lg:pl-18 lg:mt-0 lg:flex-row lg:w-1/2">
