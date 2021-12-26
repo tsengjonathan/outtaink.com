@@ -20,13 +20,13 @@ const Navigation: FC<NavigationProps> = ({ setDrawerOpen }: NavigationProps) => 
   return (
     <div className="md:px-6">
       <div className="max-w-screen-page mx-6 md:mx-auto pt-6 md:py-10 flex items-center justify-between">
-        <SearchButton className="tooltip-right" />
+        <DrawerButton setDrawerOpen={setDrawerOpen} />
         <Link href="/">
           <a>
             <Logo />
           </a>
         </Link>
-        <DrawerButton setDrawerOpen={setDrawerOpen} />
+        <SearchButton className="tooltip-left" />
       </div>
     </div>
   )
