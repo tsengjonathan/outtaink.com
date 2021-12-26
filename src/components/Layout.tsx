@@ -1,6 +1,6 @@
-import React, { FC, ReactNode, useRef } from 'react'
+import React, { FC, ReactNode, useState } from 'react'
 
-import { useScroll } from 'react-use'
+import { useWindowScroll } from 'react-use'
 import Navigation from './Navigation'
 import Drawer from './Drawer'
 import StickyNavigation from './StickyNavigation'
@@ -11,19 +11,16 @@ type LayoutProps = {
 }
 
 const Layout: FC<LayoutProps> = ({ children }: LayoutProps) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const { y } = useScroll(ref)
-
-  const drawerToggleId = 'drawer-toggle'
+  const [ drawerOpen, setDrawerOpen ] = useState(false)
+  const { y } = useWindowScroll()
 
   return (
     <main className="bg-background h-full">
-      <Drawer toggleId={drawerToggleId} scrollRef={ref}>
-        <StickyNavigation isVisible={y > 0} />
-        <Navigation drawerToggleId={drawerToggleId} />
-        { children }
-        <Footer />
-      </Drawer>
+      <Drawer isOpen={drawerOpen} setIsOpen={setDrawerOpen}/>
+      <StickyNavigation isVisible={y > 0} />
+      <Navigation setDrawerOpen={setDrawerOpen} />
+      { children }
+      <Footer />
     </main>
   )
 }

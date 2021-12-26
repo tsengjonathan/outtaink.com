@@ -8,12 +8,15 @@
     "url": "https://github.com/tsengjonathan/outtaink.com/issues"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@fontsource/noto-sans-tc": "^4.5.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
+    "@mui/material": "^5.2.5",
     "@prismicio/client": "^5.1.0",
     "@sentry/nextjs": "^6.16.1",
     "@typeform/embed-react": "^1.1.2",

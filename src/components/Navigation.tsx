@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { Dispatch, FC, SetStateAction } from 'react'
 import Link from 'next/link'
 
 import DrawerButton from './DrawerButton'
@@ -13,10 +13,10 @@ export const navs = [
 ];
 
 type NavigationProps = {
-  drawerToggleId?: string
+  setDrawerOpen: Dispatch<SetStateAction<boolean>>
 }
 
-const Navigation: FC<NavigationProps> = ({ drawerToggleId }: NavigationProps) => {
+const Navigation: FC<NavigationProps> = ({ setDrawerOpen }: NavigationProps) => {
   return (
     <div className="max-w-screen-page mx-6 md:mx-auto pt-6 md:py-10 flex items-center justify-between">
       <SearchButton className="tooltip-right" />
@@ -25,7 +25,7 @@ const Navigation: FC<NavigationProps> = ({ drawerToggleId }: NavigationProps) =>
           <Logo />
         </a>
       </Link>
-      <DrawerButton toggleId={drawerToggleId} />
+      <DrawerButton setDrawerOpen={setDrawerOpen} />
     </div>
   )
 }
