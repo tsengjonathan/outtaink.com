@@ -1,6 +1,7 @@
 import React from 'react'
 import { RichText } from 'prismic-dom'
 
+import { useRouter } from 'next/router'
 import SEO from '../components/SEO'
 import Interviewee from '../components/Interviewee'
 
@@ -9,14 +10,18 @@ import Colon from '../components/Colon'
 import { sanitizeArticle } from '../utils/sanitize'
 import { PrismicArticle, PrismicAuthor } from '../types/cms'
 import { fetchAllArticleSlugs, fetchArticle, fetchAuthorById } from '../utils/queries'
+import Loader from '../components/Loader'
+import useUpdatePreviewRef from '../utils/useUpdatePreviewRef'
+import Custom404 from './404'
 
 
 type ArticleProps = {
   article: PrismicArticle
   author: PrismicAuthor
+  previewRef: string
 }
 
-const Article = ({ article, author }: ArticleProps) => {
+const Article = ({ article, author, previewRef }: ArticleProps) => {
   const {
     name,
     bio_group,
@@ -25,6 +30,17 @@ const Article = ({ article, author }: ArticleProps) => {
     title,
     excerpt
   } = article.data
+
+  const router = useRouter()
+  if (router.isFallback) {
+    return <Loader />
+  }
+
+  if (!article.id) {
+    return <Custom404 />
+  }
+
+  useUpdatePreviewRef(previewRef, article.id)
 
   const html = sanitizeArticle(body)
 
@@ -71,9 +87,11 @@ const Article = ({ article, author }: ArticleProps) => {
 
 export default Article
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, previewData }) => {
+  const previewRef = previewData ? previewData.ref : null
+
   const { slug } = params
-  const article = await fetchArticle(slug)
+  const article = await fetchArticle(slug, previewRef)
 
   const { id } = article.data.author
   const author = await fetchAuthorById(id)
@@ -81,7 +99,8 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       article,
-      author
+      author,
+      previewRef
     }
   }
 }
@@ -89,8 +108,8 @@ export const getStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
   const articleSlugs = await fetchAllArticleSlugs()
   return {
-    paths: articleSlugs.map(slug => ({ params: { slug } })),
-    fallback: false
+    paths: articleSlugs,
+    fallback: true
   }
 }
 
