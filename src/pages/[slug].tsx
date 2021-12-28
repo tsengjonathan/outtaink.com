@@ -22,6 +22,10 @@ type ArticleProps = {
 }
 
 const Article = ({ article, author, previewRef }: ArticleProps) => {
+  if (!article || !article.id || !article.data) {
+    return <Custom404 />
+  }
+
   const {
     name,
     bio_group,
@@ -34,10 +38,6 @@ const Article = ({ article, author, previewRef }: ArticleProps) => {
   const router = useRouter()
   if (router.isFallback) {
     return <Loader />
-  }
-
-  if (!article.id) {
-    return <Custom404 />
   }
 
   useUpdatePreviewRef(previewRef, article.id)
