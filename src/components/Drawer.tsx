@@ -13,7 +13,7 @@ const Drawer: FC<DrawerProps> = ({ isOpen, setIsOpen }: DrawerProps) => {
   const closeDrawer = () => setIsOpen(false)
 
   return (
-    <MUIDrawer open={isOpen} onClose={closeDrawer} anchor="right">
+    <MUIDrawer open={isOpen} onClose={closeDrawer} anchor="left">
       <ul className="menu w-80 bg-white py-6">
         {navs.map(nav => (
           <li onClick={closeDrawer} key={nav.src}>
