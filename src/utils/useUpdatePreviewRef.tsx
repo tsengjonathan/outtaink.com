@@ -13,7 +13,7 @@ function timeout(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export default function useUpdatePreviewRef(previewRef, documentId) {
+export default function useUpdatePreviewRef(previewRef: string, documentId: string) {
   const router = useRouter()
   const previewExitRoute = getExitPreviewRoute(router)
   useEffect(() => {

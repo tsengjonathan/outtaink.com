@@ -38,8 +38,17 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack5": "^6.4.9",
+    "@storybook/manager-webpack5": "^6.4.9",
+    "@storybook/react": "^6.4.9",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "autoprefixer": "^10.3.6",
+    "babel-loader": "^8.2.3",
     "dotenv": "^10.0.0",
     "eslint-plugin-import": "^2.25.2",
     "gh-pages": "^3.2.3",
@@ -64,6 +73,8 @@
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "start": "npm run develop",
     "local": "npm run develop -- -H 0.0.0.0",
-    "serve": "next start"
+    "serve": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
