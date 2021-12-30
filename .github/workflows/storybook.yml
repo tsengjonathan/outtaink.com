@@ -18,5 +18,5 @@ jobs:
         with:
           node-version: '16'
 
-      - run: npm storybook:build
-      - run: npm storybook:deploy
+      - run: npm run storybook:build
+      - run: npm run storybook:deploy
