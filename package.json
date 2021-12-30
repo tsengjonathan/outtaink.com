@@ -76,7 +76,8 @@
     "start": "npm run develop",
     "local": "npm run develop -- -H 0.0.0.0",
     "serve": "next start",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook:start": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
+    "storybook:deploy": "gh-pages -d storybook-static"
   }
 }
