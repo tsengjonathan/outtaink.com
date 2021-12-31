@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import classNames from 'classnames'
 
 import plane from '../../assets/hairline_button_plane.png'
@@ -33,11 +34,14 @@ const HairlineButton = ({ title }: HairlineButtonProps) => {
           strokeLinecap='round'
         />
       </svg>
-      <img
-        className={planeClasses}
-        src={plane}
-        alt='HairlineButton Plane'
-      />
+      <div className={planeClasses}>
+        <Image
+          src={plane}
+          width={614}
+          height={426}
+          alt='HairlineButton Plane'
+        />
+      </div>
       <h1 className={titleClasses}>
         {title}
       </h1>
