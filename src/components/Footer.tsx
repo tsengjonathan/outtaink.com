@@ -15,7 +15,7 @@ const Footer: FC = () => {
           <div className="lg:w-1/2">
             <Newsletter />
           </div>
-          <div className="lg:w-1/2 flex flex-col lg:pl-18 lg:pr-12 mt-8 lg:mt-0">
+          <div className="lg:w-1/2 flex flex-col lg:pl-18 lg:pr-8 mt-8 lg:mt-0">
             <h3 className="font-en text-white font-bold text-lg">
               Let us hear your stories, keep your memories on Outtaink
             </h3>
