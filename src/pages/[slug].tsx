@@ -50,7 +50,7 @@ const Article = ({ article, author, previewRef }: ArticleProps) => {
   return (
     <>
       <SEO title={headline} description={excerpt} />
-      <div className="grid grid-cols-1 lg:grid-cols-article mx-4 lg:mx-40">
+      <div className="grid grid-cols-1 lg:grid-cols-article mx-4 md:mx-auto max-w-screen-lg">
         <article id="article">
           <header>
             <div className="mt-6 mb-2 flex items-center">
