@@ -10,7 +10,7 @@ import Newsletter from './Newsletter';
 const Footer: FC = () => {
   return (
     <section className="flex flex-col bg-default-50 pt-12 px-6 pb-4">
-      <div className="max-w-screen-page mx-auto">
+      <div className="max-w-screen-lg mx-auto">
         <div className="flex flex-col lg:flex-row mt-4 mb-16">
           <div className="lg:w-1/2">
             <Newsletter />

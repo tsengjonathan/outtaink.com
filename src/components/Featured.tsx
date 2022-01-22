@@ -23,10 +23,11 @@ const Featured: FC<FeaturedProps> = ({ article }: FeaturedProps) => {
 
   // TODO: Replace SVG with @heroicons/react once https://github.com/tailwindlabs/heroicons/pull/281 is merged
   return (
-    <section className="flex max-w-screen-page mx-auto grid grid-cols-1 md:grid-cols-featured">
+    <section className="flex max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-featured">
       <Link href={url}>
         <a className="m-6 md:m-0 z-10 h-80 md:h-full relative">
           <Image
+            className=""
             src={cover.url}
             alt={cover.alt}
             layout="fill"
@@ -35,9 +36,9 @@ const Featured: FC<FeaturedProps> = ({ article }: FeaturedProps) => {
         </a>
       </Link>
       <div className="flex flex-col">
-        <div className="hidden md:block h-36" />
-        <div className="bg-white mr-14 md:mr-0 transform -translate-y-10 -mb-10 md:mb-0">
-          <div className="h-full mt-8 md:pt-40 pb-4 md:pb-10 px-6 md:pl-10 md:pr-16">
+        <div className="hidden md:block h-24" />
+        <div className="bg-white mr-14 md:mr-0 transform -translate-y-10 -mb-10 md:mb-0 rounded drop-shadow">
+          <div className="h-full mt-8 md:pt-24 pb-4 md:pb-10 px-6 md:pl-10 md:pr-16">
             <Link href={url}>
               <a>
                 <div className="flex items-center">
@@ -56,7 +57,7 @@ const Featured: FC<FeaturedProps> = ({ article }: FeaturedProps) => {
             </div>
           </div>
         </div>
-        <div className="hidden md:block h-16" />
+        <div className="hidden md:block h-8" />
       </div>
     </section>
   )
