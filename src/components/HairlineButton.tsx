@@ -5,10 +5,11 @@ import classNames from 'classnames'
 import plane from '../../assets/hairline_button_plane.png'
 
 type HairlineButtonProps = {
+  className?: string
   title: string
 }
 
-const HairlineButton = ({ title }: HairlineButtonProps) => {
+const HairlineButton = ({ className, title }: HairlineButtonProps) => {
   const planeClasses = classNames(
     'absolute w-14 top-3 right-20',
     'animate-plane origin-bottom-left scale-0'
@@ -21,7 +22,7 @@ const HairlineButton = ({ title }: HairlineButtonProps) => {
   )
 
   return (
-    <div className='relative w-72'>
+    <div className={classNames('relative', 'w-72', className)}>
       <svg className='w-52 mx-auto' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 200'>
         <path
           className='animate-draw'
