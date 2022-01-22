@@ -45,6 +45,26 @@ module.exports = {
       },
       width: {
         18: '4.5rem'
+      },
+      keyframes: {
+        dash: {
+          '100%': { 'stroke-dashoffset': 0 }
+        },
+        plane: {
+          '0%': {
+            transform: 'scale(0)'
+          },
+          '100%': {
+            transform: 'scale(1) translateX(2.5rem)'
+          }
+        }
+      },
+      animation: {
+        draw: 'dash 2s linear forwards',
+        plane: 'plane 400ms linear forwards 500ms'
+      },
+      transitionProperty: {
+        'scale': 'scale'
       }
     },
   },
