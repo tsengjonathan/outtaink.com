@@ -9,7 +9,6 @@ type ArticleCardsProps = {
 }
 
 const ArticleCards: FC<ArticleCardsProps> = ({ articles }: ArticleCardsProps) => {
-
   return (
     <>
       <HairlineButton title="關於留學，我們有話要說" className='mx-auto mb-8' />
