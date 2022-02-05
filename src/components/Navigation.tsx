@@ -19,7 +19,7 @@ type NavigationProps = {
 const Navigation: FC<NavigationProps> = ({ setDrawerOpen }: NavigationProps) => {
   return (
     <div className="md:px-6">
-      <div className="max-w-screen-page mx-6 md:mx-auto pt-6 md:py-10 flex items-center justify-between">
+      <div className="max-w-screen-lg mx-6 md:mx-auto pt-6 md:py-10 flex items-center justify-between">
         <DrawerButton setDrawerOpen={setDrawerOpen} />
         <Link href="/">
           <a>

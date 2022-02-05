@@ -23,7 +23,7 @@ module.exports = {
           900: '#e5f1f0',
         },
         border: '#656565',
-        background: '#F3F3F3',
+        background: '#F7F7F7',
       },
       minHeight: {
         24: '6rem',
@@ -39,9 +39,6 @@ module.exports = {
       },
       letterSpacing: {
         'lihsianti': '-.125em'
-      },
-      screens: {
-        page: '1272px'
       },
       width: {
         18: '4.5rem'

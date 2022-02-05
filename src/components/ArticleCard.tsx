@@ -26,8 +26,14 @@ const ArticleCard: FC<ArticleCardProps> = ({ article, equalHeight = false }: Art
     { 'h-72': equalHeight }
   )
 
+  const wrapperClasses = classNames(
+    'bg-white p-5 mx-6 mb-6 break-inside-avoid drop-shadow rounded',
+    'md:mx-0 md:mb-10',
+    'md:hover:scale-105 transition-transform duration-300'
+  )
+
   return (
-    <div className="bg-white p-4 mx-6 md:mx-0 mb-6 md:mb-10 break-inside-avoid">
+    <div className={wrapperClasses}>
       <Link href={url}>
         <a>
           <div className={imageClasses}>
