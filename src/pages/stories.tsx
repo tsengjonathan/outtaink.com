@@ -28,7 +28,7 @@ const Stories: FC<StoriesProps> = ({ articles }: StoriesProps) => {
     <>
       <SEO title="Stories" />
       <Filter options={tags} filters={filters} handleFilter={handleFilter} />
-      <div className="m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-screen-lg mx-auto">
         {posts.map(article => <ArticleCard key={article.id} article={article} equalHeight={true} />)}
       </div>
     </>
