@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { repoName } from "../../prismicConfiguration";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -11,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`} />
+          <script defer data-domain="outtaink.com" src="/js/script.js"></script>
         </Head>
         <body>
           <Main />
