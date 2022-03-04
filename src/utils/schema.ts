@@ -1,5 +1,5 @@
 import { string, object, array, mixed, SchemaOf, number } from 'yup'
-import { PrismicAboutUsPage, PrismicArticle, PrismicArticleData, PrismicArticleDataBioGroup, PrismicAuthor, PrismicCofounder, PrismicImage, PrismicMember, PrismicNode, PrismicSite, PrismicText } from '../types/cms'
+import { PrismicAboutUsPage, PrismicArticle, PrismicArticleData, PrismicArticleDataBioGroup, PrismicAuthor, PrismicCofounder, PrismicImage, PrismicMember, PrismicNode, PrismicSite, PrismicText, PrismicVideo } from '../types/cms'
 
 export const prismicArticleDataBioGroupSchema: SchemaOf<PrismicArticleDataBioGroup> = object().shape({
   text: string()
@@ -87,3 +87,13 @@ export const prismicArticleSchema: SchemaOf<PrismicArticle> = object().shape({
 }).defined()
 
 export const prismicAllDocumentTypesSchema = mixed().oneOf([ prismicAboutUsPageSchema, prismicArticleSchema, prismicAuthorSchema ])
+
+
+export const prismicVideoSchema: SchemaOf<PrismicVideo> = object().shape({
+  id: string(),
+  data: object().shape({
+    name: string(),
+    title: string(),
+    url: string()
+  }),
+}).defined()

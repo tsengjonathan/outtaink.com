@@ -1,8 +1,8 @@
 import Prismic from '@prismicio/client'
 import { Document } from '../types/client'
-import { PrismicAboutUsPage, PrismicArticle, PrismicAuthor } from '../types/cms'
+import { PrismicAboutUsPage, PrismicArticle, PrismicAuthor, PrismicVideo } from '../types/cms'
 import { Client } from './prismicHelpers'
-import { prismicAboutUsPageSchema, prismicArticleSchema, prismicAuthorSchema } from './schema'
+import { prismicAboutUsPageSchema, prismicArticleSchema, prismicAuthorSchema, prismicVideoSchema } from './schema'
 
 const recursiveQuery = async (
   query: string | string[],
@@ -75,4 +75,13 @@ export const fetchAuthorById = async (id: string): Promise<PrismicAuthor> => {
     Prismic.Predicates.at('document.id', id)
   ])
   return prismicAuthorSchema.cast(response[0])
+}
+
+export const fetchVideos = async (size?: number): Promise<PrismicVideo[]> => {
+  const response = await recursiveQuery(
+    Prismic.Predicates.at('document.type', 'video'),
+    '[my.video.date desc]',
+    size
+  )
+  return response.map(document => prismicVideoSchema.cast(document))
 }

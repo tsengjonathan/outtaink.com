@@ -1,4 +1,4 @@
-export type PrismicAllDocumentTypes = PrismicAboutUsPage | PrismicArticle | PrismicAuthor
+export type PrismicAllDocumentTypes = PrismicAboutUsPage | PrismicArticle | PrismicAuthor | PrismicVideo
 
 export type PrismicText = {
   text: string
@@ -82,5 +82,15 @@ export type PrismicImage = {
   dimensions: {
     height: number
     width: number
+  }
+}
+
+export type PrismicVideo = {
+  id: string
+  data: {
+    name: string
+    title: string
+    description: string
+    url: string
   }
 }

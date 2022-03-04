@@ -19,7 +19,7 @@ const ArticleCards: FC<ArticleCardsProps> = ({ articles }: ArticleCardsProps) =>
       </section>
       <section className="max-w-screen-lg mx-auto flex justify-center">
         <Link href="/stories">
-          <a className="mb-10 md:mb-20">
+          <a className="mb-10 md:mb-16">
             <MoreStories />
           </a>
         </Link>
