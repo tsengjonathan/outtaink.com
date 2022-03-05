@@ -92,5 +92,6 @@ export type PrismicVideo = {
     title: string
     description: string
     url: string
+    cover: PrismicImage
   }
 }

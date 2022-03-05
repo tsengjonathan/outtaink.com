@@ -94,6 +94,7 @@ export const prismicVideoSchema: SchemaOf<PrismicVideo> = object().shape({
   data: object().shape({
     name: string(),
     title: string(),
-    url: string()
+    url: string(),
+    cover: prismicImageSchema,
   }),
 }).defined()

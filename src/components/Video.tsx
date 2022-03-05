@@ -10,7 +10,7 @@ const Video = ({ video }: VideoProps) => {
   const { data: { name, title, description, url } } = video
 
   return (
-    <div className="w-full mb-16">
+    <div className="w-full mb-10">
       <div className="relative">
         <iframe
           className="relative z-10"
