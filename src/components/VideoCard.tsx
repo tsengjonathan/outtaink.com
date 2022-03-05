@@ -54,13 +54,13 @@ const VideoCard: FC<VideoCardProps> = ({ video }: VideoCardProps) => {
         </div>
       </div>
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} maxWidth="lg" fullWidth>
-        <DialogContent className="relative pt-[56.25%]">
+        <div className="relative pt-[56.25%]">
           <iframe
             className="absolute inset-0 w-full h-full"
             id="player"
             src={url}
           />
-        </DialogContent>
+        </div>
       </Dialog>
     </>
   )
