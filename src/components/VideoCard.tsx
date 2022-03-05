@@ -17,6 +17,7 @@ const VideoCard: FC<VideoCardProps> = ({ video }: VideoCardProps) => {
   const {
     data: {
       name,
+      description,
       title,
       cover,
       url
@@ -53,13 +54,37 @@ const VideoCard: FC<VideoCardProps> = ({ video }: VideoCardProps) => {
           <h1 className="font-mixed font-medium text-lg md:text-xl">{title}</h1>
         </div>
       </div>
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)} maxWidth="lg" fullWidth>
-        <div className="relative pt-[56.25%]">
-          <iframe
-            className="absolute inset-0 w-full h-full"
-            id="player"
-            src={url}
-          />
+      <Dialog
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        maxWidth="lg"
+        fullWidth
+        PaperProps={{
+          className: 'bg-transparent',
+          elevation: 0
+        }}
+      >
+        <div className="w-full">
+          <div className="relative">
+            <div className="lg:mr-24 relative z-10">
+              <div className="relative pt-[56.25%]">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  id="player"
+                  src={url}
+                />
+              </div>
+            </div>
+            <div className="bg-white w-full h-10 absolute right-0 bottom-0 rounded-t hidden lg:block" />
+          </div>
+          <div className="bg-white px-4 lg:px-12 py-4 lg:ml-24">
+            <div className="flex items-center">
+              <h1 className="font-mixed font-medium text-lg md:text-xl">{name}</h1>
+              <Colon width={8} className="mx-2" />
+              <h1 className="font-mixed font-medium text-lg md:text-xl">{title}</h1>
+            </div>
+            <p className="font-zh my-2 lg:my-0 text-sm lg:text-base">{description}</p>
+          </div>
         </div>
       </Dialog>
     </>
