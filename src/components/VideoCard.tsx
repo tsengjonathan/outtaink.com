@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import Dialog from '@mui/material/Dialog'
 
+import DialogContent from '@mui/material/DialogContent'
 import { PrismicVideo } from '../types/cms'
 import Colon from './Colon'
 
@@ -27,7 +28,7 @@ const VideoCard: FC<VideoCardProps> = ({ video }: VideoCardProps) => {
   )
 
   const wrapperClasses = classNames(
-    'bg-white p-5 mx-6 mb-6 break-inside-avoid drop-shadow rounded',
+    'bg-white p-5 mx-6 break-inside-avoid drop-shadow rounded',
     'md:mx-0 md:mb-10',
     'md:hover:scale-105 transition-transform duration-300',
     'cursor-pointer'
@@ -52,15 +53,14 @@ const VideoCard: FC<VideoCardProps> = ({ video }: VideoCardProps) => {
           <h1 className="font-mixed font-medium text-lg md:text-xl">{title}</h1>
         </div>
       </div>
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)} maxWidth="lg">
-        <div className="w-full">
+      <Dialog open={isOpen} onClose={() => setIsOpen(false)} maxWidth="lg" fullWidth>
+        <DialogContent className="relative pt-[56.25%]">
           <iframe
+            className="absolute inset-0 w-full h-full"
             id="player"
-            width="1200"
-            height="675"
             src={url}
           />
-        </div>
+        </DialogContent>
       </Dialog>
     </>
   )

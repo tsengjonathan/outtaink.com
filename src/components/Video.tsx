@@ -12,13 +12,13 @@ const Video = ({ video }: VideoProps) => {
   return (
     <div className="w-full mb-10">
       <div className="relative">
-        <iframe
-          className="relative z-10"
-          id="player"
-          width="960"
-          height="540"
-          src={url}
-        />
+        <div className="relative z-10 overflow-hidden pt-[56.25%] mx-6">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              id="player"
+              src={url}
+            />
+        </div>        
         <div className="h-12 bg-white absolute right-0 bottom-0 w-11/12" />
       </div>
       <div className="flex flex-col ml-12 px-8 pb-4 pt-3 justify-end bg-white">
