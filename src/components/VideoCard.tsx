@@ -77,7 +77,7 @@ const VideoCard: FC<VideoCardProps> = ({ video }: VideoCardProps) => {
             </div>
             <div className="bg-white w-full h-10 absolute right-0 bottom-0 rounded-t hidden lg:block" />
           </div>
-          <div className="bg-white px-4 lg:px-12 py-4 lg:ml-24">
+          <div className="bg-white px-4 lg:px-12 py-4 lg:ml-24 rounded-b">
             <div className="flex items-center">
               <h1 className="font-mixed font-medium text-lg md:text-xl">{name}</h1>
               <Colon width={8} className="mx-2" />

@@ -24,7 +24,7 @@ const VideoSection = ({ videos }: VideoSectionProps) => {
           <Colon className="ml-2" />
         </div>
         <div className="grid gap-6 grid-cols-1 lg:grid-cols-3">
-          {otherVideos.map(video => <VideoCard video={video} />)}
+          {otherVideos.map(video => <VideoCard video={video} key={video.id} />)}
         </div>
       </section>
     </>
