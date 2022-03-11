@@ -60,8 +60,10 @@ const VideoCard: FC<VideoCardProps> = ({ video }: VideoCardProps) => {
         maxWidth="lg"
         fullWidth
         PaperProps={{
-          className: 'bg-transparent',
-          elevation: 0
+          elevation: 0,
+          sx: {
+            backgroundColor: 'transparent'
+          }
         }}
       >
         <div className="w-full">
