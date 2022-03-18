@@ -66,18 +66,18 @@ const VideoCard: FC<VideoCardProps> = ({ video }: VideoCardProps) => {
           }
         }}
       >
-        <div className="w-full">
+        <div className="w-full px-8" onClick={() => setIsOpen(false)}>
           <div className="relative">
             <div className="lg:mr-24 relative z-10">
               <div className="relative pt-[56.25%]">
                 <iframe
-                  className="absolute inset-0 w-full h-full"
+                  className="absolute inset-0 w-full h-full rounded"
                   id="player"
                   src={url}
                 />
               </div>
             </div>
-            <div className="bg-white w-full h-10 absolute right-0 bottom-0 rounded-t hidden lg:block" />
+            <div className="bg-white w-full h-10 absolute right-0 bottom-0 rounded-t rounded-l hidden lg:block" />
           </div>
           <div className="bg-white px-4 lg:px-12 py-4 lg:ml-24 rounded-b">
             <div className="flex items-center">
