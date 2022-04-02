@@ -3,7 +3,7 @@ import React from 'react'
 const MoreStories = () => {
   return (
     <svg
-      className="stroke-gray-400 hover:stroke-default-50 fill-gray-400 hover:fill-default-50 transition-colors w-52 h-52"
+      className="stroke-gray-400 hover:stroke-default-50 fill-gray-400 hover:fill-default-50 transition-colors w-44 h-44"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 261.61 270.42"
     >
