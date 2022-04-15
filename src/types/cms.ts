@@ -18,6 +18,7 @@ export type PrismicArticleData = {
   body: PrismicNode[]
   excerpt: string
   links: PrismicNode[]
+  quote?: string
 }
 
 export type PrismicArticle = {
