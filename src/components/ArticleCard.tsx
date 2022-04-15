@@ -37,7 +37,7 @@ const ArticleCard: FC<ArticleCardProps> = ({ article, equalHeight = false }: Art
     <div className={wrapperClasses}>
       <Link href={url}>
         <a className="relative grid">
-          <div className="transition-opacity opacity-100 md:hover:opacity-0 z-20 bg-white p-5">
+          <div className="transition-opacity duration-500 opacity-100 md:hover:opacity-0 z-20 bg-white p-5">
             <div className={imageClasses}>
               <Image
                 src={cover.url}
