@@ -39,7 +39,8 @@ export const prismicArticleDataSchema: SchemaOf<PrismicArticleData> = object().s
   date: string(),
   body: array().of(prismicNodeSchema),
   excerpt: string(),
-  links: array().of(prismicTextSchema)
+  links: array().of(prismicTextSchema),
+  quote: string().nullable()
 })
 
 export const prismicSite: SchemaOf<PrismicSite> = object().shape({
