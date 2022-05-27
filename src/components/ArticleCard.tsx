@@ -10,9 +10,10 @@ import Quote from './Quote'
 type ArticleCardProps = {
   article: PrismicArticle
   equalHeight?: boolean
+  hideQuote?: boolean
 }
 
-const ArticleCard: FC<ArticleCardProps> = ({ article, equalHeight = false }: ArticleCardProps) => {
+const ArticleCard: FC<ArticleCardProps> = ({ article, equalHeight = false, hideQuote = false }: ArticleCardProps) => {
   const {
     url,
     data: {
@@ -37,7 +38,10 @@ const ArticleCard: FC<ArticleCardProps> = ({ article, equalHeight = false }: Art
     <div className={wrapperClasses}>
       <Link href={url}>
         <a className="relative grid">
-          <div className="transition-opacity duration-500 opacity-100 md:hover:opacity-0 z-20 bg-white p-5">
+          <div className={classNames(
+            "transition-opacity duration-500 opacity-100 z-20 bg-white p-5",
+            { "md:hover:opacity-0": !hideQuote }
+          )}>
             <div className={imageClasses}>
               <Image
                 src={cover.url}
@@ -58,7 +62,7 @@ const ArticleCard: FC<ArticleCardProps> = ({ article, equalHeight = false }: Art
               </h1>
             </div>
           </div>
-          <div className="hidden lg:flex flex-col items-center justify-center absolute w-full h-full">
+          {!hideQuote && <div className="hidden lg:flex flex-col items-center justify-center absolute w-full h-full">
             <div className="m-16 relative">
               <Quote className="w-12 absolute" />
               <Quote className="w-12 absolute rotate-180 right-0 bottom-0 mr-6" />
@@ -69,7 +73,7 @@ const ArticleCard: FC<ArticleCardProps> = ({ article, equalHeight = false }: Art
             <p className="font-mixed font-medium">
               {name}
             </p>
-          </div>
+          </div>}
         </a>
       </Link>
     </div>
