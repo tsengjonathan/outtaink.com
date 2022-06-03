@@ -12,7 +12,7 @@ export const prismicImageSchema: SchemaOf<PrismicImage> = object().shape({
     height: number(),
     width: number()
   })
-})
+}).nullable()
 
 export const prismicTextSchema: SchemaOf<PrismicText> = object().shape({
   type: string(),
