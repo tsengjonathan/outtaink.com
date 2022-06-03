@@ -38,7 +38,7 @@ export const prismicArticleDataSchema: SchemaOf<PrismicArticleData> = object().s
   bio_group: array().of(prismicArticleDataBioGroupSchema),
   date: string(),
   body: array().of(prismicNodeSchema),
-  excerpt: string(),
+  excerpt: string().nullable(),
   links: array().of(prismicTextSchema),
   quote: string().nullable()
 })

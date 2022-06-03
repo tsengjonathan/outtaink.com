@@ -16,7 +16,7 @@ export type PrismicArticleData = {
   bio_group: PrismicArticleDataBioGroup[]
   date: string
   body: PrismicNode[]
-  excerpt: string
+  excerpt?: string
   links: PrismicNode[]
   quote?: string
 }
