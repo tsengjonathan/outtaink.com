@@ -9,8 +9,8 @@ export const prismicImageSchema: SchemaOf<PrismicImage> = object().shape({
   url: string(),
   alt: string().nullable(),
   dimensions: object().shape({
-    height: number().nullable(),
-    width: number().nullable()
+    height: number().notRequired(),
+    width: number().notRequired()
   })
 }).nullable()
 
