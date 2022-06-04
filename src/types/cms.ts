@@ -81,8 +81,8 @@ export type PrismicImage = {
   url: string
   alt: string | null
   dimensions: {
-    height?: number
-    width?: number
+    height: number
+    width: number
   }
 }
 

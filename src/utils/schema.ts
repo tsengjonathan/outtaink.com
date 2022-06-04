@@ -9,10 +9,10 @@ export const prismicImageSchema: SchemaOf<PrismicImage> = object().shape({
   url: string(),
   alt: string().nullable(),
   dimensions: object().shape({
-    height: number().notRequired(),
-    width: number().notRequired()
+    height: number(),
+    width: number()
   })
-}).nullable()
+})
 
 export const prismicTextSchema: SchemaOf<PrismicText> = object().shape({
   type: string(),
@@ -33,7 +33,7 @@ export const prismicNodeSchema: SchemaOf<PrismicNode> = object().shape({
 export const prismicArticleDataSchema: SchemaOf<PrismicArticleData> = object().shape({
   name: string(),
   title: array().of(prismicTextSchema),
-  cover: prismicImageSchema,
+  cover: prismicImageSchema.notRequired(),
   author: object().shape({ id: string() }),
   bio_group: array().of(prismicArticleDataBioGroupSchema),
   date: string(),
