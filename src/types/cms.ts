@@ -9,14 +9,14 @@ export type PrismicNode = PrismicText | PrismicImage
 export type PrismicArticleData = {
   name: string
   title: PrismicText[]
-  cover: PrismicImage
+  cover?: PrismicImage
   author: {
     id: string
   }
   bio_group: PrismicArticleDataBioGroup[]
   date: string
   body: PrismicNode[]
-  excerpt: string
+  excerpt?: string
   links: PrismicNode[]
   quote?: string
 }
