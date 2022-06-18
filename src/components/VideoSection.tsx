@@ -1,6 +1,7 @@
 import React from 'react'
 import { PrismicVideo } from '../types/cms'
 import Colon from './Colon'
+import HairlineButton from './HairlineButton'
 import Video from './Video'
 import VideoCard from './VideoCard'
 
@@ -10,12 +11,12 @@ type VideoSectionProps = {
 
 const VideoSection = ({ videos }: VideoSectionProps) => {
   const featuredVideo = videos[0]
-  const otherVideos = videos.slice(1, 3)
+  const otherVideos = videos.slice(1, 4)
 
   return (
     <>
       <section className="max-w-screen-lg mx-auto flex-col text-center">
-        <h1 className="font-zh text-2xl font-medium mb-8">畢業了，然後呢？</h1>
+        <HairlineButton title="畢業了，然後呢？" className='mx-auto mb-8' />
         <Video video={featuredVideo} />
       </section>
       <section className="max-w-screen-lg mx-auto flex-col mb-16">
