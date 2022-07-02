@@ -15,7 +15,7 @@ const VideoSection = ({ videos }: VideoSectionProps) => {
 
   return (
     <>
-      <section className="max-w-screen-lg mx-auto flex-col text-center">
+      <section className="max-w-screen-lg mx-auto flex-col text-center mt-8">
         <HairlineButton title="畢業了，然後呢？" className='mx-auto mb-8' />
         <Video video={featuredVideo} />
       </section>

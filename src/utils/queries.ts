@@ -43,6 +43,14 @@ export const fetchAuthors = async (): Promise<PrismicAuthor[]> => {
   return response.map(document => prismicAuthorSchema.cast(document))
 }
 
+export const fetchNewDirectionArticles = async (size?: number): Promise<PrismicArticle[]> => {
+  const response = await recursiveQuery([
+    Prismic.Predicates.at('document.type', 'article'),
+    Prismic.Predicates.at('my.article.article_type', 'New Direction'),
+  ], '[my.article.date desc]', size)
+  return response.map(document => prismicArticleSchema.cast(document))
+}
+
 export const fetchAboutUsPage = async (): Promise<PrismicAboutUsPage[]> => {
   const response = await recursiveQuery(
     Prismic.Predicates.at('document.type', 'about_us_page')
