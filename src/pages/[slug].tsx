@@ -13,6 +13,7 @@ import { fetchAllArticleSlugs, fetchArticle, fetchAuthorById } from '../utils/qu
 import Loader from '../components/Loader'
 import useUpdatePreviewRef from '../utils/useUpdatePreviewRef'
 import Custom404 from './404'
+import classNames from 'classnames'
 
 
 type ArticleProps = {
@@ -73,10 +74,9 @@ const Article = ({ article, author, previewRef }: ArticleProps) => {
             className="text-base font-light font-zh tracking-wide"
             dangerouslySetInnerHTML={{ __html: html }}
           />
-          <hr className="my-6" />
-          <footer />
+          <hr className="mt-6 mb-8" />
         </article>
-        <div className="flex flex-col">
+        <div className={classNames('flex flex-col', { 'hidden': bio_group.length === 0 && links.length === 0 })}>
           <Interviewee name={name} bio={bio_group} links={linkHTML} />
           <div className="flex-grow" />
         </div>
