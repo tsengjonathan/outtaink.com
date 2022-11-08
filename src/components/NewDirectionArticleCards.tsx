@@ -1,7 +1,6 @@
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
 import Link from "next/link"
+import { ArrowRightIcon } from '@heroicons/react/24/solid'
 import { PrismicArticle } from "../types/cms"
 import Colon from "./Colon"
 import NewDirectionArticleCard from "./NewDirectionArticleCard"
@@ -50,7 +49,7 @@ const NewDirectionArticleCards = ({ articles }: NewDirectionArticleCardsProps) =
                 <span className="text-white font-mixed text-xl md:text-3xl mr-4">
                   前往閱讀
                 </span>
-                <FontAwesomeIcon icon={faArrowRight} className="w-8" color="#FFFFFF" />
+                <ArrowRightIcon className="w-8" color="#FFFFFF" />
               </a>
             </Link>
           </div>

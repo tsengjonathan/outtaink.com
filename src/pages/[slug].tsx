@@ -2,6 +2,7 @@ import React from 'react'
 import { RichText } from 'prismic-dom'
 
 import { useRouter } from 'next/router'
+import classNames from 'classnames'
 import SEO from '../components/SEO'
 import Interviewee from '../components/Interviewee'
 
@@ -13,7 +14,6 @@ import { fetchAllArticleSlugs, fetchArticle, fetchAuthorById } from '../utils/qu
 import Loader from '../components/Loader'
 import useUpdatePreviewRef from '../utils/useUpdatePreviewRef'
 import Custom404 from './404'
-import classNames from 'classnames'
 
 
 type ArticleProps = {

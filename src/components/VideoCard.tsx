@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import Dialog from '@mui/material/Dialog'
 
-import DialogContent from '@mui/material/DialogContent'
 import { PrismicVideo } from '../types/cms'
 import Colon from './Colon'
 

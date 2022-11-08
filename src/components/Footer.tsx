@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faInstagram , faGithub } from '@fortawesome/free-brands-svg-icons';
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
+
+import { Instagram, GitHub } from './Icons'
 
 import FooterLogo from './FooterLogo';
 import Newsletter from './Newsletter';
@@ -49,7 +49,7 @@ const Footer: FC = () => {
                 className="flex flex-grow justify-center lg:mr-4"
                 href="mailto:contact@outtaink.com"
               >
-                <FontAwesomeIcon icon={faEnvelope} size="2x" />
+                <EnvelopeIcon className="w-8" />
               </a>
               <a
                 className="flex flex-grow justify-center lg:mr-4"
@@ -57,7 +57,7 @@ const Footer: FC = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faInstagram} size="2x" />
+                <Instagram className="w-7 h-7" />
               </a>
               <a
                 className="flex flex-grow justify-center lg:mr-4"
@@ -65,7 +65,7 @@ const Footer: FC = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faGithub} size="2x" />
+                <GitHub className="w-7 h-7" />
               </a>
             </div>
           </div>

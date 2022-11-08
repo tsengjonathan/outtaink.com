@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 
-import Logo from './Logo'
+import { Logo } from './Icons'
 import NavigationItem from './NavigationItem'
 import { navs } from './Navigation'
 import SearchButton from './SearchButton'

@@ -2,7 +2,7 @@ import React, { Dispatch, FC, SetStateAction } from 'react'
 import Link from 'next/link'
 
 import DrawerButton from './DrawerButton'
-import Logo from './Logo'
+import { Logo } from './Icons'
 import SearchButton from './SearchButton'
 
 export const navs = [
