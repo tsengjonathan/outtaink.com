@@ -45,7 +45,7 @@ const NewDirectionArticleCards = ({ articles }: NewDirectionArticleCardsProps) =
               {title.map(heading => heading.text)}
             </h2>
             <Link href={url}>
-              <a className="bg-default-300 px-6 py-3 md:px-8 md:py-4 rounded-full mr-auto transition hover:shadow hover:scale-105">
+              <a className="bg-default-300 flex items-center px-6 py-3 md:px-8 md:py-4 rounded-full mr-auto transition hover:shadow hover:scale-105">
                 <span className="text-white font-mixed text-xl md:text-3xl mr-4">
                   前往閱讀
                 </span>
