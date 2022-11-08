@@ -69,6 +69,3 @@ yarn-error.log
 
 # Sentry
 .sentryclirc
-
-# Storybook
-storybook-static/
