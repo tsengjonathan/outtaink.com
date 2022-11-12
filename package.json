@@ -14,7 +14,7 @@
     "@heroicons/react": "^2.0.13",
     "@mui/material": "^5.10.13",
     "@prismicio/client": "^5.1.1",
-    "@sentry/nextjs": "^6.19.7",
+    "@sentry/nextjs": "^7.19.0",
     "@typeform/embed-react": "^2.2.0",
     "@types/prismic-dom": "^2.1.1",
     "@types/react-helmet": "^6.1.5",
