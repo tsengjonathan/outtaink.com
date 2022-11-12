@@ -73,5 +73,6 @@ module.exports = {
   ],
   daisyui: {
     base: false,
+    darkTheme: 'light',
   },
 };
