@@ -15,7 +15,7 @@
     "@mui/material": "^5.10.13",
     "@prismicio/client": "^5.1.1",
     "@sentry/nextjs": "^6.19.7",
-    "@typeform/embed-react": "^1.21.0",
+    "@typeform/embed-react": "^2.2.0",
     "@types/prismic-dom": "^2.1.1",
     "@types/react-helmet": "^6.1.5",
     "@types/react-transition-group": "^4.4.5",
