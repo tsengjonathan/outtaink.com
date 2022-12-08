@@ -2,6 +2,7 @@ import React from 'react'
 import ArticleCards from '../components/ArticleCards'
 import Featured from '../components/Featured'
 import Introduction from '../components/Introduction'
+import NewDirection from '../components/NewDirection'
 import NewDirectionArticleCards from '../components/NewDirectionArticleCards'
 import SEO from '../components/SEO'
 import VideoSection from '../components/VideoSection'
@@ -26,6 +27,7 @@ const LandingPage = ({ articles: allArticles, videos, newDirectionArticles }: La
       <Featured article={featuredArticle} />
       <Introduction />
       <ArticleCards articles={articles} />
+      <NewDirection />
       <NewDirectionArticleCards articles={newDirectionArticles} />
       <VideoSection videos={videos} />
     </>
