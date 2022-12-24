@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import bottle from './assets/two_bottle.svg'
-import tag from './assets/two_tag.svg'
 
 const BottleTwo = () => {
   return (
@@ -12,7 +11,7 @@ const BottleTwo = () => {
         <ScrollTwo />
       </div>
       <div className="absolute top-[502px] left-[300px] w-[20.5px]">
-        <Image src={tag} alt="Bottle Two Tag" />
+        <TagTwo />
       </div>
     </div>
   )
@@ -29,6 +28,21 @@ const ScrollTwo = () => (
         className="text-xl font-medium translate-x-[40px] translate-y-[50px]"
       >
         (上) 那些年的成长之痛
+      </text>
+    </g>
+  </svg>
+)
+
+const TagTwo = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.03 216.72">
+    <g>
+      <rect style={{ fill: '#006862' }} x=".3" y="141.63" width="28.73" height="75.09" />
+      <polygon style={{ fill: '#4c9c97' }} points="29.03 141.63 29.03 0 12.74 21.65 0 0 0 141.63 29.03 141.63" />
+      <text
+        style={{ fill: '#e3f0ef' }}
+        className="font-mixed rotate-90 translate-x-[12px] translate-y-[32px]"
+      >
+        Janet Wang
       </text>
     </g>
   </svg>

@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import bottle from './assets/three_bottle.svg'
-import tag from './assets/three_tag.svg'
 
 const BottleThree = () => {
   return (
@@ -12,7 +11,7 @@ const BottleThree = () => {
         <ScrollThree />
       </div>
       <div className="absolute top-[544px] left-[830px] w-[20px]">
-        <Image src={tag} alt="Bottle Three Tag" />
+        <TagThree />
       </div>
     </div>
   )
@@ -28,6 +27,21 @@ const ScrollThree = () => (
       留學生是孩子也相對脆弱
     </text>
   </svg >
+)
+
+const TagThree = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.03 233.72">
+    <g>
+      <rect style={{ fill: '#006862' }} x=".3" y="141.63" width="28.73" height="92.09" />
+      <polygon style={{ fill: '#4c9c97' }} points="29.03 141.63 29.03 0 12.74 21.65 0 0 0 141.63 29.03 141.63" />
+      <text
+        className="font-mixed rotate-90 translate-x-[12px] translate-y-[32px]"
+        style={{ fill: '#e3f0ef' }}
+      >
+        Janet Wang
+      </text>
+    </g>
+  </svg>
 )
 
 export default BottleThree

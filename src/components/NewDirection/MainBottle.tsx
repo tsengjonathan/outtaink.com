@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import bottle from './assets/main_bottle.svg'
-import tag from './assets/main_tag.svg'
 
 const MainBottle = () => {
   return (
@@ -12,7 +11,7 @@ const MainBottle = () => {
         <MainScroll />
       </div>
       <div className="absolute top-[121px] left-[310px] w-[120px]">
-        <Image src={tag} alt="Main Tag" />
+        <MainTag />
       </div>
     </div>
   )
@@ -35,6 +34,27 @@ const MainScroll = () => (
     </g>
   </svg>
 
+)
+
+const MainTag = () => (
+  <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.95 199.53">
+    <g id="Layer_1-2">
+      <polygon
+        style={{ fill: '#006862' }}
+        points="87.53 129.21 142.33 199.53 164.95 181.82 110.15 111.5 87.53 129.21"
+      />
+      <polygon
+        style={{ fill: '#4c9c97' }}
+        points="110.15 111.5 22.86 0 23.37 27.09 0 17.89 87.29 129.39 110.15 111.5"
+      />
+      <text
+        style={{ fill: '#e3f0ef' }}
+        className="font-mixed rotate-[51.94deg] translate-x-[30px] translate-y-[40px]"
+      >
+        Janet Wang
+      </text>
+    </g>
+  </svg>
 )
 
 export default MainBottle
