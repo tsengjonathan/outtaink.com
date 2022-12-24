@@ -1,24 +1,34 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { PrismicArticle } from '../../types/cms'
 import bottle from './assets/main_bottle.svg'
 
-const MainBottle = () => {
+type Props = {
+  article: PrismicArticle
+}
+
+const MainBottle = ({ article }: Props) => {
+  const { data: { title, name }, url } = article
+
   return (
-    <div className="absolute">
-      <div className="absolute top-[128px] left-[53px] w-[475px]">
-        <Image src={bottle} alt="Main Bottle" />
-      </div>
-      <div className="absolute top-[277px] left-[87px] w-[290px]">
-        <MainScroll />
-      </div>
-      <div className="absolute top-[121px] left-[310px] w-[120px]">
-        <MainTag />
-      </div>
-    </div>
+    <Link href={url}>
+      <a className="absolute transition">
+        <div className="absolute top-[128px] left-[53px] w-[475px]">
+          <Image src={bottle} alt="Main Bottle" />
+        </div>
+        <div className="absolute top-[277px] left-[87px] w-[290px]">
+          <MainScroll title={title.map(heading => heading.text).join('')} />
+        </div>
+        <div className="absolute top-[121px] left-[310px] w-[120px]">
+          <MainTag author={name} />
+        </div>
+      </a>
+    </Link>
   )
 }
 
-const MainScroll = () => (
-  <svg version="1.1" id="Layer_2_00000044891579685865579030000017928351869556311733_" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 397.8 238.9">
+const MainScroll = ({ title }: { title: string }) => (
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 397.8 238.9">
     <g>
       <path
         style={{ fill: '#E6F4F4' }}
@@ -29,14 +39,14 @@ const MainScroll = () => (
       <text
         className="font-mixed text-2xl w-full text-center translate-y-[185px] -rotate-[20deg] translate-x-[50px]"
       >
-        學會把每個社團都玩得很認真
+        {title}
       </text>
     </g>
   </svg>
 
 )
 
-const MainTag = () => (
+const MainTag = ({ author }: { author: string }) => (
   <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.95 199.53">
     <g id="Layer_1-2">
       <polygon
@@ -51,7 +61,7 @@ const MainTag = () => (
         style={{ fill: '#e3f0ef' }}
         className="font-mixed rotate-[51.94deg] translate-x-[30px] translate-y-[40px]"
       >
-        Janet Wang
+        {author}
       </text>
     </g>
   </svg>

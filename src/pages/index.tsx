@@ -27,7 +27,7 @@ const LandingPage = ({ articles: allArticles, videos, newDirectionArticles }: La
       <Featured article={featuredArticle} />
       <Introduction />
       <ArticleCards articles={articles} />
-      <NewDirection />
+      <NewDirection articles={newDirectionArticles} />
       <NewDirectionArticleCards articles={newDirectionArticles} />
       <VideoSection videos={videos} />
     </>

@@ -1,23 +1,32 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { PrismicArticle } from '../../types/cms'
 import bottle from './assets/two_bottle.svg'
 
-const BottleTwo = () => {
+type Props = {
+  article: PrismicArticle
+}
+
+const BottleTwo = ({ article }: Props) => {
+  const { data: { title, name }, url } = article
   return (
-    <div className="absolute">
-      <div className="absolute top-[565px] left-[20px] w-[350px]">
-        <Image src={bottle} alt="Bottle Two Bottle" />
-      </div>
-      <div className="absolute top-[594px] left-[63px] w-[215px]">
-        <ScrollTwo />
-      </div>
-      <div className="absolute top-[502px] left-[300px] w-[20.5px]">
-        <TagTwo />
-      </div>
-    </div>
+    <Link href={url}>
+      <a className="absolute">
+        <div className="absolute top-[565px] left-[20px] w-[350px]">
+          <Image src={bottle} alt="Bottle Two Bottle" />
+        </div>
+        <div className="absolute top-[594px] left-[63px] w-[215px]">
+          <ScrollTwo title={title.map(heading => heading.text).join('')} />
+        </div>
+        <div className="absolute top-[502px] left-[300px] w-[20.5px]">
+          <TagTwo author={name} />
+        </div>
+      </a>
+    </Link>
   )
 }
 
-const ScrollTwo = () => (
+const ScrollTwo = ({ title }: { title: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.81 86.12">
     <g>
       <path
@@ -27,13 +36,13 @@ const ScrollTwo = () => (
       <text
         className="text-xl font-medium translate-x-[40px] translate-y-[50px]"
       >
-        (上) 那些年的成长之痛
+        {title}
       </text>
     </g>
   </svg>
 )
 
-const TagTwo = () => (
+const TagTwo = ({ author }: { author: string } ) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.03 216.72">
     <g>
       <rect style={{ fill: '#006862' }} x=".3" y="141.63" width="28.73" height="75.09" />
@@ -42,7 +51,7 @@ const TagTwo = () => (
         style={{ fill: '#e3f0ef' }}
         className="font-mixed rotate-90 translate-x-[12px] translate-y-[32px]"
       >
-        Janet Wang
+        {author}
       </text>
     </g>
   </svg>
