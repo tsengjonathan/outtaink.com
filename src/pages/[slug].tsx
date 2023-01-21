@@ -54,12 +54,14 @@ const Article = ({ article, author, previewRef }: ArticleProps) => {
       <div className="grid grid-cols-1 lg:grid-cols-article mx-4 md:mx-auto max-w-screen-lg">
         <article id="article">
           <header>
-            <div className="mt-6 mb-2 flex items-center">
-              <h1 className="mb-0 mr-2 text-4xl font-medium font-en">
-                {name}
-              </h1>
-              <Colon />
-            </div>
+            {name && (
+              <div className="mt-6 mb-2 flex items-center">
+                <h1 className="mb-0 mr-2 text-4xl font-medium font-en">
+                  {name}
+                </h1>
+                <Colon />
+              </div>
+            )}
             <h1 className="mb-6 text-4xl font-medium font-zh">{headline}</h1>
             <div className="flex mb-6 w-3/4">
               <p className="flex-1 m-0 text-sm font-bold font-en tracking-widest text-default-200">

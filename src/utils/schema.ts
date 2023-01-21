@@ -31,7 +31,7 @@ export const prismicNodeSchema: SchemaOf<PrismicNode> = object().shape({
 })
 
 export const prismicArticleDataSchema: SchemaOf<PrismicArticleData> = object().shape({
-  name: string(),
+  name: string().nullable(),
   title: array().of(prismicTextSchema),
   cover: prismicImageSchema,
   author: object().shape({ id: string() }),

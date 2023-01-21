@@ -7,7 +7,7 @@ export type PrismicText = {
 export type PrismicNode = PrismicText | PrismicImage
 
 export type PrismicArticleData = {
-  name: string
+  name: string | null
   title: PrismicText[]
   cover?: PrismicImage
   author: {

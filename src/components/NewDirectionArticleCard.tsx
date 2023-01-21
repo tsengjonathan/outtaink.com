@@ -1,14 +1,15 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { PrismicArticle } from '../types/cms'
+import { PrismicArticle, PrismicAuthor } from '../types/cms'
 import Colon from './Colon'
 
 type NewDirectionArticleCardProps = {
   article: PrismicArticle
+  author?: PrismicAuthor
 }
 
-const NewDirectionArticleCard = ({ article }: NewDirectionArticleCardProps) => {
+const NewDirectionArticleCard = ({ article, author }: NewDirectionArticleCardProps) => {
   const {
     url,
     data: {
@@ -42,7 +43,7 @@ const NewDirectionArticleCard = ({ article }: NewDirectionArticleCardProps) => {
             </div>
             <div className="px-5 pb-5">
               <div className="flex items-center">
-                <h1 className="font-mixed font-medium mr-2">{name}</h1>
+                <h1 className="font-mixed font-medium mr-2">{author?.data.name}</h1>
                 <Colon width={6} />
               </div>
               <h1 className="font-mixed font-medium text-lg md:text-xl mt-1">
