@@ -8,7 +8,7 @@ import SearchButton from './SearchButton'
 export const navs = [
   { name: '無墨精選集', subname: 'FEATURED', src: '/' },
   { name: '他們的故事', subname: 'STORIES', src: '/stories' },
-  { name: '我們的故事', subname: 'OUR STORIES', src: '/stories' },
+  { name: '我們的故事', subname: 'STORIES', src: '/newstories' },
   { name: '關於', subname: 'ABOUT', src: '/about' },
   { name: '投稿', subname: 'SURVEY', src: '/survey' },
 ];
