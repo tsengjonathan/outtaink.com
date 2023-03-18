@@ -52,11 +52,11 @@ const ArticleCard: FC<ArticleCardProps> = ({ article, equalHeight = false, hideQ
                 { ...!equalHeight && { width: cover.dimensions.width }}
               />
             </div>
-            <div className="mt-3 md:mt-4">
-              <div className="flex items-center">
+            <div className="mt-3 md:mt-4 mb-1">
+              {name && <div className="flex items-center">
                 <h1 className="font-mixed font-medium text-xl md:text-2xl mr-2">{name}</h1>
                 <Colon width={8} />
-              </div>
+              </div>}
               <h1 className="font-mixed font-medium text-lg md:text-xl mt-1">
                 { title.map(heading => heading.text) }
               </h1>
